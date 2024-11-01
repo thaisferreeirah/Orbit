@@ -26,6 +26,8 @@ namespace RedeSocial
         PagePost pagePost;
         ChatList chatList;
 
+        string pesquisa;
+
         int codUsuario;
         public Home(int _codUsuario, ChatList _chatList)
         {
@@ -41,7 +43,8 @@ namespace RedeSocial
 
         private void BotaoBuscar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PageBuscar(codUsuario, MainFrame, this));
+            pesquisa = CaixaPesquisa.Text.ToString();
+            MainFrame.Navigate(new PageBuscar(codUsuario, MainFrame, this, pesquisa));
         }
 
         private void BotaoPerfil_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -115,7 +118,8 @@ namespace RedeSocial
         {
             if (e.Key == Key.Enter)
             {
-                PageBuscar pageBuscar = new PageBuscar(codUsuario, MainFrame, this);
+                pesquisa = CaixaPesquisa.Text.ToString();
+                PageBuscar pageBuscar = new PageBuscar(codUsuario, MainFrame, this, pesquisa);
                 MainFrame.Navigate(pageBuscar);
             }
         }

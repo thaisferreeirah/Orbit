@@ -23,13 +23,15 @@ namespace RedeSocial
         UserManager userManager = new UserManager();
         Frame mainFrame;
         Home mainWindow;
-        public PageBuscar(int codUser, Frame _mainFrame, Home _mainWindow)
+        string pesquisa;
+        public PageBuscar(int codUser, Frame _mainFrame, Home _mainWindow, string _pesquisa)
         {
             InitializeComponent();
             mainFrame = _mainFrame;
-            repetirLista(codUser);
             mainWindow = _mainWindow;
+            pesquisa = _pesquisa;
 
+            repetirLista(codUser);
         }
         public void listarUsuario(int codUser, int codPerfil) 
         {
@@ -47,11 +49,11 @@ namespace RedeSocial
         }
         public void repetirLista(int codUser)
         {
-
             for (int i = 0; i < userManager.BuscarQuantidade(); i++)
             {
-
-                if (i != codUser)
+                string nomeUsuario = userManager.BuscarNome(i);
+                nomeUsuario.ToLower();
+                if (i != codUser && nomeUsuario.ToLower().Contains(pesquisa))
                 {
                     listarUsuario(codUser,i);
                 }
