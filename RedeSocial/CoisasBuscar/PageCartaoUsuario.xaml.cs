@@ -53,7 +53,7 @@ namespace RedeSocial
             if (botaoAdicionar.Content.ToString() == "Cancelar solicitação")
             {
                 botaoAdicionar.Content = "Enviar solicitação";
-                userManager.RecusarSolicitacao(codPerfil ,codUser);
+                userManager.CancelarSolicitacao(codPerfil ,codUser);
                 botaoAdicionar.Style = (Style)FindResource("EstiloBotaoAzul");
             }
             else if (botaoAdicionar.Content.ToString() == "Enviar solicitação")

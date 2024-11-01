@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,23 +23,28 @@ namespace RedeSocial
     /// </summary>
     public partial class Home : Window
     {
-        private UserManager userManager = new UserManager();
-        PagePost pagePost;
+        private UserManager usuarioManager = new UserManager();
         ChatList chatList;
 
-        string pesquisa;
+        PagePost pagePost;
+        WindowNotificacao windowNotificacao;
 
         int codUsuario;
+        string pesquisa;
+        bool novaNotificacao;
         public Home(int _codUsuario, ChatList _chatList)
         {
             InitializeComponent();
 
             codUsuario = _codUsuario;
+            novaNotificacao = false;
             chatList = _chatList;
             pagePost = new PagePost(codUsuario);
 
-            MainFrame.Navigate(pagePost);
             AtualizarFotoPerfil();
+            ChecarNotificacao();
+
+            MainFrame.Navigate(pagePost);
         }
 
         private void BotaoBuscar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -103,14 +109,14 @@ namespace RedeSocial
 
         private void BotaoMenu_Unchecked(object sender, RoutedEventArgs e)
         {
-           // MainFrame.Opacity = 1.0;
+            // MainFrame.Opacity = 1.0;
         }
 
         private void AtualizarFotoPerfil()
         {
             EllipseFotoUser.Fill = new ImageBrush
             {
-                ImageSource = new BitmapImage(new Uri(userManager.BuscarFoto(codUsuario)))
+                ImageSource = new BitmapImage(new Uri(usuarioManager.BuscarFoto(codUsuario)))
             };
         }
 
@@ -124,6 +130,48 @@ namespace RedeSocial
             }
         }
 
-        
+        private void BotaoNotificacao_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            BotaoNotificacao.Source = new BitmapImage(new Uri("pack://application:,,,/RedeSocial;component/Icones/Notificacao.png"));
+
+            Point buttonPosition = BotaoNotificacao.TransformToAncestor(this).Transform(new Point(0, 0));
+
+            Point mainWindowPosition = new Point(this.Left, this.Top);
+
+            Point modalPosition = new Point(mainWindowPosition.X + buttonPosition.X + BotaoNotificacao.ActualWidth,
+                                            mainWindowPosition.Y + buttonPosition.Y);
+
+            windowNotificacao = new WindowNotificacao(codUsuario)
+            {
+                Owner = this,
+                WindowStartupLocation = WindowStartupLocation.Manual,
+                Left = modalPosition.X - 280,
+                Top = modalPosition.Y + 80
+            };
+
+            windowNotificacao.Show();
+        }
+
+        private void Window_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (windowNotificacao != null && !windowNotificacao.IsMouseOver)
+            {
+                windowNotificacao.Close();
+                windowNotificacao = null;
+            }
+        }
+
+        private void ChecarNotificacao()
+        {
+            for (int i = 0; i < usuarioManager.BuscarQuantidadeNotificacao(codUsuario); i++)
+            {
+                if (!usuarioManager.VerificarNotificacaoVerificacao(codUsuario, i))
+                {
+                    novaNotificacao = true;
+                    BotaoNotificacao.Source = new BitmapImage(new Uri("pack://application:,,,/RedeSocial;component/Icones/NotificacaoNova.png"));
+                    break;
+                }
+            }
+        }
     }
 }

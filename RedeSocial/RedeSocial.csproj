@@ -23,6 +23,8 @@
     <None Remove="Icones\icon_menuBC.png" />
     <None Remove="Icones\icon_sair.png" />
     <None Remove="Icones\Lupa.png" />
+    <None Remove="Icones\Notificacao.png" />
+    <None Remove="Icones\NotificacaoNova.png" />
     <None Remove="Icones\Voltar.png" />
     <None Remove="Imagens\CartasJogo.png" />
     <None Remove="Imagens\CobrinhaJogo.png" />
@@ -35,6 +37,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icones\Notificacao.png" />
+    <Resource Include="Icones\NotificacaoNova.png" />
     <Resource Include="Icones\Voltar.png" />
   </ItemGroup>
 

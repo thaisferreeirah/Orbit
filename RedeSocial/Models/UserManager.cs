@@ -6,9 +6,11 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace RedeSocial
 {
+
     public class User
     {
         public required string Email { get; set; }
@@ -20,10 +22,11 @@ namespace RedeSocial
         public string Capa { get; set; }
         public ArrayList Amigos { get; set; } = new ArrayList();
         public ArrayList Solicitacoes { get; set; } = new ArrayList();
+        public List<Notificacao> Notificacoes { get; set; } = new List<Notificacao>();
     }
 
     public class UserManager
-    {
+    {   
         private const int AgeLimit = 16; // Limite de idade mínima
 
         // Dicionário para armazenar usuários e suas informações, indexados pelo Email e ID
@@ -287,6 +290,8 @@ namespace RedeSocial
         public void AdicionarSolicitacao(int remetente, int destinatario)
         {
             usersByEmail.ElementAt(destinatario).Value.Solicitacoes.Add(remetente);
+            usersByEmail.ElementAt(destinatario).Value.Notificacoes.Add(new Notificacao(remetente, "solicitacao", BuscarCodSolicitacao(remetente, destinatario)));
+
         }
         public void AceitarSolicitacao(int remetente, int destinatario)
         {
@@ -299,9 +304,19 @@ namespace RedeSocial
         {
             usersByEmail.ElementAt(remetente).Value.Solicitacoes.Remove(destinatario);
         }
+
+        public void CancelarSolicitacao(int remetente, int destinatario)
+        {
+            usersByEmail.ElementAt(remetente).Value.Solicitacoes.Remove(destinatario);
+            //usersByEmail.ElementAt(destinatario).Value.Notificacoes.RemoveAt(BuscarCodigoNotificacao(destinatario, remetente));
+        }
         public bool VerificarSolicitacao(int remetente, int destinatario)
         {
            return usersByEmail.ElementAt(destinatario).Value.Solicitacoes.Contains(remetente);
+        }
+        public int BuscarCodSolicitacao(int remetente, int destinatario)
+        {
+            return usersByEmail.ElementAt(destinatario).Value.Solicitacoes.IndexOf(remetente);
         }
         public void DesfazerAmizade(int codUser, int codAmigo)
         {
@@ -317,8 +332,32 @@ namespace RedeSocial
         {
             return usersByEmail.Keys.ToList().IndexOf(email);
         }
-       
 
+        #region NOTIFICAÇÂO
+        public int BuscarQuantidadeNotificacao(int codUsuario)
+        {
+            return usersByEmail.ElementAt(codUsuario).Value.Notificacoes.Count;
+        }
 
+        public bool VerificarNotificacaoVerificacao(int codUsuario, int i)
+        {
+            return usersByEmail.ElementAt(codUsuario).Value.Notificacoes.ElementAt(i).Verificado;
+        }
+
+        public void AlterarNotificacaoVerificado(int codUsuario, int i)
+        {
+            usersByEmail.ElementAt(codUsuario).Value.Notificacoes.ElementAt(i).Verificado = true;
+        }
+
+        public int BuscarRemetenteNotificacao(int codUsuario, int i)
+        {
+            return usersByEmail.ElementAt(codUsuario).Value.Notificacoes.ElementAt(i).Remetente;
+        }
+
+        public int BuscarCodigoNotificacao(int codUsuario, int remetente)
+        {
+            return usersByEmail.ElementAt(codUsuario).Value.Notificacoes.IndexOf(new Notificacao(remetente, "amizade", BuscarCodSolicitacao(remetente, codUsuario)));
+        }
+        #endregion
     }
 }

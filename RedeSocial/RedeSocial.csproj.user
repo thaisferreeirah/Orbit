@@ -16,6 +16,9 @@
     <Compile Update="CoisasJogos\PageTelaJogo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CoisasNotificacao\PageCartaoNotificacaoAmizade.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="PageComunidades.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,6 +73,9 @@
     <Compile Update="Window1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowNotificacao.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CoisasChat\PageCartaoChat.xaml">
@@ -82,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CoisasJogos\PageTelaJogo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasNotificacao\PageCartaoNotificacaoAmizade.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageComunidades.xaml">
@@ -142,6 +151,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageTesteComunidade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowNotificacao.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

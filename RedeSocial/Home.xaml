@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RedeSocial"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
         Title="Orbit: Um espaço para seus melhores momentos. 🚀" Height="720" Width="1280" Background="#FFF0F0FA"
-        WindowState="Maximized">
+        WindowState="Maximized" PreviewMouseDown="Window_PreviewMouseDown">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55"/>
@@ -14,11 +14,12 @@
         </Grid.RowDefinitions>
 
         <!-- Barra superior -->
-        <Grid Grid.Row="0" Background="#37376E ">
+        <Grid x:Name="GridBarraSuperior" Grid.Row="0" Background="#37376E ">
             <TextBlock Canvas.Top="57" Canvas.Left="57" FontSize="14" Foreground="#9094B6" FontFamily="{StaticResource ArimoFont}"
        Panel.ZIndex="1" IsHitTestVisible="False" Text="Pesquise na Orbit" Visibility="{Binding ElementName=CaixaPesquisa, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="14 0 0 0" Width="520"/>
             <TextBox x:Name="CaixaPesquisa" Style="{StaticResource SearchBox}" KeyDown="CaixaPesquisa_KeyDown"/>
             <Image x:Name="BotaoBuscar" Source="\Icones\Lupa.png" Margin="450 0 0 0" Style="{StaticResource ImageMenu}" MouseLeftButtonUp="BotaoBuscar_MouseLeftButtonUp"/>
+            <Image x:Name="BotaoNotificacao" Source="\Icones\Notificacao.png" HorizontalAlignment="Right" Margin="0 0 20 0" Style="{StaticResource ImageMenu}" MouseLeftButtonUp="BotaoNotificacao_MouseLeftButtonUp"/>
 
             <!-- Toggle Menu -->
             <ToggleButton x:Name="BotaoMenu" Checked="BotaoMenu_Checked" Unchecked="BotaoMenu_Unchecked" Style="{StaticResource BotaoToggle}">

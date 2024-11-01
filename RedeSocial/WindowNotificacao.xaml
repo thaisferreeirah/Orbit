@@ -1,0 +1,15 @@
+﻿<Window x:Class="RedeSocial.WindowNotificacao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedeSocial"
+        mc:Ignorable="d"
+        Title="WindowNotificacao" Height="450" Width="300"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Border x:Name="BorderNotificacao" Background="#FFFFFF" VerticalAlignment="Stretch" CornerRadius="5" BorderBrush="Black" BorderThickness="3">
+        <StackPanel x:Name="StackPanelNotificacoes">
+            <Label Content="Notificações" Margin="10" FontFamily="{StaticResource ArimoFont}" FontSize="18" FontWeight="Bold"/>
+        </StackPanel>
+    </Border>
+</Window>
