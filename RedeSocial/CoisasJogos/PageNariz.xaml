@@ -1,0 +1,143 @@
+﻿<Page x:Class="RedeSocial.Models.PageNariz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial.Models"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageNariz">
+    <Grid x:Name="grid1" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Label x:Name="labelNariz" Content="0" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontFamily="Cascadia Mono" FontSize="40"/>
+            <Image x:Name="botaoNariz" HorizontalAlignment="Center" VerticalAlignment="Center" Width="130" Height="130" Source="/Imagens/Nariz.png"  RenderOptions.BitmapScalingMode="HighQuality" MouseLeftButtonDown="botaoNariz_MouseLeftButtonDown" MouseEnter="botaoNariz_MouseEnter" MouseLeave="botaoNariz_MouseLeave" MouseLeftButtonUp="botaoNariz_MouseLeftButtonUp"/>
+            <Label x:Name="labelNpC" Content="Nariz por Clique: 1" HorizontalAlignment="Left" Margin="10,0,0,40" VerticalAlignment="Bottom" FontFamily="Cascadia Mono" FontSize="16"/>
+            <Label x:Name="labelNpS" Content="Nariz por Segundo: 0" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" FontFamily="Cascadia Mono" FontSize="16"/>
+        </Grid>
+        <Grid Grid.Column="1" Background="White" MaxWidth="230" Width="230" HorizontalAlignment="Right">
+            <Border Background="#EEEEEE">
+                <Border.Effect>
+                    <DropShadowEffect Direction="180" ShadowDepth="1" BlurRadius="7"/>
+                </Border.Effect>
+            </Border>
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="botaox1"   Content="x1"   Grid.Column="0" VerticalAlignment="Top" Height="30" Background="#FFEEEEEE" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="#FF000000" BorderThickness="0,0,1,1" Click="botaox1_Click"/>
+                    <Button x:Name="botaox10"  Content="x10"  Grid.Column="1" VerticalAlignment="Top" Height="30" Background="#FF646464" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="#FFEDEDED" BorderThickness="0,0,1,1" Click="botaox10_Click"/>
+                    <Button x:Name="botaox100" Content="x100" Grid.Column="2" VerticalAlignment="Top" Height="30" Background="#FF646464" FontFamily="Cascadia Mono" FontSize="14" FontWeight="Bold" Foreground="#FFEDEDED" BorderThickness="0,0,0,1" Click="botaox100_Click"/>
+                </Grid>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Grid x:Name="botaoUpgrade1" Background="#FFEEEEEE" MouseLeftButtonUp="botaoUpgrade1_MouseLeftButtonUp" MouseEnter="botaoUpgrade1_MouseEnter" MouseLeave="botaoUpgrade1_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="labelUpgrade1Name" Grid.Row="0" Text="Toque macio" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,5,0,5" FontFamily="Cascadia Mono" FontSize="20"/>
+                            <TextBlock x:Name="labelUpgrade1Price" Grid.Row="1" Text="x1 10" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,5" FontFamily="Cascadia Mono" FontSize="14"/>
+                        </Grid>
+                        <TextBlock x:Name="labelUpgrade1Lv" Grid.Column="1" Text="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Cascadia Mono" FontSize="20"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Grid x:Name="botaoUpgrade2" Background="#FFEEEEEE" MouseLeftButtonUp="botaoUpgrade2_MouseLeftButtonUp" MouseEnter="botaoUpgrade2_MouseEnter" MouseLeave="botaoUpgrade2_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="labelUpgrade2Name" Grid.Row="0" Text="Cotonete" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,5,0,5" FontFamily="Cascadia Mono" FontSize="20"/>
+                            <TextBlock x:Name="labelUpgrade2Price" Grid.Row="1" Text="x1 20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,5" FontFamily="Cascadia Mono" FontSize="14"/>
+                        </Grid>
+                        <TextBlock x:Name="labelUpgrade2Lv" Grid.Column="1" Text="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Cascadia Mono" FontSize="20"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Grid x:Name="botaoUpgrade3" Background="#FFEEEEEE" MouseLeftButtonUp="botaoUpgrade3_MouseLeftButtonUp" MouseEnter="botaoUpgrade3_MouseEnter" MouseLeave="botaoUpgrade3_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="labelUpgrade3Name" Grid.Row="0" Text="Cafungada" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,5,0,5" FontFamily="Cascadia Mono" FontSize="20"/>
+                            <TextBlock x:Name="labelUpgrade3Price" Grid.Row="1" Text="x1 200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,5" FontFamily="Cascadia Mono" FontSize="14"/>
+                        </Grid>
+                        <TextBlock x:Name="labelUpgrade3Lv" Grid.Column="1" Text="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Cascadia Mono" FontSize="20"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Grid x:Name="botaoUpgrade4" Background="#FFEEEEEE" MouseLeftButtonUp="botaoUpgrade4_MouseLeftButtonUp" MouseEnter="botaoUpgrade4_MouseEnter" MouseLeave="botaoUpgrade4_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="labelUpgrade4Name" Grid.Row="0" Text="Moustache" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,5,0,5" FontFamily="Cascadia Mono" FontSize="20"/>
+                            <TextBlock x:Name="labelUpgrade4Price" Grid.Row="1" Text="x1 500" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,5" FontFamily="Cascadia Mono" FontSize="14"/>
+                        </Grid>
+                        <TextBlock x:Name="labelUpgrade4Lv" Grid.Column="1" Text="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Cascadia Mono" FontSize="20"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Grid x:Name="botaoUpgrade5" Background="#FFEEEEEE" MouseLeftButtonUp="botaoUpgrade5_MouseLeftButtonUp" MouseEnter="botaoUpgrade5_MouseEnter" MouseLeave="botaoUpgrade5_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="labelUpgrade5Name" Grid.Row="0" Text="Cutucada" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,5,0,5" FontFamily="Cascadia Mono" FontSize="20"/>
+                            <TextBlock x:Name="labelUpgrade5Price" Grid.Row="1" Text="x1 1000" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,5" FontFamily="Cascadia Mono" FontSize="14"/>
+                        </Grid>
+                        <TextBlock x:Name="labelUpgrade5Lv" Grid.Column="1" Text="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Cascadia Mono" FontSize="20"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Grid x:Name="botaoUpgrade6" Background="#FFEEEEEE" MouseLeftButtonUp="botaoUpgrade6_MouseLeftButtonUp" MouseEnter="botaoUpgrade6_MouseEnter" MouseLeave="botaoUpgrade6_MouseLeave">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="labelUpgrade6Name" Grid.Row="0" Text="Melequinha" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="10,5,0,5" FontFamily="Cascadia Mono" FontSize="20"/>
+                            <TextBlock x:Name="labelUpgrade6Price" Grid.Row="1" Text="x1 10000" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,5" FontFamily="Cascadia Mono" FontSize="14"/>
+                        </Grid>
+                        <TextBlock x:Name="labelUpgrade6Lv" Grid.Column="1" Text="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Cascadia Mono" FontSize="20"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

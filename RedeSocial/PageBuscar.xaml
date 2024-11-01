@@ -1,0 +1,15 @@
+﻿<Page x:Class="RedeSocial.PageBuscar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageBuscar">
+
+
+    <Grid Background="Transparent">
+        <Grid x:Name="gridBuscar"   Background="#DADCDF" HorizontalAlignment="Center" Height="389" Margin="0,25,0,0" VerticalAlignment="Top" Width="600"/>
+    </Grid>
+</Page>

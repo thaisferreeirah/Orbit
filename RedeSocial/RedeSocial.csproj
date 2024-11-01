@@ -1,0 +1,95 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fotos\Gojo.jpg" />
+    <None Remove="Fotos\Pukki.jpg" />
+    <None Remove="Icones\AdicionarFoto.png" />
+    <None Remove="Icones\icon_amigos.png" />
+    <None Remove="Icones\icon_conversas.png" />
+    <None Remove="Icones\icon_depoimentos.png" />
+    <None Remove="Icones\icon_grupos.png" />
+    <None Remove="Icones\icon_inicio.png" />
+    <None Remove="Icones\icon_jogos.png" />
+    <None Remove="Icones\icon_menu.png" />
+    <None Remove="Icones\icon_menuB.png" />
+    <None Remove="Icones\icon_menuBC.png" />
+    <None Remove="Icones\icon_sair.png" />
+    <None Remove="Icones\Lupa.png" />
+    <None Remove="Icones\Voltar.png" />
+    <None Remove="Imagens\CartasJogo.png" />
+    <None Remove="Imagens\CobrinhaJogo.png" />
+    <None Remove="Imagens\GTA6Jogo.png" />
+    <None Remove="Imagens\Moustache.png" />
+    <None Remove="Imagens\NaoAbreJogo.png" />
+    <None Remove="Imagens\Nariz.png" />
+    <None Remove="Imagens\NarizJogo.png" />
+    <None Remove="Imagens\TigrinhoJogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icones\Voltar.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Imagens\CartasJogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Fontes\" />
+    <Resource Include="Fontes\Arimo-Regular.ttf" />
+    <Resource Include="Fontes\Arimo-VariableFont_wght.ttf" />
+    <Resource Include="Fontes\Arimo-Bold.ttf" />
+    <Resource Include="Fontes\KulimPark-Regular.ttf" />
+    <Resource Include="Fontes\KulimPark-Bold.ttf" />
+    <Resource Include="Fotos\Gojo.jpg" />
+    <Resource Include="Fotos\Pukki.jpg" />
+    <Resource Include="Icones\AdicionarFoto.png" />
+    <Resource Include="Icones\icon_amigos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_conversas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_depoimentos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_grupos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_inicio.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_jogos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_menuB.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_menuBC.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\icon_sair.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icones\Lupa.png" />
+    <Resource Include="Imagens\CobrinhaJogo.png" />
+    <Resource Include="Imagens\GTA6Jogo.png" />
+    <Resource Include="Imagens\Moustache.png" />
+    <Resource Include="Imagens\NaoAbreJogo.png" />
+    <Resource Include="Imagens\Nariz.png" />
+    <Resource Include="Imagens\NarizJogo.png" />
+    <Resource Include="Imagens\TigrinhoJogo.png" />
+  </ItemGroup>
+
+</Project>

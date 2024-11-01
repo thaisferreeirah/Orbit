@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="CoisasChat\PageCartaoChat.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasChat\PageCartaoChatSelecionado.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasJogos\PageTelaJogo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageComunidades.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageGrupo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageJogos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasJogos\PageNariz.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageChat.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasPerfil\Page6Amigos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageAmigos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageBuscar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasAmigos\PageCartaoAmigo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasAmigos\PageCartaoSolicitacao.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasAmigos\PageCartaoSolicitacaoEnviada.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasBuscar\PageCartaoUsuario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PagePerfil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasPerfil\PagePerfilOutros.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PagePost.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageTesteComunidade.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Window1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CoisasChat\PageCartaoChat.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasChat\PageCartaoChatSelecionado.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageDepoimentos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasDepoimentos\PagePostDepoimento.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasJogos\PageTelaJogo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageComunidades.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageGrupo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageJogos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasJogos\PageNariz.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageChat.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasPerfil\Page6Amigos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageAmigos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageBuscar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasAmigos\PageCartaoAmigo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasAmigos\PageCartaoSolicitacao.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasAmigos\PageCartaoSolicitacaoEnviada.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasBuscar\PageCartaoUsuario.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PagePerfil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasPerfil\PagePerfilOutros.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PagePost.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Window1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageTesteComunidade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

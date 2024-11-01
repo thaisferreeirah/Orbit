@@ -1,0 +1,23 @@
+﻿<Page x:Class="RedeSocial.PagePostDepoimento"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial"
+      mc:Ignorable="d" 
+      d:DesignHeight="225" d:DesignWidth="630"
+      Title="PagePostDepoimento">
+
+    <Grid >
+        <Border Background="White" CornerRadius="5"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Height="150">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "Auto"/>
+                    <RowDefinition Height = "*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="labelDestRem" Grid.Row="0" Grid.Column="1" Content="De: [Usuario] para [Amigo]" FontFamily="{StaticResource ArimoFont}" FontSize="16" FontWeight="Bold" Margin="10,15,10,10"/>
+                <RichTextBox x:Name="rtbConteudo" Background="AliceBlue" Grid.Row="1"  Style="{StaticResource RichTextBoxConteudo}" VerticalAlignment="Top" Margin="10,10,10,0"  TextChanged="rtbConteudo_TextChanged" Height="73" />
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

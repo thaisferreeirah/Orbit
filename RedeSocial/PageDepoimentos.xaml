@@ -1,0 +1,72 @@
+﻿<Page x:Class="RedeSocial.PageDepoimentos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageDepoimentos">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "*"/>
+            <ColumnDefinition Width = "Auto"/>
+            <ColumnDefinition Width = "*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,20,0,20" Width="630">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height = "*"/>
+                        <RowDefinition Height = "*"/>
+                        <RowDefinition Height = "*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="#FFFFFFFF" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="15,0,15,0">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="3" ShadowDepth="0"/>
+                        </Border.Effect>
+                        <Grid x:Name="gridFormPost">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height = "Auto"/>
+                                <RowDefinition Height = "Auto"/>
+                                <RowDefinition Height = "*"/>
+                                <RowDefinition Height = "*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width = "Auto"/>
+                                <ColumnDefinition Width = "Auto"/>
+                                <ColumnDefinition Width = "5*"/>
+                                <ColumnDefinition Width = "3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Ellipse x:Name="postFormFoto" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="45" Width="45" Stretch="Fill" Margin="10,10,10,5" Stroke="#37376E"/>
+                            <ComboBox x:Name="campoDestinatario" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
+                            <Label x:Name="labelTitulo" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Content="Título" Style="{StaticResource LabelPost}"/>
+                            <RichTextBox x:Name="campoDepoimento"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource RichTextBoxPost}"/>
+                            <Label x:Name="labelTexto" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Content="Escreva algo . . ." Margin="5,0,0,5" Style="{StaticResource LabelPost}"/>
+                            <Border x:Name="botaoAdicionarFoto" Grid.Row="3" Grid.Column="1"  Style="{StaticResource BorderAdicionarFoto}">
+                                <Grid/>
+                            </Border>
+                            <Button x:Name="botaoNegrito" Grid.Row="3" Grid.Column="2" Content="N" Margin="5,0,0,0" FontWeight="Bold" Style="{StaticResource BotaoNIS}" Click="botaoNegrito_Click"/>
+                            <Button x:Name="botaoItalico" Grid.Row="3" Grid.Column="2" Content="I" Margin="45,0,0,0" FontStyle="Italic" Style="{StaticResource BotaoNIS}" Click="botaoItalico_Click"/>
+                            <Button x:Name="botaoSublinhado" Grid.Row="3" Grid.Column="2" Margin="85,0,0,0" Style="{StaticResource BotaoNIS}" Click="botaoSublinhado_Click">
+                                <TextBlock Text="S" TextDecorations="Underline"/>
+                            </Button>
+                            <Button x:Name="botaoPostar" Grid.Row="3" Grid.Column="3" Content="Postar" Style="{StaticResource BotaoPostar}" Click="botaoPostar_Click"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="botaoEnviados" Grid.Column="0" Content="Enviados" Margin="0, 10, 10, 0" Style="{StaticResource EstiloBotaoAzul}" Height="40" Click="botaoEnviados_Click" />
+                    <Button x:Name="botaoRecebidos" Grid.Column="1" Content="Recebidos" Margin="0, 10, 0, 0" Style="{StaticResource EstiloBotaoCinza}" Click="botaoRecebidos_Click"/>
+                </Grid>
+                <Grid x:Name="gridDepoimentos" Grid.Row="2"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+
+</Page>

@@ -1,0 +1,120 @@
+﻿<Window x:Class="RedeSocial.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedeSocial"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
+        Title="MainWindow" Height="720" Width="1280" Background="#FFF0F0FA"
+        WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Barra superior -->
+        <Grid Grid.Row="0" Background="#37376E ">
+            <TextBlock Canvas.Top="57" Canvas.Left="57" FontSize="14" Foreground="#9094B6" FontFamily="{StaticResource ArimoFont}"
+       Panel.ZIndex="1" IsHitTestVisible="False" Text="Pesquise na Orbit" Visibility="{Binding ElementName=CaixaPesquisa, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="14 0 0 0" Width="520"/>
+            <TextBox x:Name="CaixaPesquisa" Style="{StaticResource SearchBox}" KeyDown="CaixaPesquisa_KeyDown"/>
+            <Image x:Name="BotaoBuscar" Source="\Icones\Lupa.png" Margin="450 0 0 0" Style="{StaticResource ImageMenu}" MouseLeftButtonUp="BotaoBuscar_MouseLeftButtonUp"/>
+
+            <!-- Toggle Menu -->
+            <ToggleButton x:Name="BotaoMenu" Checked="BotaoMenu_Checked" Unchecked="BotaoMenu_Unchecked" Style="{StaticResource BotaoToggle}">
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="/Icones/icon_menuB.png" Stretch="UniformToFill" RenderOptions.BitmapScalingMode="HighQuality"/>
+                </ToggleButton.Background>
+                <ToggleButton.Triggers>
+                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                        <BeginStoryboard>
+                            <Storyboard x:Name="GuardeStackPanel">
+                                <DoubleAnimation Storyboard.TargetName="MenuLateral" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="230" To="65"  Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                        <BeginStoryboard>
+                            <Storyboard x:Name="MostraStackPanel">
+                                <DoubleAnimation Storyboard.TargetName="MenuLateral" Storyboard.TargetProperty="Width" BeginTime="0:0:0.2" From="65" To="230" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </ToggleButton.Triggers>
+            </ToggleButton>
+        </Grid>
+
+        <!-- Menu Lateral -->
+        <Grid x:Name="MenuLateral" Grid.Row="1" HorizontalAlignment="Left" Width="200" Background="#F2F4F7" Panel.ZIndex="1">
+            <StackPanel x:Name="NomePlaceholder">
+                <!-- Listview pro menu -->
+                <ListView x:Name="ItensMenu" Background="Transparent" BorderBrush="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <!-- Item Perfil -->
+                    <ListViewItem x:Name="BotaoPerfil" Margin="0 50 0 0" Style="{StaticResource ListViewPadrão}" MouseLeftButtonUp="BotaoPerfil_MouseLeftButtonUp">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Ellipse x:Name="EllipseFotoUser" Height="30" Width="30" Stretch="Fill" Margin="12 0 0 0"/>
+                            <TextBlock Text="Perfil" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <!-- Item Inicio -->
+                    <ListViewItem x:Name="BotaoInicio" Style="{StaticResource ListViewPadrão}" MouseLeftButtonUp="BotaoInicio_MouseLeftButtonUp">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Image Source="/Icones/icon_inicio.png" Style="{StaticResource ImageMenu}"/>
+                            <TextBlock Text="Inicio" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <!-- Item Amigos -->
+                    <ListViewItem x:Name="BotaoAmigos" Style="{StaticResource ListViewPadrão}" MouseLeftButtonUp="BotaoAmigos_MouseLeftButtonUp">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Image Source="/Icones/icon_amigos.png" Style="{StaticResource ImageMenu}"/>
+                            <TextBlock Text="Amigos" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <!-- Item Conversas -->
+                    <ListViewItem x:Name="BotaoConversas" Style="{StaticResource ListViewPadrão}" MouseLeftButtonUp="BotaoConversas_MouseLeftButtonUp">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Image Source="/Icones/icon_conversas.png" Style="{StaticResource ImageMenu}"/>
+                            <TextBlock Text="Conversas" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <!-- Item Conversas -->
+                    <ListViewItem x:Name="BotaoDepoimentos" Style="{StaticResource ListViewPadrão}" MouseLeftButtonUp="BotaoDepoimentos_MouseLeftButtonUp">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Image Source="/Icones/icon_depoimentos.png" Style="{StaticResource ImageMenu}"/>
+                            <TextBlock Text="Depoimentos" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <!-- Item Comunidades -->
+                    <ListViewItem x:Name="BotaoComunidades" Style="{StaticResource ListViewPadrão}" MouseLeftButtonUp="BotaoComunidades_MouseLeftButtonUp">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Image Source="/Icones/icon_grupos.png" Style="{StaticResource ImageMenu}"/>
+                            <TextBlock Text="Comunidades" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <!-- Item Jogos -->
+                    <ListViewItem x:Name="BotaoJogos" Style="{StaticResource ListViewPadrão}" MouseLeftButtonUp="BotaoJogos_MouseLeftButtonUp">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Image Source="/Icones/icon_jogos.png" Style="{StaticResource ImageMenu}"/>
+                            <TextBlock Text="Jogos" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <!-- Item Sair -->
+                    <ListViewItem x:Name="BotaoSair" Style="{StaticResource ListViewPadrão}" MouseDoubleClick="BotaoSair_MouseDoubleClick">
+                        <StackPanel Style="{StaticResource StackPanelMenu}">
+                            <Image x:Name="botaoSair" Style="{StaticResource ImageMenu}" Source="/Icones/icon_sair.png" MouseLeftButtonUp="BotaoSair_MouseLeftButtonUp" />
+                            <TextBlock Text="Sair" Style="{StaticResource TextBlockMenu}"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1"  Panel.ZIndex="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="171*"/>
+                <ColumnDefinition Width="85*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Name="MainFrame" NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Grid>
+</Window>

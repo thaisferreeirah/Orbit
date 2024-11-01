@@ -1,0 +1,52 @@
+﻿<Page x:Class="RedeSocial.Page6Amigos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial"
+      mc:Ignorable="d" 
+      d:DesignHeight="250" d:DesignWidth="400"
+      Title="Page6Amigos">
+
+    <Grid  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Ellipse x:Name= "foto1" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Margin="10,10,10,25"  Width="80" MouseLeftButtonUp="foto1_MouseLeftButtonUp"/>
+
+
+        <Ellipse x:Name="foto2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Margin="10,10,10,25"  Width="80"  MouseLeftButtonUp="foto2_MouseLeftButtonUp"/>
+
+
+        <Ellipse x:Name="foto3" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Margin="10,10,10,25"  Width="80"  MouseLeftButtonUp="foto3_MouseLeftButtonUp"/>
+
+
+        <Ellipse x:Name="foto4" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Margin="10,10,10,25"  Width="80"  MouseLeftButtonUp="foto4_MouseLeftButtonUp"/>
+
+
+        <Ellipse x:Name="foto5"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Margin="10,10,10,25"  Width="80"  MouseLeftButtonUp="foto5_MouseLeftButtonUp"/>
+
+
+        <Ellipse x:Name="foto6" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Margin="10,10,10,25"  Width="80"  MouseLeftButtonUp="foto6_MouseLeftButtonUp"/>
+
+
+
+        <Label x:Name="labelNome1" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="0,0,0,5" RenderTransformOrigin="1.215,8.853" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333"/>
+        <Label x:Name="labelNome2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="0,0,0,5" RenderTransformOrigin="1.215,8.853" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333"/>
+        <Label x:Name="labelNome3" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="0,0,0,5" RenderTransformOrigin="1.215,8.853" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333"/>
+        <Label x:Name="labelNome4" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="0,0,0,5" RenderTransformOrigin="1.215,8.853" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333"/>
+        <Label x:Name="labelNome5" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="0,0,0,5" RenderTransformOrigin="1.215,8.853" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333"/>
+        <Label x:Name="labelNome6" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="0,0,0,5" RenderTransformOrigin="1.215,8.853" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333"/>
+
+    </Grid>
+
+
+
+</Page>

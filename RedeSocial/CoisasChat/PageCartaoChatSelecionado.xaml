@@ -1,0 +1,23 @@
+﻿<Page x:Class="RedeSocial.CoisasChat.PageCartaoChatSelecionado"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial.CoisasChat"
+      mc:Ignorable="d" 
+      d:DesignHeight="65" d:DesignWidth="350"
+      Title="PageCartaoChatSelecionado">
+    <Border CornerRadius="5,5,0,0" x:Name="gridCartao" Background="White">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="2" ShadowDepth="0"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "Auto"/>
+                <ColumnDefinition Width = "*"/>
+            </Grid.ColumnDefinitions>
+            <Ellipse x:Name="foto" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="50" Stretch="Fill" Margin="10, 5, 5, 5" Stroke="#37376E"/>
+            <TextBlock x:Name="textNome" Grid.Column="1" VerticalAlignment="Center" Margin="5" Text="Nome do amigo" FontSize="16" FontWeight="Bold" TextWrapping="Wrap"/>
+        </Grid>
+    </Border>
+</Page>
