@@ -5,19 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RedeSocial"
       mc:Ignorable="d" 
-      d:DesignHeight="225" d:DesignWidth="630"
+      d:DesignHeight="170" d:DesignWidth="630" 
       Title="PagePostDepoimento">
 
-    <Grid >
-        <Border Background="White" CornerRadius="5"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Height="150">
+    <Grid VerticalAlignment="Center"  HorizontalAlignment="Center" >
+        <Border Background="White" CornerRadius="5"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Height="150" BorderBrush="#37376E" BorderThickness="0.4">
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height = "Auto"/>
-                    <RowDefinition Height = "*"/>
-                </Grid.RowDefinitions>
-                <Label x:Name="labelDestRem" Grid.Row="0" Grid.Column="1" Content="De: [Usuario] para [Amigo]" FontFamily="{StaticResource ArimoFont}" FontSize="16" FontWeight="Bold" Margin="10,15,10,10"/>
-                <RichTextBox x:Name="rtbConteudo" Background="AliceBlue" Grid.Row="1"  Style="{StaticResource RichTextBoxConteudo}" VerticalAlignment="Top" Margin="10,10,10,0"  TextChanged="rtbConteudo_TextChanged" Height="73" />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle x:Name="fotoRemetente" Grid.Column="0" Fill="Black" Width="100" Height="100" RadiusX="6" RadiusY="6" Margin="10"/>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height = "Auto"/>
+                        <RowDefinition Height = "*"/>
+                    </Grid.RowDefinitions>
+                    <Label x:Name="labelDestRem" Grid.Row="0" Grid.Column="1" Content="De: [Usuario] para [Amigo]" FontFamily="{StaticResource ArimoFont}" FontSize="16" FontWeight="Bold" Margin="10,15,10,10"/>
+                    <RichTextBox x:Name="rtbConteudo"  Style="{StaticResource RichTextBoxConteudo}" VerticalAlignment="Top" Margin="10,43,10,0"  TextChanged="rtbConteudo_TextChanged" Height="97" Grid.RowSpan="2"  />
+                </Grid>
             </Grid>
+
         </Border>
     </Grid>
 </Page>

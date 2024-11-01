@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RedeSocial"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
-        Title="MainWindow" Height="720" Width="1280" Background="#FFF0F0FA"
+        Title="Orbit: Um espaço para seus melhores momentos. 🚀" Height="720" Width="1280" Background="#FFF0F0FA"
         WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>

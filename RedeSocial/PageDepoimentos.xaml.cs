@@ -31,7 +31,7 @@ namespace RedeSocial
             codUser = _codUser;
             gerenciarDepoimento = new GerenciarDepoimento();
             CarregarAmigos(_codUser);
-            CarregarDepoimentosExistentes();
+            FiltrarDepoimentosEnviados();
         }
 
         private void CarregarAmigos(int codUsuario)
@@ -41,11 +41,11 @@ namespace RedeSocial
             for (int i = 0; i < userManager.BuscarQuantidadeAmigos(codUsuario); i++)
             {
                 codAmigo = userManager.BuscarCodAmigo(codUsuario, i);
-                if (codAmigo != codUsuario) // Garante que o próprio usuário não aparece na lista
-                {
-                    string nomeAmigo = userManager.BuscarNome(codAmigo); // Supondo que você tenha um método para buscar nome por código
+               
+                
+                    string nomeAmigo = userManager.BuscarNome(codAmigo); 
                     campoDestinatario.Items.Add(new ComboBoxItem { Content = nomeAmigo, Tag = codAmigo });
-                }
+                
             }
         }
 
@@ -56,54 +56,30 @@ namespace RedeSocial
                 MessageBox.Show("Selecione um amigo para enviar o depoimento.");
                 return;
             }
-            var amigoSelecionado = (ComboBoxItem)campoDestinatario.SelectedItem;
 
-            if (amigoSelecionado.Tag == null)
+            var amigoSelecionado = (ComboBoxItem)campoDestinatario.SelectedItem;
+            int destinatario = (int)amigoSelecionado.Tag;   
+            TextRange textRange = new TextRange(campoDepoimento.Document.ContentStart, campoDepoimento.Document.ContentEnd);
+            if(string.IsNullOrWhiteSpace(textRange.Text.Trim()))
             {
-                MessageBox.Show("Erro: Amigo selecionado inválido.");
+                MessageBox.Show("Não é possível enviar um depoimento em branco.");
                 return;
             }
-
-            int destinatario = (int)amigoSelecionado.Tag;
-            TextRange textRange = new TextRange(campoDepoimento.Document.ContentStart, campoDepoimento.Document.ContentEnd);
             string conteudo;
             using (var memoryStream = new System.IO.MemoryStream())
             {
                 textRange.Save(memoryStream, DataFormats.Xaml);
                 conteudo = System.Text.Encoding.UTF8.GetString(memoryStream.ToArray());
             }
-
-
             gerenciarDepoimento.ArmazenarDepoimento(codUser, destinatario, conteudo);
-            CarregarDepoimentosExistentes();
+            FiltrarDepoimentosEnviados();
+            botaoEnviados_Click(sender, e);
+            campoDestinatario.SelectedItem = null;
+            campoDepoimento.Document.Blocks.Clear();
 
         }
 
 
-        private void CarregarDepoimentosExistentes()
-        {
-            gridDepoimentos.Children.Clear();
-            int quantidadeDepoimentos = gerenciarDepoimento.BuscarQuantidade();
-            //MessageBox.Show($"Quantidade de depoimentos: {quantidadeDepoimentos}");
-
-            for (int i = quantidadeDepoimentos - 1; i >= 0; i--)
-            {
-                int remetente = gerenciarDepoimento.BuscarRemetente(i);
-                int destinatario = gerenciarDepoimento.BuscarDestinatario(i);
-                string conteudo = gerenciarDepoimento.BuscarConteúdo(i);
-                Frame frame = new Frame
-                {
-                    Height = 225,
-                    Width = 630
-                };
-                PagePostDepoimento postDepoimento = new PagePostDepoimento(remetente, destinatario, conteudo);
-                frame.Navigate(postDepoimento);
-
-                gridDepoimentos.RowDefinitions.Add(new RowDefinition());
-                Grid.SetRow(frame, gridDepoimentos.RowDefinitions.Count - 1);
-                gridDepoimentos.Children.Add(frame);
-            }
-        }
 
         private void FiltrarDepoimentosEnviados()
         {
@@ -120,7 +96,7 @@ namespace RedeSocial
                 {
                     Frame frame = new Frame
                     {
-                        Height = 225,
+                        Height = 170,
                         Width = 630
                     };
                     PagePostDepoimento postDepoimento = new PagePostDepoimento(remetente, destinatario, conteudo);
@@ -148,7 +124,7 @@ namespace RedeSocial
                 {
                     Frame frame = new Frame
                     {
-                        Height = 225,
+                        Height = 170,
                         Width = 630
                     };
                     PagePostDepoimento postDepoimento = new PagePostDepoimento(remetente, destinatario, conteudo);
@@ -216,11 +192,41 @@ namespace RedeSocial
         private void botaoEnviados_Click(object sender, RoutedEventArgs e)
         {
             FiltrarDepoimentosEnviados();
+            botaoEnviados.Style =  (Style)FindResource("EstiloBotaoSelecionado");
+            botaoRecebidos.Style = (Style)FindResource("EstiloBotaoAzul");
         }
 
         private void botaoRecebidos_Click(object sender, RoutedEventArgs e)
         {
             FiltrarDepoimentosRecebidos();
+            botaoEnviados.Style = (Style)FindResource("EstiloBotaoAzul");
+            botaoRecebidos.Style = (Style)FindResource("EstiloBotaoSelecionado");
+        }
+
+        private void campoDestinatario_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(campoDestinatario.SelectedItem != null)
+            {
+                labelDestinatario.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                labelDestinatario.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        private void campoDepoimento_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextRange conteudo = new TextRange(campoDepoimento.Document.ContentStart, campoDepoimento.Document.ContentEnd);
+            if (string.IsNullOrWhiteSpace(conteudo.Text))
+            {
+                labelConteudo.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                labelConteudo.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

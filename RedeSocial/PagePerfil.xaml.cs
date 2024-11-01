@@ -77,6 +77,11 @@ namespace RedeSocial
             {
                 ImageSource = new BitmapImage(new Uri(userManager.BuscarFoto(codUsuario)))
             };
+            postFormFoto.Fill = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(userManager.BuscarFoto(codUsuario))),
+                Stretch = Stretch.UniformToFill,
+            };
 
         }
 

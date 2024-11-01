@@ -193,6 +193,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!--Label-->
+        <Style x:Key="estiloLabelLogin" TargetType="Label">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="#4B4B82"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#2D2D5A"/>
+                    <Setter Property="FontSize" Value="14"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <!-- #endregion LOGIN-->
 
         <!-- #region HOME -->

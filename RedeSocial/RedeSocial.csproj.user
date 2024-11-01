@@ -78,9 +78,6 @@
     <Page Update="CoisasChat\PageCartaoChatSelecionado.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PageDepoimentos.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="CoisasDepoimentos\PagePostDepoimento.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -88,6 +85,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageComunidades.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageDepoimentos.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageGrupo.xaml">

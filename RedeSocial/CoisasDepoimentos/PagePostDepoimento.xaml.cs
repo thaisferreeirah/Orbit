@@ -31,6 +31,11 @@ namespace RedeSocial
         {
             string nomeRem =userManager.BuscarNome(remetente);
             string nomeDest = userManager.BuscarNome(destinatario);
+            fotoRemetente.Fill = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(userManager.BuscarFoto(remetente))),
+                Stretch = Stretch.UniformToFill,
+            };
             labelDestRem.Content = $"De {nomeRem} para {nomeDest} ";
             TextRange textRange = new TextRange(rtbConteudo.Document.ContentStart, rtbConteudo.Document.ContentEnd);
             using (var memoryStream = new System.IO.MemoryStream(System.Text.Encoding.UTF8.GetBytes(conteudo)))

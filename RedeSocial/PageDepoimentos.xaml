@@ -8,15 +8,117 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageDepoimentos">
 
+    <Page.Resources>
+        <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Background" Value="#E2E5E9"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border x:Name="Fundo" Background="{TemplateBinding Background}" BorderBrush="#E2E5E9" BorderThickness="1" CornerRadius="0,5,5,0">
+                            <TextBlock Text="V" FontSize="12" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Fundo" Property="Background" Value="#D6D9DD"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Fundo" Property="Background" Value="#DDE0E4 "/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="EstiloComboBox" TargetType="ComboBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <Border CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="1">
+                                <DockPanel>
+                                    <ToggleButton DockPanel.Dock="Right" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press" Width="26" Style="{StaticResource ComboBoxToggleButton}" />
+                                    <ContentPresenter Content="{TemplateBinding SelectionBoxItem}" Margin="14,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                </DockPanel>
+                            </Border>
+                            <Popup x:Name="Popup" IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" Width="{TemplateBinding ActualWidth}" AllowsTransparency="True" Focusable="False">
+                                <Border x:Name="PopupBorder" Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="0,0,5,5">
+                                    <ScrollViewer Margin="4">
+                                        <StackPanel IsItemsHost="True"/>
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#D6D9DD"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="rtbDepoimentos" TargetType="RichTextBox">
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RichTextBox">
+                        <Border CornerRadius="10" Background="#F0F0FA">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="EstiloBotaoSelecionado" TargetType="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="borda" CornerRadius="4"  Background="{TemplateBinding Background}" BorderBrush="#37376E" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width = "*"/>
             <ColumnDefinition Width = "Auto"/>
             <ColumnDefinition Width = "*"/>
         </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Auto">
             <StackPanel>
-                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,20,0,20" Width="630">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,20,0,0" Width="630">
                     <Grid.RowDefinitions>
                         <RowDefinition Height = "*"/>
                         <RowDefinition Height = "*"/>
@@ -39,20 +141,23 @@
                                 <ColumnDefinition Width = "5*"/>
                                 <ColumnDefinition Width = "3*"/>
                             </Grid.ColumnDefinitions>
-                            <Ellipse x:Name="postFormFoto" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="45" Width="45" Stretch="Fill" Margin="10,10,10,5" Stroke="#37376E"/>
-                            <ComboBox x:Name="campoDestinatario" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" />
-                            <Label x:Name="labelTitulo" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Content="Título" Style="{StaticResource LabelPost}"/>
-                            <RichTextBox x:Name="campoDepoimento"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource RichTextBoxPost}"/>
-                            <Label x:Name="labelTexto" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Content="Escreva algo . . ." Margin="5,0,0,5" Style="{StaticResource LabelPost}"/>
+                            <!--Ellipse x:Name="fotoUser" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="45" Width="45" Stretch="Fill" Margin="10,10,10,5" Stroke="#37376E"/-->
+                            <ComboBox Text="campoDestinatario" x:Name="campoDestinatario" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Height="35" Style="{StaticResource EstiloComboBox}" Margin="10,10,10,5" Padding="14,10,0,10" Background="#F0F0FA" SelectionChanged="campoDestinatario_SelectionChanged"/>
+                            <Label x:Name="labelDestinatario" Grid.Column="1" Grid.ColumnSpan="2" Content="Destinatário" Style="{StaticResource LabelPost}" Margin="20,0,0,0"/>
+                            
+                            <RichTextBox  x:Name="campoDepoimento"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource rtbDepoimentos}" Margin="10" Padding="10,10,0,10" TextChanged="campoDepoimento_TextChanged"/>
+                            <Label x:Name="labelConteudo" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Content="Diga ao seu amigo o quanto ele é incrível..." Margin="20,0,0,0" Style="{StaticResource LabelPost}" />
+                            
                             <Border x:Name="botaoAdicionarFoto" Grid.Row="3" Grid.Column="1"  Style="{StaticResource BorderAdicionarFoto}">
                                 <Grid/>
                             </Border>
-                            <Button x:Name="botaoNegrito" Grid.Row="3" Grid.Column="2" Content="N" Margin="5,0,0,0" FontWeight="Bold" Style="{StaticResource BotaoNIS}" Click="botaoNegrito_Click"/>
-                            <Button x:Name="botaoItalico" Grid.Row="3" Grid.Column="2" Content="I" Margin="45,0,0,0" FontStyle="Italic" Style="{StaticResource BotaoNIS}" Click="botaoItalico_Click"/>
-                            <Button x:Name="botaoSublinhado" Grid.Row="3" Grid.Column="2" Margin="85,0,0,0" Style="{StaticResource BotaoNIS}" Click="botaoSublinhado_Click">
+                            
+                            <Button x:Name="botaoNegrito" Grid.Row="3" Grid.Column="2" Content="N" Margin="15,0,0,0" FontWeight="Bold" Style="{StaticResource BotaoNIS}" Click="botaoNegrito_Click"/>
+                            <Button x:Name="botaoItalico" Grid.Row="3" Grid.Column="2" Content="I" Margin="55,0,0,0" FontStyle="Italic" Style="{StaticResource BotaoNIS}" Click="botaoItalico_Click"/>
+                            <Button x:Name="botaoSublinhado" Grid.Row="3" Grid.Column="2" Margin="95,0,0,0" Style="{StaticResource BotaoNIS}" Click="botaoSublinhado_Click">
                                 <TextBlock Text="S" TextDecorations="Underline"/>
                             </Button>
-                            <Button x:Name="botaoPostar" Grid.Row="3" Grid.Column="3" Content="Postar" Style="{StaticResource BotaoPostar}" Click="botaoPostar_Click"/>
+                            <Button x:Name="botaoPostar" Grid.Row="3" Grid.Column="3" Content="Enviar" Style="{StaticResource BotaoPostar}" Click="botaoPostar_Click"/>
                         </Grid>
                     </Border>
                 </Grid>
@@ -61,12 +166,13 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="botaoEnviados" Grid.Column="0" Content="Enviados" Margin="0, 10, 10, 0" Style="{StaticResource EstiloBotaoAzul}" Height="40" Click="botaoEnviados_Click" />
-                    <Button x:Name="botaoRecebidos" Grid.Column="1" Content="Recebidos" Margin="0, 10, 0, 0" Style="{StaticResource EstiloBotaoCinza}" Click="botaoRecebidos_Click"/>
+                    <Button x:Name="botaoEnviados" Grid.Column="0" Content="Enviados" Margin="20, 10, 5, 0" Style="{StaticResource EstiloBotaoSelecionado}" Height="40" Click="botaoEnviados_Click" />
+                    <Button x:Name="botaoRecebidos" Grid.Column="1" Content="Recebidos" Margin="5, 10, 20, 0" Style="{StaticResource EstiloBotaoAzul}" Click="botaoRecebidos_Click"/>
                 </Grid>
-                <Grid x:Name="gridDepoimentos" Grid.Row="2"/>
+                <Grid x:Name="gridDepoimentos" Grid.Row="2" Margin="0,10,0,0"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
+
 
 </Page>

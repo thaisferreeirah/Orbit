@@ -112,7 +112,7 @@ namespace RedeSocial
             }
             else
             {
-                tabMenu.Height = 460;
+                tabMenu.Height = 358;
             }
         }
 
