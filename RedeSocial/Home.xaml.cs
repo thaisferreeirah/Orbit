@@ -39,7 +39,7 @@ namespace RedeSocial
             codUsuario = _codUsuario;
             novaNotificacao = false;
             chatList = _chatList;
-            pagePost = new PagePost(codUsuario);
+            pagePost = new PagePost(codUsuario, this, MainFrame);
 
             AtualizarFotoPerfil();
             ChecarNotificacao();
@@ -60,7 +60,7 @@ namespace RedeSocial
 
         private void BotaoInicio_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PagePost(codUsuario));
+            MainFrame.Navigate(new PagePost(codUsuario, this, MainFrame));
         }
 
         private void BotaoAmigos_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

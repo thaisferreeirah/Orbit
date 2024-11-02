@@ -13,6 +13,12 @@
     <Compile Update="CoisasChat\PageCartaoChatSelecionado.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CoisasInicio\PageAmizadesInicio.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CoisasInicio\PageComunidadesInicio.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CoisasJogos\PageTelaJogo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,6 +91,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CoisasDepoimentos\PagePostDepoimento.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasInicio\PageAmizadesInicio.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasInicio\PageComunidadesInicio.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CoisasJogos\PageTelaJogo.xaml">

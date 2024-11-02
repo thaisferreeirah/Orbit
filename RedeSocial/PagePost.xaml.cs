@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using RedeSocial.CoisasInicio;
 
 namespace RedeSocial
 {
@@ -28,6 +29,9 @@ namespace RedeSocial
         private PostManager postManager = new PostManager();
         private UserManager usuarioManager = new UserManager();
 
+        private Home mainWindow;
+        Frame mainFrame;
+
         int codUsuario;
         string enderecoMidia;
         string exibicaoPost;
@@ -39,13 +43,16 @@ namespace RedeSocial
         SolidColorBrush corSecundaria;
         SolidColorBrush corPlano;
         SolidColorBrush corLinha;
-        public PagePost(int codUser)
+        public PagePost(int codUser, Home _mainWin, Frame _mainFrame)
         {
             InitializeComponent();
 
             codUsuario = codUser;
             exibicaoPost = "proprio";
             enderecoMidia = "";
+
+            mainWindow = _mainWin;
+            mainFrame = _mainFrame;
 
             projectPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
 
@@ -54,6 +61,9 @@ namespace RedeSocial
             corSecundaria = new SolidColorBrush(Color.FromRgb(75, 75, 130));
             corPlano = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             corLinha = new SolidColorBrush(Color.FromRgb(200, 200, 200));
+
+            frameAmigos.Navigate(new PageAmizadesInicio(codUsuario, mainFrame, mainWindow));
+            frameComunidades.Navigate(new PageComunidadesInicio(codUsuario, mainFrame, mainWindow));
 
             atualizarPagina(exibicaoPost);
             exibirFotoPerfil();

@@ -48,6 +48,8 @@ namespace RedeSocial.Models
             narizManager.AdicionarUsuario();
             usuarioManager.AdicionarUsuario("lucileny6@gmail.com", "lulu", "123456", "Lucileny Xavier", new DateOnly(2001, 02, 13), projectPath + "\\Fotos\\Janete.jpeg", projectPath + "\\Fotos\\Gojo.jpg");
             narizManager.AdicionarUsuario();
+            usuarioManager.AdicionarUsuario("seeun@gmail.com", "sese", "123123", "Yoon Se Eun", new DateOnly(2003, 06, 14), projectPath + "\\Fotos\\Seboke.jpg", projectPath + "\\Fotos\\Gojo.jpg");
+            narizManager.AdicionarUsuario();
 
             narizManager.SetNariz(0, 5000);
         }

@@ -10,6 +10,6 @@
 
 
     <Grid Background="Transparent">
-        <Grid x:Name="gridBuscar"   Background="#DADCDF" HorizontalAlignment="Center" Height="389" Margin="0,25,0,0" VerticalAlignment="Top" Width="600"/>
+        <Grid x:Name="gridBuscar"  HorizontalAlignment="Center" Height="390" Margin="0,25,0,0" VerticalAlignment="Top" Width="600"/>
     </Grid>
 </Page>
