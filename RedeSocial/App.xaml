@@ -557,5 +557,16 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!-- #region COISAS INICIO -->
+        <Style x:Key="TextBlockInicio" TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="{StaticResource ArimoFont}" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="0,72,0,0" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
     </Application.Resources>
 </Application>

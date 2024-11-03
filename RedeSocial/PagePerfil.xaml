@@ -115,12 +115,7 @@
                             <Grid x:Name="gridPosts" Grid.Row="2"/>
                         </Grid>
                         <!--Aqui é a borda amigos-->
-                        <Border Grid.Column="2" Background="#FFFFFF" Width="450" Height="250" CornerRadius="10" VerticalAlignment="Top">
-                            <Border.Effect>
-                                <DropShadowEffect BlurRadius="3" ShadowDepth="0"/>
-                            </Border.Effect>
-                            <Frame x:Name="frame6Amigos"/>
-                        </Border>
+                        <Frame x:Name="frame6Amigos" Grid.Column="2" Width="450" Height="250"  VerticalAlignment="Top"/>
                     </Grid>
                 </Grid>
             </StackPanel>

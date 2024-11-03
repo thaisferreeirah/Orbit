@@ -40,7 +40,7 @@ namespace RedeSocial.CoisasInicio
             int quantidadeAmigos = userManager.BuscarQuantidadeAmigos(cod);
 
             var amigosFotos = new[] { fotoUsuario1, fotoUsuario2, fotoUsuario3, fotoUsuario4, fotoUsuario5};
-            var amigosNomes = new[] { labelNome1, labelNome2, labelNome3, labelNome4, labelNome5};
+            var amigosNomes = new[] { nomeUsuario1, nomeUsuario2, nomeUsuario3, nomeUsuario4, nomeUsuario5};
 
             for (int i = 0; i < quantidadeAmigos && i < amigosFotos.Length; i++)
             {
@@ -50,14 +50,13 @@ namespace RedeSocial.CoisasInicio
                     ImageSource = new BitmapImage(new Uri(userManager.BuscarFoto(codAmigo))),
                     Stretch = Stretch.UniformToFill,
                 };
-                amigosNomes[i].Content = userManager.BuscarNome(codAmigo);
+                amigosNomes[i].Text = userManager.BuscarNome(codAmigo);
                 amigos[i] = codAmigo;
-            }
-
-            if (quantidadeAmigos > 5)
-            {
-                labelVerTodos.Content = $"Ver todos ({quantidadeAmigos})";
-                labelVerTodos.Visibility = Visibility.Visible;
+                if (quantidadeAmigos > 5)
+                {
+                    labelVerTodos.Content = $"Ver todos ({quantidadeAmigos})";
+                    labelVerTodos.Visibility = Visibility.Visible;
+                }
             }
         }
 

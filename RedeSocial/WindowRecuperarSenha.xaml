@@ -1,0 +1,39 @@
+﻿<Window x:Class="RedeSocial.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterScreen"  
+        Title="Recuperação de Senha" Height="180" Width="400"> 
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Texto de instrução -->
+        <TextBlock Panel.ZIndex="1" Text="Digite seu e-mail para recuperação de senha" Style="{StaticResource TextBlockLogin}"  VerticalAlignment="Top" HorizontalAlignment="Left"  Visibility="{Binding ElementName=txtEmail, Path=Text.IsEmpty, Converter={StaticResource BoolToVis} }" Margin="34,34,0,0" Height="17"/>
+
+        <!-- TextBox para inserir o e-mail -->
+        <TextBox Name="txtEmail" 
+                 Grid.Row="0"
+                 Panel.ZIndex="0"
+                 Width="350" 
+                 Height="35" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Padding="14,0,0,0"
+                 Style="{StaticResource EstiloTextBox}"
+                 Margin="0,25,0,0" />
+
+        <!-- Botão para enviar o e-mail -->
+        <Button Content="Enviar" 
+                HorizontalAlignment="Center" 
+                Height="30" 
+                Width="200" 
+                VerticalAlignment="Center" 
+                Style="{StaticResource EstiloBotaoAzul}"
+                Click="EnviarEmail_Click" Grid.Row="2"/>
+    </Grid>
+</Window>

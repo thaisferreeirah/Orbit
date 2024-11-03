@@ -33,17 +33,17 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Ellipse x:Name="fotoUsuario1" Grid.Column="0" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" MouseLeftButtonDown="fotoUsuario1_MouseLeftButtonDown"/>
-                    <Label x:Name="labelNome1" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Margin="0,0,0,24"/>
+                    <TextBlock x:Name="nomeUsuario1" Grid.Column="0" Grid.Row="0"  Style="{StaticResource TextBlockInicio}"/>
                     <Ellipse x:Name="fotoUsuario2" Grid.Column="1" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" MouseLeftButtonDown="fotoUsuario2_MouseLeftButtonDown"/>
-                    <Label x:Name="labelNome2" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Margin="0,0,0,24"/>
+                    <TextBlock x:Name="nomeUsuario2" Grid.Column="1" Grid.Row="0"  Style="{StaticResource TextBlockInicio}"/>
                     <Ellipse x:Name="fotoUsuario3" Grid.Column="2" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" MouseLeftButtonDown="fotoUsuario3_MouseLeftButtonDown"/>
-                    <Label x:Name="labelNome3" Grid.Column="2" Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Margin="0,0,0,24"/>
-
+                    <TextBlock x:Name="nomeUsuario3" Grid.Column="2" Grid.Row="0"  Style="{StaticResource TextBlockInicio}"/>
+                    
                     <Ellipse x:Name="fotoUsuario4" Grid.Column="0" Grid.Row="1" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" MouseLeftButtonDown="fotoUsuario4_MouseLeftButtonDown"/>
-                    <Label x:Name="labelNome4" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Margin="0,0,0,24"/>
+                    <TextBlock x:Name="nomeUsuario4" Grid.Column="0" Grid.Row="1"  Style="{StaticResource TextBlockInicio}"/>
                     <Ellipse x:Name="fotoUsuario5" Grid.Column="1" Grid.Row="1" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" MouseLeftButtonDown="fotoUsuario5_MouseLeftButtonDown"/>
-                    <Label x:Name="labelNome5" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Margin="0,0,0,24"/>
-
+                    <TextBlock x:Name="nomeUsuario5" Grid.Column="1" Grid.Row="1"  Style="{StaticResource TextBlockInicio}"/>
+                    
                     <Label x:Name="labelVerTodos" Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#37376E" MouseLeftButtonDown="labelVerTodos_MouseLeftButtonDown"/>
                 </Grid>
             </Grid>

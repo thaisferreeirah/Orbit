@@ -76,7 +76,7 @@
     <Compile Update="PageTesteComunidade.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Window1.xaml.cs">
+    <Compile Update="WindowRecuperarSenha.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WindowNotificacao.xaml.cs">
@@ -159,7 +159,7 @@
     <Page Update="PagePost.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Window1.xaml">
+    <Page Update="WindowRecuperarSenha.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageTesteComunidade.xaml">
