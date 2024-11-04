@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:RedeSocial"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"  
         Title="Orbit: Entre, cadastre-se ou saiba mais! 🚀" Height="720" Width="1280" Background="#FFF0F0FA"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Icon="\Icones\OrbitIcone.ico">
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <Grid>
@@ -30,7 +31,7 @@
                                     <PasswordBox x:Name="CampoSenha" Canvas.Top="90" Canvas.Left="42" Style="{StaticResource PasswordRedondoEmBaixo}" KeyDown="CampoSenha_KeyDown" PasswordChanged="CampoSenha_PasswordChanged"/>
 
                                     <!--Label Esqueci Minha Senha-->
-                                    <Label  Content="Esqueceu a senha?" Canvas.Top="163" Canvas.Left="57" FontSize="13" Foreground="#37376E" FontFamily="{StaticResource ArimoFont}" MouseLeftButtonDown="BotaoRecuperarSenha_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    <Label  Content="Esqueceu a senha?" Canvas.Top="163" Canvas.Left="57" FontSize="13" Foreground="#37376E" Cursor="Hand" FontFamily="{StaticResource ArimoFont}" MouseLeftButtonDown="BotaoRecuperarSenha_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
                                     <!--Botão Entrar-->
                                     <Button x:Name="BotaoEntrar" Content="Entrar" Width="343" Height="47" Canvas.Left="58" Canvas.Top="205" Style="{StaticResource EstiloBotaoRedondo}" Click="BotaoEntrar_Click"/>

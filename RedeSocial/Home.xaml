@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:RedeSocial"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
         Title="Orbit: Um espaço para seus melhores momentos. 🚀" Height="720" Width="1280" Background="#FFF0F0FA"
-        WindowState="Maximized" PreviewMouseDown="Window_PreviewMouseDown">
+        WindowState="Maximized" PreviewMouseDown="Window_PreviewMouseDown"
+        Icon="\Icones\OrbitIcone.ico" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55"/>
@@ -30,14 +31,14 @@
                     <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                         <BeginStoryboard>
                             <Storyboard x:Name="GuardeStackPanel">
-                                <DoubleAnimation Storyboard.TargetName="MenuLateral" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="230" To="65"  Duration="0:0:0.2"/>
+                                <DoubleAnimation Storyboard.TargetName="MenuLateral" Storyboard.TargetProperty="Width" BeginTime="0:0:0" From="200" To="65"  Duration="0:0:0.2"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
                     <EventTrigger RoutedEvent="ToggleButton.Checked">
                         <BeginStoryboard>
                             <Storyboard x:Name="MostraStackPanel">
-                                <DoubleAnimation Storyboard.TargetName="MenuLateral" Storyboard.TargetProperty="Width" BeginTime="0:0:0.2" From="65" To="230" Duration="0:0:0.3"/>
+                                <DoubleAnimation Storyboard.TargetName="MenuLateral" Storyboard.TargetProperty="Width" BeginTime="0:0:0.2" From="65" To="200" Duration="0:0:0.3"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>

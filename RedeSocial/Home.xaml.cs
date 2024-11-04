@@ -132,24 +132,24 @@ namespace RedeSocial
 
         private void BotaoNotificacao_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            BotaoNotificacao.Source = new BitmapImage(new Uri("pack://application:,,,/RedeSocial;component/Icones/Notificacao.png"));
+                BotaoNotificacao.Source = new BitmapImage(new Uri("pack://application:,,,/RedeSocial;component/Icones/Notificacao.png"));
 
-            Point buttonPosition = BotaoNotificacao.TransformToAncestor(this).Transform(new Point(0, 0));
+                Point buttonPosition = BotaoNotificacao.TransformToAncestor(this).Transform(new Point(0, 0));
 
-            Point mainWindowPosition = new Point(this.Left, this.Top);
+                Point mainWindowPosition = new Point(this.Left, this.Top);
 
-            Point modalPosition = new Point(mainWindowPosition.X + buttonPosition.X + BotaoNotificacao.ActualWidth,
-                                            mainWindowPosition.Y + buttonPosition.Y);
+                Point modalPosition = new Point(mainWindowPosition.X + buttonPosition.X + BotaoNotificacao.ActualWidth,
+                                                mainWindowPosition.Y + buttonPosition.Y);
 
-            windowNotificacao = new WindowNotificacao(codUsuario)
-            {
-                Owner = this,
-                WindowStartupLocation = WindowStartupLocation.Manual,
-                Left = modalPosition.X - 280,
-                Top = modalPosition.Y + 80
-            };
+                windowNotificacao = new WindowNotificacao(codUsuario)
+                {
+                    Owner = this,
+                    WindowStartupLocation = WindowStartupLocation.Manual,
+                    Left = modalPosition.X - 280,
+                    Top = modalPosition.Y + 80
+                };
 
-            windowNotificacao.Show();
+                windowNotificacao.Show();
         }
 
         private void Window_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -171,6 +171,24 @@ namespace RedeSocial
                     BotaoNotificacao.Source = new BitmapImage(new Uri("pack://application:,,,/RedeSocial;component/Icones/NotificacaoNova.png"));
                     break;
                 }
+            }
+        }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (windowNotificacao != null)
+            {
+                windowNotificacao.Close();
+                windowNotificacao = null;
+            }
+        }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                Left = 0;
+                Top = 0;
             }
         }
     }

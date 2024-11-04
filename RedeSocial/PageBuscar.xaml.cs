@@ -36,15 +36,12 @@ namespace RedeSocial
         public void listarUsuario(int codUser, int codPerfil) 
         {
             PageCartaoUsuario pageCartao = new PageCartaoUsuario(codUser,codPerfil, mainFrame, mainWindow);
-            gridBuscar.RowDefinitions.Add(new RowDefinition());
-            Frame frame = new Frame()
-            {
-                Height = 60,  
-                Width = 600
-            };
+
+            Frame frame = new Frame();
+
             frame.Navigate(pageCartao);
-            Grid.SetRow(frame, gridBuscar.RowDefinitions.Count - 1);
-            gridBuscar.Children.Add(frame);
+
+            StackBuscar.Children.Add(frame);
             
         }
         public void repetirLista(int codUser)

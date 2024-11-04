@@ -25,6 +25,7 @@
     <None Remove="Icones\Lupa.png" />
     <None Remove="Icones\Notificacao.png" />
     <None Remove="Icones\NotificacaoNova.png" />
+    <None Remove="Icones\OrbitIcone.ico" />
     <None Remove="Icones\Voltar.png" />
     <None Remove="Imagens\CartasJogo.png" />
     <None Remove="Imagens\CobrinhaJogo.png" />
@@ -39,6 +40,7 @@
   <ItemGroup>
     <Resource Include="Icones\Notificacao.png" />
     <Resource Include="Icones\NotificacaoNova.png" />
+    <Resource Include="Icones\OrbitIcone.ico" />
     <Resource Include="Icones\Voltar.png" />
   </ItemGroup>
 

@@ -29,14 +29,14 @@ namespace RedeSocial
         public PageCartaoUsuario(int _codUser, int _codPerfil, Frame _mainFrame, Home _mainWindow)
         {
             InitializeComponent();
+
             mainFrame = _mainFrame;
             mainWindow = _mainWindow;
             codPerfil = _codPerfil;
             codUser = _codUser;
+
             buscarUsuario();
             alterarConteudoBotao();
-             
-
         }
         private void buscarUsuario()
         {
@@ -53,7 +53,7 @@ namespace RedeSocial
             if (botaoAdicionar.Content.ToString() == "Cancelar solicitação")
             {
                 botaoAdicionar.Content = "Enviar solicitação";
-                userManager.CancelarSolicitacao(codPerfil ,codUser);
+                userManager.CancelarSolicitacao(codPerfil, codUser);
                 botaoAdicionar.Style = (Style)FindResource("EstiloBotaoAzul");
             }
             else if (botaoAdicionar.Content.ToString() == "Enviar solicitação")
@@ -67,7 +67,7 @@ namespace RedeSocial
                 userManager.AceitarSolicitacao(codUser, codPerfil);
                 botaoAdicionar.Content = "Adicionado";
                 botaoAdicionar.IsEnabled = false;
-                botaoAdicionar.Style = (Style)FindResource("EstiloBotaoAzul");
+                botaoAdicionar.Style = (Style)FindResource("EstiloBotaoCinza");
             }
 
 
@@ -77,16 +77,20 @@ namespace RedeSocial
             if (userManager.VerificarSolicitacao(codUser, codPerfil))
             {
                 botaoAdicionar.Content = "Cancelar solicitação";
+                botaoAdicionar.Style = (Style)FindResource("EstiloBotaoCinza");
 
-            } else if (userManager.VerificarCodAmigo(codUser, codPerfil))
+            }
+            else if (userManager.VerificarCodAmigo(codUser, codPerfil))
             {
                 botaoAdicionar.Content = "Adicionado";
                 botaoAdicionar.IsEnabled = false;
+                botaoAdicionar.Style = (Style)FindResource("EstiloBotaoCinza");
 
-            } else if (userManager.VerificarSolicitacao(codPerfil, codUser))
+            }
+            else if (userManager.VerificarSolicitacao(codPerfil, codUser))
             {
-
                 botaoAdicionar.Content = "Aceitar solicitação";
+                botaoAdicionar.Style = (Style)FindResource("EstiloBotaoAzul");
             }
         }
 

@@ -18,11 +18,6 @@ namespace RedeSocial
     /// <summary>
     /// Interação lógica para PageAmigos.xam
     /// </summary>
-    /// 
-
-    //TODO: dividir 2 grids (Uma para solicitação. outra para amigos existentes) e colocar no wrappane 
-
-
     public partial class PageAmigos : Page
     {
         UserManager userManager = new UserManager();
@@ -31,42 +26,39 @@ namespace RedeSocial
         public PageAmigos(int codUser, Frame _mainFrame, Home _mainWindow)
         {
             InitializeComponent();
+
             mainFrame = _mainFrame;
             mainWindow = _mainWindow;
+
             repetirListaRecebidas(codUser);
             repetirListaEnviadas(codUser);
             repetirListaAmigos(codUser);
-            
-
         }
-        public void listarUsuarioRecebidas(int codUser, int codPerfil )
+        public void listarUsuarioRecebidas(int codUser, int codPerfil)
         {
             PageCartaoSolicitacao pageCartaoSolicitacao = new PageCartaoSolicitacao(codUser, codPerfil, mainFrame);
-            
+
             Frame frame = new Frame()
             {
                 Height = 345,
                 Width = 230
             };
             frame.Navigate(pageCartaoSolicitacao);
-           
-            gridSolicitacaoRecebida.Children.Add(frame);
 
+            gridSolicitacaoRecebida.Children.Add(frame);
         }
 
         public void repetirListaRecebidas(int codUser)
         {
-
             for (int i = 0; i < userManager.BuscarQuantidade(); i++)
             {
-
                 if (i != codUser)
                 {
                     if (userManager.VerificarSolicitacao(i, codUser))
                     {
                         listarUsuarioRecebidas(codUser, i);
+                        LabelNenhumRecebido.Visibility = Visibility.Collapsed;
                     }
-                   
                 }
             }
         }
@@ -83,26 +75,22 @@ namespace RedeSocial
             frame.Navigate(pageCartaoSolicitacaoEnviada);
 
             gridSolicitacaoEnviada.Children.Add(frame);
-
         }
 
         public void repetirListaEnviadas(int codUser)
         {
-
             for (int i = 0; i < userManager.BuscarQuantidade(); i++)
             {
-
                 if (i != codUser)
                 {
                     if (userManager.VerificarSolicitacao(codUser, i))
                     {
-                        listarUsuarioEnviadas(codUser,i);
+                        listarUsuarioEnviadas(codUser, i);
+                        LabelNenhumEnviado.Visibility = Visibility.Collapsed;
                     }
-
                 }
             }
         }
-
 
         public void listarUsuarioAmigos(int codUser, int codPerfil)
         {
@@ -116,25 +104,21 @@ namespace RedeSocial
             frame.Navigate(pageCartaoAmigo);
 
             gridAmigos.Children.Add(frame);
-
         }
 
         public void repetirListaAmigos(int codUser)
         {
-
             for (int i = 0; i < userManager.BuscarQuantidade(); i++)
             {
-
                 if (i != codUser)
                 {
                     if (userManager.VerificarCodAmigo(i, codUser))
                     {
                         listarUsuarioAmigos(codUser, i);
+                        LabelNenhumAmigo.Visibility = Visibility.Collapsed;
                     }
-
                 }
             }
         }
-
     }
 }

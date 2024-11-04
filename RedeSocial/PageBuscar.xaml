@@ -7,9 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageBuscar">
-
-
-    <Grid Background="Transparent">
-        <Grid x:Name="gridBuscar"  HorizontalAlignment="Center" Height="390" Margin="0,25,0,0" VerticalAlignment="Top" Width="600"/>
+    <Grid Background="Transparent" VerticalAlignment="Stretch">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel x:Name="StackBuscar"  HorizontalAlignment="Center" Margin="0 25 0 20" VerticalAlignment="Top" Width="600"/>
+        </ScrollViewer>
     </Grid>
 </Page>
