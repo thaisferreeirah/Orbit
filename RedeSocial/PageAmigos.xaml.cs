@@ -57,7 +57,7 @@ namespace RedeSocial
                     if (userManager.VerificarSolicitacao(i, codUser))
                     {
                         listarUsuarioRecebidas(codUser, i);
-                        LabelNenhumRecebido.Visibility = Visibility.Collapsed;
+                        labelSolicAmizade.Visibility = Visibility.Visible;
                     }
                 }
             }
@@ -86,8 +86,9 @@ namespace RedeSocial
                     if (userManager.VerificarSolicitacao(codUser, i))
                     {
                         listarUsuarioEnviadas(codUser, i);
-                        LabelNenhumEnviado.Visibility = Visibility.Collapsed;
+                        labelSolicEnviada.Visibility = Visibility.Visible;
                     }
+
                 }
             }
         }

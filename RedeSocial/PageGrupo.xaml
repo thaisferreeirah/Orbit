@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RedeSocial"
       mc:Ignorable="d" 
-      d:DesignHeight="670" d:DesignWidth="1150"
+      d:DesignHeight="670" d:DesignWidth="900"
       Title="PageGrupo">
+
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
             <Grid>
@@ -35,19 +36,20 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Rectangle Grid.Row="0" Fill="Black" Width="150" Height="150" RadiusX="2" RadiusY="2" Margin="45,21,45,11"/>
-                                <Label Grid.Row="1" Content="Nome da Comunidade" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Margin="0,0,0,0"/>
-                                <Label Grid.Row="2" Content="VAR membros" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" Margin="0,0,0,10"/>
+                                <Rectangle x:Name="FotoComuni" Grid.Row="0" Fill="Black" Width="150" Height="150" RadiusX="2" RadiusY="2" Margin="45,21,45,11"/>
+                                <Label x:Name="labelNomeComunidade" Grid.Row="1" Content="Nome da Comunidade" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Margin="0,0,0,0"/>
+                                <Label x:Name="QTD_Membros" Grid.Row="2" Content="VAR membros" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" Margin="0,0,0,10"/>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="55*"/>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="114*"/>
                                 </Grid.RowDefinitions>
+                                <Button x:Name="VoltarPag" Content="X" Margin="577,10,10,20"/>
                                 <Label Grid.Row="0" Content="Descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Padding="0" Margin=" 12,37,0,0"/>
-                                <Label Grid.Row="1" Content="Texto da descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="14" Foreground="#333333" Padding="0" Margin="15,15,35,0" Height="65"/>
-                                <Button Grid.Row="2" Content="Participar da Comunidade" Style="{StaticResource EstiloBotaoAzul}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="240" Margin="0,0,35,18"/>
+                                <Label x:Name="labelDescricaoComunidade" Grid.Row="1" Content="Texto da descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="14" Foreground="#333333" Padding="0" Margin="15,15,35,0" Height="65"/>
+                                <Button Grid.Row="2" x:Name="btnParticipar" Content="Participar da Comunidade" Style="{StaticResource EstiloBotaoAzul}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="240" Margin="0,0,35,18" IsEnabled="{Binding ParticiparHabilitado}"/>
                             </Grid>
                         </Grid>
                     </Border>
@@ -56,13 +58,23 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <Border Grid.Column="1" Background="#FFFFFFFF" Width="240" CornerRadius="10" Margin="10,8,10,16">
+                        <Border Grid.Column="1" Background="#ffffff" Width="240" CornerRadius="10" Margin="10,8,10,16">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="Membros (VAR)" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Margin="0,16,0,0"/>
+                                <Label Content="Membros" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Height="33" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <ItemsControl ItemsSource="{Binding Membros}" Grid.Row="1">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" Margin="5">
+                                                <Image Width="50" Height="50" Source="{Binding Foto}" Margin="5"/>
+                                                <TextBlock Text="{Binding Nome}" VerticalAlignment="Center" FontSize="16" Margin="5"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </Grid>
 
                         </Border>

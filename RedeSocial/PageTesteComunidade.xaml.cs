@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedeSocial.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,46 @@ namespace RedeSocial
     /// </summary>
     public partial class PageTesteComunidade : Page
     {
-        public PageTesteComunidade()
+        private ComunidadeManager comunidadeManager;
+        private UserManager userManager;
+        private int codUsuario;
+        private Frame MainFrame;
+        private int novoCodigo;
+
+
+        public PageTesteComunidade(ComunidadeManager comunidadeManager, UserManager userManager, int codUsuario, Frame MainFrame)
         {
             InitializeComponent();
+            this.userManager = userManager;
+            this.comunidadeManager = comunidadeManager;
+            this.codUsuario = codUsuario;
+            this.MainFrame = MainFrame;
+        }
+
+        private void AbrirCriarComunidade()
+        {
+            novoCodigo = comunidadeManager.CodigoUnico();
+            frameComunidade.Navigate(new PageCriarComunidade(comunidadeManager, userManager, codUsuario, frameComunidade, MainFrame, novoCodigo));
+        }
+
+        public void AbrirPageGrupo()
+        {
+
+        }
+
+        private void AbrirCriarComunidade_Click(object sender, RoutedEventArgs e)
+        {
+            AbrirCriarComunidade();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AbrirTodasAsComunidades_Click(object sender, RoutedEventArgs e)
+        {
+            frameComunidade.Navigate(new PageTodasComunidades(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
         }
     }
 }

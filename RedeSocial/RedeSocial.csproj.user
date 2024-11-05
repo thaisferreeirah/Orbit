@@ -73,9 +73,6 @@
     <Compile Update="PagePost.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PageTesteComunidade.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="WindowRecuperarSenha.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,6 +103,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageComunidades.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageCriarComunidade.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageDepoimentos.xaml">
@@ -159,10 +159,13 @@
     <Page Update="PagePost.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="WindowRecuperarSenha.xaml">
+    <Page Update="PageTesteComunidade.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PageTesteComunidade.xaml">
+    <Page Update="PageTodasComunidades.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowRecuperarSenha.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowNotificacao.xaml">

@@ -12,28 +12,27 @@
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <StackPanel>
-                <Border BorderBrush="Black" BorderThickness="0 0 0 1" Width="920" Margin="0,30,0,10">
+                <Border BorderBrush="#FFF0F0FA" BorderThickness="0 0 0 1" Width="920" Margin="0,30,0,10">
                     <Grid Margin="0 0 0 15">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Content="Solicitações de Amizade" FontFamily="{StaticResource ArimoFont}" FontSize="20" FontWeight="Bold" Margin="0,0,0,15" />
-                        <Label x:Name="LabelNenhumRecebido" Grid.Row="1" Content="Nenhuma" FontFamily="{StaticResource ArimoFont}" FontSize="18" Margin="0,0,0,15"/>
+                        <Label x:Name="labelSolicAmizade" Grid.Row="0" Content="Solicitações de Amizade" FontFamily="{StaticResource ArimoFont}" FontSize="20" FontWeight="Bold" Margin="0,0,0,15" Visibility="Collapsed"/>
                         <WrapPanel Grid.Row="1" x:Name="gridSolicitacaoRecebida" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
                     </Grid>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="0 0 0 1" Width="920" Margin="0,29,0,0">
+                <Border BorderBrush="#FFF0F0FA" BorderThickness="0 0 0 1" Width="920" Margin="0,29,0,0">
                     <Grid Background="#FFF0F0FA" Margin="0 0 0 15">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Content="Solicitações Enviadas" FontFamily="{StaticResource ArimoFont}" FontSize="20" FontWeight="Bold" Margin="0,0,0,15"/>
-                        <Label x:Name="LabelNenhumEnviado" Grid.Row="1" Content="Nenhuma" FontFamily="{StaticResource ArimoFont}" FontSize="18" Margin="0,0,0,15"/>
+                        <Label x:Name="labelSolicEnviada" Grid.Row="0" Content="Solicitações Enviadas" FontFamily="{StaticResource ArimoFont}" FontSize="20" FontWeight="Bold" Margin="0,0,0,15" Visibility="Collapsed"/>
                         <WrapPanel Grid.Row="1" x:Name="gridSolicitacaoEnviada" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
                     </Grid>
                 </Border>
+
                 <Grid Background="#FFF0F0FA" Width="920" Margin="0,29,0,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>

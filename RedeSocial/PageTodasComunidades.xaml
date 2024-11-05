@@ -1,0 +1,33 @@
+﻿<Page x:Class="RedeSocial.PageTodasComunidades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Todas as Comunidades">
+
+    <Grid Background="White" Height="600" Width="700">
+        <TextBlock Text="Todas as Comunidades" FontSize="24" FontWeight="Bold" Margin="0,0,0,562" TextAlignment="Center"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Comunidades}" Height="514">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" Width="600" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border MouseLeftButtonUp="AbrirPaginaComunidade" Tag="{Binding Codigo}" Cursor="Hand" Margin="10">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="180">
+                                <Ellipse Width="100" Height="100">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Foto}" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                                <TextBlock Text="{Binding Nome}" VerticalAlignment="Center" FontSize="16" TextAlignment="Center" Margin="0,5,0,0"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Page>

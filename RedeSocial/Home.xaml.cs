@@ -24,6 +24,7 @@ namespace RedeSocial
     public partial class Home : Window
     {
         private UserManager usuarioManager = new UserManager();
+        private ComunidadeManager comunidadeManager = new();
         ChatList chatList;
 
         PagePost pagePost;
@@ -80,7 +81,7 @@ namespace RedeSocial
 
         private void BotaoComunidades_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PageComunidades());
+            MainFrame.Navigate(new PageTesteComunidade(comunidadeManager, usuarioManager, codUsuario, MainFrame));
         }
 
         private void BotaoJogos_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
