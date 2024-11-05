@@ -77,6 +77,10 @@ namespace RedeSocial
                 labelVerTodos.Content = $"Ver todos ({quantidadeAmigos})";
                 labelVerTodos.Visibility = Visibility.Visible;
             }
+            else
+            {
+                labelAmigos.Content = $"Amigos ({quantidadeAmigos})";
+            }
         }
 
         private void fotoUsuario_MouseLeftButtonUp(object sender, MouseButtonEventArgs e, int amigo)
