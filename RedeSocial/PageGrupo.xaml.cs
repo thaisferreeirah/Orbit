@@ -91,7 +91,7 @@ namespace RedeSocial
                     labelNomeComunidade.Content = NomeComunidade;
 
                     string DescricaoComunidade = comunidadeManager.BuscarDescricaoComunidade(codComunidade);
-                    labelDescricaoComunidade.Content = DescricaoComunidade;
+                    labelDescricaoComunidade.Text = DescricaoComunidade;
 
                     int QuantidadeMembros = comunidade.Membros.Count();
                     QTD_Membros.Content = (QuantidadeMembros + " Membros");

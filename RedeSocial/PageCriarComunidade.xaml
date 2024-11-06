@@ -5,23 +5,62 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RedeSocial"
       mc:Ignorable="d" 
-      d:DesignHeight="320" d:DesignWidth="300"
+      d:DesignHeight="490" d:DesignWidth="540" 
       Title="PageCriarComunidade">
 
+    <Page.Resources>
+        <Style x:Key="textBoxRedondo" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="Padding" Value="14,0,0,0"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="5" BorderBrush="#E3E5E7" BorderThickness="1">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
     <Grid>
-        <StackPanel Margin="10">
-            <TextBlock Text="Criar Nova Comunidade" FontSize="18" FontWeight="Bold" Margin="0,0,0,20" TextAlignment="Center"/>
+        <Border Grid.Row="0" Background="#FFFFFFFF" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="480" Width="540" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="3" ShadowDepth="0"/>
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-            <Ellipse x:Name="imgComunidade" Height="100" Stroke="Black" Width="100" StrokeThickness="2" Fill="Transparent"/>
-            <Button Content="Adicionar Imagem" Click="AdicionarImagem_Click" Width="120" Height="30" Margin="0,10,0,10"/>
+                <Image Grid.Row="0" x:Name="ImageVoltar" Source="\Icones\Voltar.png" Height="14" Width="14" HorizontalAlignment="Left" RenderOptions.BitmapScalingMode="HighQuality" Margin="14,7,0,0"/>
+                <Label Grid.Row="0" x:Name="LabelVoltar" Content="Voltar"   VerticalContentAlignment="Center" FontSize="12" Margin="25,7,0,0"/>
+                <TextBlock Grid.Row="1" Text="Crie uma nova comunidade!" FontSize="16" FontWeight="Bold"  TextAlignment="Center" Margin="0,6,0,20"/>
 
-            <TextBox x:Name="txtNomeComunidade" Text="Nome da Comunidade" Margin="0,0,0,10"/>
-            <TextBox x:Name="txtDescricao" Text="Descrição" Margin="0,0,0,10"/>
+                <Rectangle Grid.Row="2" x:Name="imgComunidade" Height="120" Width="120"  Fill="Black" RadiusX="5" RadiusY="5" RenderOptions.BitmapScalingMode="HighQuality" Margin="0,13,0,11"/>
+                <Button Grid.Row="3" Content="Adicionar Imagem" Click="AdicionarImagem_Click" Width="165" Height="30" Margin="0,11,0,10" Style="{StaticResource EstiloBotaoCinza}"/>
 
-            <Button Content="Criar Comunidade" Margin="0,0,0,10" Click="CriarComunidade_Click"/>
+                <TextBox Grid.Row="4" x:Name="txtNomeComunidade" Text="Nome da Comunidade" Margin="60,0,60,11" Height="35" Style="{StaticResource textBoxRedondo}"  VerticalContentAlignment="Center" />
+                <TextBox Grid.Row="5" x:Name="txtDescricao" Text="Descrição" Margin="60,11,60,42" Height="35" Style="{StaticResource textBoxRedondo}" VerticalContentAlignment="Center" TextWrapping="Wrap" />
 
-            <Button Content="Fechar" Click="Fechar_Click" Background="Red" Foreground="White" />
-            
-        </StackPanel>
+                <Button Grid.Row="6" Content="Criar Comunidade" Margin="170,0,170,24" Height="35" Style="{StaticResource EstiloBotaoAzul}" Click="CriarComunidade_Click"/>
+
+
+
+
+            </Grid>
+        </Border>
     </Grid>
 </Page>

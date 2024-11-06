@@ -42,13 +42,13 @@
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="55*"/>
+                                    <RowDefinition Height="*"/>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="114*"/>
+                                    <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Button x:Name="VoltarPag" Content="X" Margin="577,10,10,20"/>
+                                <Button x:Name="VoltarPag" Content="X" Margin="577,10,10,48"/>
                                 <Label Grid.Row="0" Content="Descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Padding="0" Margin=" 12,37,0,0"/>
-                                <Label x:Name="labelDescricaoComunidade" Grid.Row="1" Content="Texto da descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="14" Foreground="#333333" Padding="0" Margin="15,15,35,0" Height="65"/>
+                                <TextBlock x:Name="labelDescricaoComunidade" Grid.Row="1" Text="Texto da descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="14" Foreground="#333333" Padding="0" Margin="15,15,35,0" Height="65" TextWrapping="Wrap" TextAlignment="Justify"/>
                                 <Button Grid.Row="2" x:Name="btnParticipar" Content="Participar da Comunidade" Style="{StaticResource EstiloBotaoAzul}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="240" Margin="0,0,35,18" IsEnabled="{Binding ParticiparHabilitado}"/>
                             </Grid>
                         </Grid>
@@ -58,7 +58,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0" VerticalAlignment="Stretch" Margin="0,0,0,20" Width="600">
+                        <Grid Grid.Column="0" VerticalAlignment="Stretch" Margin="0,10,0,20" Width="600">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height = "Auto"/>
                                 <RowDefinition Height = "*"/>

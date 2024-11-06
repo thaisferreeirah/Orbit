@@ -43,8 +43,12 @@ namespace RedeSocial
             if (openFileDialog.ShowDialog() == true)
             {
                 caminhoFoto = openFileDialog.FileName;
-                ImageBrush imageBrush = new ImageBrush(new BitmapImage(new Uri(caminhoFoto)));
-                imgComunidade.Fill = imageBrush;
+                //ImageBrush imageBrush = new ImageBrush(new BitmapImage(new Uri(caminhoFoto)));
+                imgComunidade.Fill = new ImageBrush
+                {
+                    ImageSource = new BitmapImage(new Uri(caminhoFoto)),
+                    Stretch = Stretch.UniformToFill,
+                };
             }
         }
 
@@ -75,6 +79,11 @@ namespace RedeSocial
         private void Fechar_Click(object sender, RoutedEventArgs e)
         {
             frameComunidade.Content = null;
+        }
+
+        private void txtNomeComunidade_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
