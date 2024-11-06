@@ -31,7 +31,7 @@
                                     <PasswordBox x:Name="CampoSenha" Canvas.Top="90" Canvas.Left="42" Style="{StaticResource PasswordRedondoEmBaixo}" KeyDown="CampoSenha_KeyDown" PasswordChanged="CampoSenha_PasswordChanged"/>
 
                                     <!--Label Esqueci Minha Senha-->
-                                    <Label  Content="Esqueceu a senha?" Canvas.Top="163" Canvas.Left="57" FontSize="13" Foreground="#37376E" Cursor="Hand" FontFamily="{StaticResource ArimoFont}" MouseLeftButtonDown="BotaoRecuperarSenha_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    <Label  Content="Esqueceu a senha?" Canvas.Top="163" Canvas.Left="57" FontSize="15" Foreground="#37376E" Cursor="Hand" FontFamily="{StaticResource ArimoFont}" MouseLeftButtonDown="BotaoRecuperarSenha_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
                                     <!--Botão Entrar-->
                                     <Button x:Name="BotaoEntrar" Content="Entrar" Width="343" Height="47" Canvas.Left="58" Canvas.Top="205" Style="{StaticResource EstiloBotaoRedondo}" Click="BotaoEntrar_Click"/>
@@ -62,7 +62,7 @@
                                     <!--DatePicker-->
                                     <TextBlock Style="{StaticResource TextBlockLogin}" Canvas.Top="275" Canvas.Left="57" Text="Data de Nascimento" Visibility="{Binding ElementName=CampoDataNascimentoCadastro, Path=Text.IsEmpty, Converter={StaticResource BoolToVis} }"/>
                                     <DatePicker x:Name="CampoDataNascimentoCadastro" Width="375" Height="53" Canvas.Top="257" Canvas.Left="42" HorizontalAlignment="Left" VerticalAlignment="Center"
-                                            BorderBrush="#E3E5E7" BorderThickness="1" VerticalContentAlignment="Center" Padding="14 0 0 0" Foreground="#333333" FontSize="14">
+                                            BorderBrush="#E3E5E7" BorderThickness="1" VerticalContentAlignment="Center" Padding="14 0 0 0" Foreground="#333333" FontSize="16">
                                         <DatePicker.Resources>
                                             <Style TargetType="DatePickerTextBox" BasedOn="{StaticResource DataSemMarca}"/>
                                         </DatePicker.Resources>

@@ -93,7 +93,7 @@ namespace RedeSocial.CoisasChat
             TextBlock newTextBlock = new TextBlock()
             {
                 Text = chatList.BuscarConteudo(i),
-                FontSize = 14,
+                FontSize = 16,
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(10),
             };
@@ -119,7 +119,7 @@ namespace RedeSocial.CoisasChat
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(5),
                 VerticalAlignment = VerticalAlignment.Bottom,
-                FontSize = 8,
+                FontSize = 10,
                 Opacity = 0.5
             };
 
@@ -149,7 +149,7 @@ namespace RedeSocial.CoisasChat
             TextBlock newTextBlock = new TextBlock()
             {
                 Text = chatList.BuscarConteudo(i),
-                FontSize = 14,
+                FontSize = 16,
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(10),
             };
@@ -175,7 +175,7 @@ namespace RedeSocial.CoisasChat
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(5),
                 VerticalAlignment = VerticalAlignment.Bottom,
-                FontSize = 8,
+                FontSize = 10,
                 Opacity = 0.5
             };
 
@@ -199,7 +199,7 @@ namespace RedeSocial.CoisasChat
             TextBlock newTextBlock = new TextBlock()
             {
                 Text = data,
-                FontSize = 12,
+                FontSize = 14,
                 Margin = new Thickness(5),
             };
 

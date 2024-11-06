@@ -15,10 +15,10 @@
 
         <!-- Estilo do TextBlock -->
         <Style x:Key="TextBlockLogin" TargetType="TextBlock">
-            <Setter Property="Height" Value="14"/>
+            <Setter Property="Height" Value="16"/>
             <Setter Property="Width" Value="345"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#9094B6"/>
             <Setter Property="IsHitTestVisible" Value="False"/>
             <Setter Property="Panel.ZIndex" Value="1"/>
@@ -30,7 +30,7 @@
             <Setter Property="Width" Value="375"/>
             <Setter Property="Padding" Value="14 0 0 0"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="#333333"/>
         </Style>
@@ -41,7 +41,7 @@
             <Setter Property="Width" Value="375"/>
             <Setter Property="Padding" Value="14 0 0 0"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Foreground" Value="#333333"/>
         </Style>
@@ -156,7 +156,8 @@
         <Style x:Key="EstiloBotaoRedondo" TargetType="Button">
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontWeight" Value="Bold"/>
+            <!--Nao sei se muda pra 20-->
+                <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Background" Value="#37376E"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Template">
@@ -181,7 +182,7 @@
 
         <Style x:Key="EstiloTextBox" TargetType="TextBox">
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -201,7 +202,7 @@
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Foreground" Value="#2D2D5A"/>
-                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="FontSize" Value="16"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -223,7 +224,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="25 0 0 0"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="Foreground" Value="#333333"/>
         </Style>
 
@@ -265,7 +266,7 @@
             <Setter Property="Padding" Value="14 0 0 0"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -312,7 +313,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Margin" Value="5 10 0 5"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#66000000"/>
             <Setter Property="IsHitTestVisible" Value="False"/>
         </Style>
@@ -324,7 +325,7 @@
             <Setter Property="Margin" Value="0 10 10 5"/>
             <Setter Property="Padding" Value="8 10 0 10"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="AcceptsReturn" Value="True"/>
             <Setter Property="Template">
@@ -345,7 +346,7 @@
             <Setter Property="Margin" Value="0 0 10 5"/>
             <Setter Property="Padding" Value="5 10 0 10"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="AcceptsReturn" Value="True"/>
             <Setter Property="Template">
@@ -367,7 +368,7 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="Margin" Value="10 5 10 10"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="#F0F0FA"/>
             <Setter Property="Template">
@@ -392,7 +393,7 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="Background" Value="#37376E"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="#F0F0FA"/>
             <Setter Property="Template">
@@ -454,7 +455,7 @@
             <Setter Property="Padding" Value="5 10 0 10"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="AcceptsReturn" Value="True"/>
@@ -510,7 +511,7 @@
         
         <!-- Botao Azul -->
         <Style x:Key="EstiloBotaoAzul" TargetType="Button">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Background" Value="#37376E"/>
@@ -536,7 +537,7 @@
 
         <!-- Botao Cinza -->
         <Style x:Key="EstiloBotaoCinza" TargetType="Button">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Background" Value="#E2E5E9"/>
@@ -567,6 +568,7 @@
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}" />
             <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="Margin" Value="0,72,0,0" />
             <Setter Property="TextWrapping" Value="Wrap" />
         </Style>

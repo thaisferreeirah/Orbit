@@ -44,7 +44,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Border Grid.Row="0"  Background="#FFFFFFFF" CornerRadius="15">
+                <Border Grid.Row="0"  Background="#FFFFFFFF" CornerRadius="15" Margin="0,0,0,16" >
                     <Border.Effect>
                         <DropShadowEffect BlurRadius="3" ShadowDepth="0"/>
                     </Border.Effect>
@@ -63,7 +63,7 @@
                 </Border>
                 <Rectangle Grid.Row="1" Stroke="#DADCDF" Margin="20,15,20,15"/>
                 <Label Grid.Row="2" Content="Minhas Comunidades" FontSize="16" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold"  Padding="15,0,0,0"/>
-                <Grid x:Name="minhasComunidades" Grid.Row="3"/>
+                <Grid x:Name="gridMinhasComunidades" Grid.Row="3" Margin="0,10,0,0"/>
             </Grid>
         </Border>
         <Frame x:Name="frameComunidade"  Width="778" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Margin="0,10,0,0"/>

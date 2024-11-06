@@ -52,7 +52,7 @@ namespace RedeSocial
         private void botaoDesfazerAmizade_Click(object sender, RoutedEventArgs e)
         {
             userManager.DesfazerAmizade(codUser, codPerfil);
-            botaoDesfazerAmizade.Content = "Amizade removida";
+            botaoDesfazerAmizade.Content = "Amizade Removida";
         }
 
         private void foto_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

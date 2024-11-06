@@ -48,7 +48,7 @@ namespace RedeSocial
         private void botaoAceitar_Click(object sender, RoutedEventArgs e)
         {
             userManager.RecusarSolicitacao(codPerfil, codUser);
-            botaoCancelarSolicitacaoEnviada.Content = "solicitação cancelada ";
+            botaoCancelarSolicitacaoEnviada.Content = "Solicitação Cancelada";
         }
 
         private void foto_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

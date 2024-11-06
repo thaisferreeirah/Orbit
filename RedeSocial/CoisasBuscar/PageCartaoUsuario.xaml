@@ -63,7 +63,7 @@
             <ColumnDefinition Width = "Auto"/>
         </Grid.ColumnDefinitions>
         <Ellipse x:Name="foto"   Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="55" Width="55" Stretch="Fill" Margin="10,10,10,5" Stroke="#37376E" MouseLeftButtonUp="foto_MouseLeftButtonUp"/>
-        <Label x:Name="labelNome" Grid.Column="1" Content="Nome de Usuário" VerticalAlignment="Center" FontSize="16" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" FontWeight="Bold"/>
-        <Button x:Name="botaoAdicionar"  Grid.Column="2" Content="Enviar solicitação" Width="150" FontSize="13" Height="45" Margin="10,0,10,0" Style="{StaticResource EstiloBotaoAzul}" Click="botaoAdicionar_Click"/>
+        <Label x:Name="labelNome" Grid.Column="1" Content="Nome de Usuário" VerticalAlignment="Center" FontSize="18" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" FontWeight="Bold"/>
+        <Button x:Name="botaoAdicionar"  Grid.Column="2" Content="Enviar solicitação" Width="150" FontSize="15" Height="45" Margin="10,0,10,0" Style="{StaticResource EstiloBotaoAzul}" Click="botaoAdicionar_Click"/>
     </Grid>
 </Page>

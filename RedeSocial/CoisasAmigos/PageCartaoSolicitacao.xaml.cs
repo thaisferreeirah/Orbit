@@ -50,7 +50,7 @@ namespace RedeSocial
         {
             userManager.AceitarSolicitacao(codUser, codPerfil);
             botaoAceitar.Visibility = Visibility.Hidden;
-            botaoRecusar.Content = "Solicitação aceita";
+            botaoRecusar.Content = "Solicitação Aceita";
             botaoRecusar.IsEnabled = false;
 
             //na segunda vez que clicar no botao amigos esse cartao tem que estar como amigo 
@@ -61,7 +61,7 @@ namespace RedeSocial
         {
             userManager.RecusarSolicitacao(codUser, codPerfil);
             botaoAceitar.Visibility = Visibility.Hidden;
-            botaoRecusar.Content = "Solicitação recusada";
+            botaoRecusar.Content = "Solicitação Recusada";
             botaoRecusar.IsEnabled = false;
             //se recusar o cartao precisa sumir do frame amigos
 

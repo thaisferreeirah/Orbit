@@ -18,6 +18,7 @@ using RedeSocial.Models;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows.Media.Effects;
+using RedeSocial.CoisasComunidades;
 
 namespace RedeSocial
 {
@@ -74,6 +75,7 @@ namespace RedeSocial
             VerificarParticipacao();
             atualizarPaginaPost(); //Carrega as postagens na tela
             exibirFotoPerfil(); //Carrega foto no usuário no formulário do post
+            MostrarMembros();
         }
 
         private void CarregarInformacoesDaComunidade()
@@ -94,7 +96,14 @@ namespace RedeSocial
                     labelDescricaoComunidade.Text = DescricaoComunidade;
 
                     int QuantidadeMembros = comunidade.Membros.Count();
-                    QTD_Membros.Content = (QuantidadeMembros + " Membros");
+                    if(QuantidadeMembros == 1)
+                    {
+                        QTD_Membros.Content = (QuantidadeMembros + " Membro");
+                    }
+                    else
+                    {
+                        QTD_Membros.Content = (QuantidadeMembros + " Membros");
+                    }
 
                     FotoComuni.Fill = new ImageBrush
                     {
@@ -102,18 +111,18 @@ namespace RedeSocial
                         Stretch = Stretch.UniformToFill
                     };
 
-                            foreach (int codUsuario in comunidade.Membros)
-                            {
-                                //MessageBox.Show($"Processando usuário com código: {codUsuario}");
+                            //foreach (int codUsuario in comunidade.Membros)
+                            //{
+                            //    //MessageBox.Show($"Processando usuário com código: {codUsuario}");
 
-                                string nome = userManager.BuscarNome(codUsuario);
-                                string foto = userManager.BuscarFoto(codUsuario);
+                            //    string nome = userManager.BuscarNome(codUsuario);
+                            //    string foto = userManager.BuscarFoto(codUsuario);
                                 
-                                if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(foto))
-                                {
-                                    Membros.Add(new MembroViewModel { Nome = nome, Foto = foto });
-                                }
-                            }
+                            //    if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(foto))
+                            //    {
+                            //        Membros.Add(new MembroViewModel { Nome = nome, Foto = foto });
+                            //    }
+                            //}
                     
                         }
                     else
@@ -127,6 +136,31 @@ namespace RedeSocial
                 }
             }
 
+        private void MostrarMembros()
+        {
+            var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
+            gridMembros.Children.Clear();
+            gridMembros.RowDefinitions.Clear(); // Limpar definições de linh
+            foreach (int codUsuario in comunidade.Membros)
+            {
+
+                string nome = userManager.BuscarNome(codUsuario);
+                string foto = userManager.BuscarFoto(codUsuario);
+                Frame frame = new Frame
+                {
+                   Height = 60,
+                   Width = 240,
+                   VerticalAlignment = VerticalAlignment.Top
+                };
+                PageMembroComunidade membroComunidade = new PageMembroComunidade(codUsuario);
+                frame.Navigate(membroComunidade);
+                gridMembros.RowDefinitions.Add(new RowDefinition());
+                Grid.SetRow(frame, gridMembros.RowDefinitions.Count - 1);
+                gridMembros.Children.Add(frame);
+
+            }
+        }
+
         private void VoltarPag_Click(object sender, RoutedEventArgs e)
         {
             //MainFrame.Navigate(new PageTesteComunidade(comunidadeManager, userManager, codComunidade, Frame frameComunidade, Frame MainFrame));
@@ -135,6 +169,7 @@ namespace RedeSocial
         private void VerificarParticipacao()
         {
             var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
+
             if (comunidade != null)
             {
                 // Verifica diretamente se o usuário está na lista de membros da comunidade
