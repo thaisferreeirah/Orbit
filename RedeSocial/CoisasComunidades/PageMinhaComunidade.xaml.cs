@@ -19,23 +19,23 @@ namespace RedeSocial.CoisasComunidades
     /// <summary>
     /// Interação lógica para PageCartaoComunidade.xam
     /// </summary>
-    public partial class PageCartaoComunidade : Page
+    public partial class PageMinhaComunidade : Page
     {
         ComunidadeManager comunidadeManager = new ComunidadeManager();
-        public PageCartaoComunidade(int codComunidade)
+        public PageMinhaComunidade(int _codComunidade)
         {
             InitializeComponent();
-            ExibirComunidade(codComunidade);
+            ExibirMembro(_codComunidade);
         }
-
-        private void ExibirComunidade(int codComunidade)
+        private void ExibirMembro(int codComunidade)
         {
-            fotoDaComunidade.Fill = new ImageBrush
+            string nomeComunidade = comunidadeManager.BuscarNomeComunidade(codComunidade);
+            fotoComunidade.Fill = new ImageBrush
             {
                 ImageSource = new BitmapImage(new Uri(comunidadeManager.BuscarFotoComunidade(codComunidade))),
                 Stretch = Stretch.UniformToFill,
             };
-            nomeDaComunidade.Text = comunidadeManager.BuscarNomeComunidade(codComunidade);
+            labelNomeComunidade.Content = nomeComunidade;
         }
     }
 }

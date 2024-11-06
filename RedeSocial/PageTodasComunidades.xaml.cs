@@ -1,4 +1,5 @@
-﻿using RedeSocial.Models;
+﻿using RedeSocial.CoisasComunidades;
+using RedeSocial.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -59,6 +60,16 @@ namespace RedeSocial
                     int codigo = comunidade.Codigo;
                     string nome = comunidade.Nome;
                     string foto = comunidade.Foto;
+
+                    //PageCartaoComunidade pageCartaoComunidade = new PageCartaoComunidade(codigo);
+
+                    //Frame frame = new Frame()
+                    //{
+                    //    Height = 300,
+                    //    Width = 230
+                    //};
+                    //frame.Navigate(pageCartaoComunidade);
+                    //gridComunidades.Children.Add(frame);
 
 
                     if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(foto))

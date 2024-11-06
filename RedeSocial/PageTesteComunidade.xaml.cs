@@ -67,7 +67,7 @@ namespace RedeSocial
                         Height = 60,
                         Width = 330
                     };
-                    PageCartaoComunidade cartaoComunidade = new PageCartaoComunidade(codComunidade);
+                    PageMinhaComunidade cartaoComunidade = new PageMinhaComunidade(codComunidade);
                     frame.Navigate(cartaoComunidade);
                     gridMinhasComunidades.RowDefinitions.Add(new RowDefinition());
                     Grid.SetRow(frame, gridMinhasComunidades.RowDefinitions.Count - 1);

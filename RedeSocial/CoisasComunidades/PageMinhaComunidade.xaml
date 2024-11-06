@@ -1,0 +1,24 @@
+﻿<Page x:Class="RedeSocial.CoisasComunidades.PageMinhaComunidade"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial.CoisasComunidades"
+      mc:Ignorable="d" 
+      d:DesignHeight="60" d:DesignWidth="330" Background="White"
+      Title="PageMinhaComunidade">
+
+    <Grid>
+        <Border Margin="0,10,0,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle x:Name="fotoComunidade" Grid.Column="0" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,10,0"  RadiusX="5" RadiusY="5" Fill="Black"/>
+                <Label x:Name="labelNomeComunidade" Grid.Column="1" Content="Nome da Comunidade"  VerticalAlignment="Center" FontSize="16" FontFamily="{StaticResource ArimoFont}" />
+            </Grid>
+        </Border>
+    </Grid>
+
+</Page>

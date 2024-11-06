@@ -5,20 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RedeSocial.CoisasComunidades"
       mc:Ignorable="d" 
-      d:DesignHeight="60" d:DesignWidth="330" Background="White"
+d:DesignHeight="300" d:DesignWidth="230" Background="Transparent"
       Title="PageCartaoComunidade">
 
-    <Grid>
-        <Border Margin="0,10,0,10">
+
+    <Grid Margin="10,10,10,0">
+        <Border Background="#FFFFFFFF" CornerRadius="6">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Rectangle x:Name="fotoComunidade" Grid.Column="0" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,10,0"  RadiusX="5" RadiusY="5" Fill="Black"/>
-                <Label x:Name="labelNomeComunidade" Grid.Column="1" Content="Nome da Comunidade"  VerticalAlignment="Center" FontSize="16" FontFamily="{StaticResource ArimoFont}" />
-            </Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height = "Auto"/>
+                    <RowDefinition Height = "Auto"/>
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="fotoDaComunidade"  Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="210" Width="210" Stretch="UniformToFill" Margin="0,0,0,5" RadiusX="6" RadiusY="6"  />
+                <TextBlock x:Name="nomeDaComunidade" Grid.Row="1" Text="Nome da Comunidade" VerticalAlignment="Center" FontSize="18" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333" TextAlignment="Center" TextWrapping="Wrap"/>
+                </Grid>
         </Border>
     </Grid>
-
 </Page>
