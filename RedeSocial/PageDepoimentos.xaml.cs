@@ -96,7 +96,7 @@ namespace RedeSocial
                 {
                     Frame frame = new Frame
                     {
-                        Height = 170,
+                        Height = 180,
                         Width = 630
                     };
                     PagePostDepoimento postDepoimento = new PagePostDepoimento(remetente, destinatario, conteudo);

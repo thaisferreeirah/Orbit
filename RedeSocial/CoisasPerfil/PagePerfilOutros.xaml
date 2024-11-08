@@ -44,8 +44,8 @@
                                 <Label x:Name="labelAlterarFoto" Panel.ZIndex="3" Content="Alterar Foto"  HorizontalAlignment="Left" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                                    Height="30" Margin="72,20,0,100" FontSize="16" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="White" Grid.Row="1" Visibility="Hidden" IsHitTestVisible="False"/>
 
-                                <Label x:Name="labelNomeUsuario" Grid.Row="1" Content="Nome do usuário" Margin="230,10,39,0"  VerticalAlignment="Top" FontSize="22" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" FontWeight="Bold" VerticalContentAlignment="Bottom"/>
-                                <Label x:Name="labelQuantAmigos" Grid.Row="1" Content="VAR amigos" Margin="244,46,660,0" Height="30" VerticalAlignment="Top" FontSize="12" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" VerticalContentAlignment="Center"/>
+                                <Label x:Name="labelNomeUsuario" Grid.Row="1" Content="Nome do usuário" Margin="230,10,39,0"  VerticalAlignment="Top" FontSize="24" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" FontWeight="Bold" VerticalContentAlignment="Bottom"/>
+                                <Label x:Name="labelQuantAmigos" Grid.Row="1" Content="VAR amigos" Margin="244,46,660,0" Height="30" VerticalAlignment="Top" FontSize="14" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" VerticalContentAlignment="Center"/>
                                 <Button x:Name="botaoAdicionar" Grid.Row="1" Content="Enviar solicitação" Height="30" Margin="869,12,28,88" Style="{StaticResource EstiloBotaoAzul}" Click="botaoAdicionar_Click"/>
                             </Grid>
                         </Border>

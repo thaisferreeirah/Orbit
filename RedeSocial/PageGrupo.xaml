@@ -37,8 +37,8 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Rectangle x:Name="FotoComuni" Grid.Row="0" Fill="Black" Width="150" Height="150" RadiusX="2" RadiusY="2" Margin="45,21,45,11"/>
-                                <Label x:Name="labelNomeComunidade" Grid.Row="1" Content="Nome da Comunidade" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Margin="0,0,0,0"/>
-                                <Label x:Name="QTD_Membros" Grid.Row="2" Content="VAR membros" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" Margin="0,0,0,10"/>
+                                <Label x:Name="labelNomeComunidade" Grid.Row="1" Content="Nome da Comunidade" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" FontWeight="Bold" Margin="0,0,0,0"/>
+                                <Label x:Name="QTD_Membros" Grid.Row="2" Content="VAR membros" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" Margin="0,0,0,10"/>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
@@ -47,8 +47,8 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Button x:Name="VoltarPag" Content="X" Margin="577,10,10,48"/>
-                                <Label Grid.Row="0" Content="Descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Padding="0" Margin=" 12,37,0,0"/>
-                                <TextBlock x:Name="labelDescricaoComunidade" Grid.Row="1" Text="Texto da descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="14" Foreground="#333333" Padding="0" Margin="15,15,35,0" Height="65" TextWrapping="Wrap" TextAlignment="Justify"/>
+                                <Label Grid.Row="0" Content="Descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" FontWeight="Bold" Padding="0" Margin=" 12,37,0,0"/>
+                                <TextBlock x:Name="labelDescricaoComunidade" Grid.Row="1" Text="Texto da descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" Padding="0" Margin="15,15,35,0" Height="65" TextWrapping="Wrap" TextAlignment="Justify"/>
                                 <Button Grid.Row="2" x:Name="btnParticipar" Content="Participar da Comunidade" Style="{StaticResource EstiloBotaoAzul}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="240" Margin="0,0,35,18" IsEnabled="{Binding ParticiparHabilitado}" Click="btnParticipar_Click"/>
                             </Grid>
                         </Grid>
@@ -101,23 +101,19 @@
                             </Border>
                             <Grid x:Name="gridPosts" Grid.Row="2"/>
                         </Grid>
-                        <Border Grid.Column="1" Background="#ffffff" Width="240" CornerRadius="10" Margin="10,8,10,16">
+                        <Border Grid.Column="1" Background="#ffffff" Width="240" CornerRadius="10" Margin="10,8,10,0" Height="392" VerticalAlignment="Top">
+                            <Border.Effect>
+                                <DropShadowEffect BlurRadius="3" ShadowDepth="0"/>
+                            </Border.Effect>
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <Label Content="Membros" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Height="33" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                <ItemsControl ItemsSource="{Binding Membros}" Grid.Row="1">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="5">
-                                                <Image Width="50" Height="50" Source="{Binding Foto}" Margin="5"/>
-                                                <TextBlock Text="{Binding Nome}" VerticalAlignment="Center" FontSize="16" Margin="5"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
+                                <Label Grid.Row="0" Content="Membros" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Height="33" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Rectangle Grid.Row="1" Height="1" Fill="#DADCDF" Margin="10,0,10,0"/>
+                                <Grid x:Name="gridMembros" Grid.Row="2" Margin="0,10,0,0" />
                             </Grid>
                         </Border>
                     </Grid>

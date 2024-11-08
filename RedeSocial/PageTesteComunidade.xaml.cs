@@ -1,4 +1,5 @@
-﻿using RedeSocial.Models;
+﻿using RedeSocial.CoisasComunidades;
+using RedeSocial.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,7 @@ namespace RedeSocial
 
             MessageBox.Show($"{codUsuario}");
 
+            //ExibirMinhasComunidades(codUsuario);
         }
 
         private void AbrirCriarComunidade()
@@ -50,6 +52,35 @@ namespace RedeSocial
         {
 
         }
+
+        private void ExibirMinhasComunidades(int codUsuario)
+        {
+            gridMinhasComunidades.Children.Clear();
+            gridMinhasComunidades.RowDefinitions.Clear(); // Limpar definições de linha
+
+            // Iterar por todas as comunidades
+            foreach (var comunidade in comunidadeManager.ObterTodasAsComunidades())
+            {
+                // Verifica se o usuário está na comunidade
+                if (comunidade.VerificarMembro(codUsuario))
+                {
+                    int codComunidade = comunidade.Codigo;
+                    Frame frame = new Frame
+                    {
+                        Height = 60,
+                        Width = 330
+                    };
+                    PageMinhaComunidade cartaoComunidade = new PageMinhaComunidade(codComunidade);
+                    frame.Navigate(cartaoComunidade);
+                    gridMinhasComunidades.RowDefinitions.Add(new RowDefinition());
+                    Grid.SetRow(frame, gridMinhasComunidades.RowDefinitions.Count - 1);
+                    gridMinhasComunidades.Children.Add(frame);
+                }
+            }
+        }
+
+
+
 
         private void AbrirCriarComunidade_Click(object sender, RoutedEventArgs e)
         {

@@ -19,7 +19,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Content="Comunidades" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" FontSize="14" Margin="0,3,0,0"/>
+                <Label Grid.Row="0" Content="Comunidades" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" FontSize="16" Margin="0,3,0,0"/>
                 <Rectangle Grid.Row="1" Height="1" Fill="#DADCDF" Margin="10,0,10,0"/>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
@@ -32,18 +32,18 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Rectangle x:Name="fotoComunidade1" Grid.Column="0" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="labelNome1" Grid.Column="0" Grid.Row="0"  Style="{StaticResource TextBlockInicio}"/>
+                    <TextBlock x:Name="nomeComunidade1" Grid.Column="0" Grid.Row="0"  Style="{StaticResource TextBlockInicio}"/>
                     <Rectangle x:Name="fotoComunidade2" Grid.Column="1" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="labelNome2" Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBlockInicio}"/>
+                    <TextBlock x:Name="nomeComunidade2" Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBlockInicio}"/>
                     <Rectangle x:Name="fotoComunidade3" Grid.Column="2" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="labelNome3" Grid.Column="2" Grid.Row="0"  Style="{StaticResource TextBlockInicio}"/>
+                    <TextBlock x:Name="nomeComunidade3" Grid.Column="2" Grid.Row="0"  Style="{StaticResource TextBlockInicio}"/>
 
                     <Rectangle x:Name="fotoComunidade4" Grid.Column="0" Grid.Row="1" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"  RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="labelNome4" Style="{StaticResource TextBlockInicio}"/>
+                    <TextBlock x:Name="nomeComunidade4" Style="{StaticResource TextBlockInicio}"/>
                     <Rectangle x:Name="fotoComunidade5" Grid.Column="1" Grid.Row="1" Height="50" Width="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="labelNome5" Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBlockInicio}"/>
+                    <TextBlock x:Name="nomeComunidade5" Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBlockInicio}"/>
 
-                    <Label x:Name="labelVerTodos" Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#37376E" />
+                    <Label x:Name="labelVerTodas" Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#37376E" />
                 </Grid>
             </Grid>
         </Border>

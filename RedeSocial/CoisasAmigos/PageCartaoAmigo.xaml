@@ -18,8 +18,8 @@
                     <RowDefinition Height = "Auto"/>
                 </Grid.RowDefinitions>
                 <Rectangle x:Name="foto"  Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Height="210" Width="210" Stretch="UniformToFill" Margin="0,0,0,5" RadiusX="6" RadiusY="6"  MouseLeftButtonUp="foto_MouseLeftButtonUp"/>
-                <Label x:Name="labelNome" Grid.Row="1" Content="Nome de Usuário" VerticalAlignment="Center" FontSize="15" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333" Padding="12,0,0,0" VerticalContentAlignment="Center"/>
-                <Button x:Name="botaoDesfazerAmizade" Grid.Row="2" Content="Desfazer amizade" FontSize="13" Height="35" Margin="12,11,12,11" Style="{StaticResource EstiloBotaoCinza}" Click="botaoDesfazerAmizade_Click" />
+                <Label x:Name="labelNome" Grid.Row="1" Content="Nome de Usuário" VerticalAlignment="Center" FontSize="17" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#333333" Padding="12,0,0,0" VerticalContentAlignment="Center"/>
+                <Button x:Name="botaoDesfazerAmizade" Grid.Row="2" Content="Desfazer amizade" FontSize="15" Height="35" Margin="12,11,12,11" Style="{StaticResource EstiloBotaoCinza}" Click="botaoDesfazerAmizade_Click" />
             </Grid>
         </Border>
     </Grid>

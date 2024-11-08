@@ -11,7 +11,7 @@
     <Page.Resources>
         <Style x:Key="textBoxRedondo" TargetType="TextBox">
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="Padding" Value="14,0,0,0"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
@@ -46,14 +46,17 @@
                 </Grid.RowDefinitions>
 
                 <Image Grid.Row="0" x:Name="ImageVoltar" Source="\Icones\Voltar.png" Height="14" Width="14" HorizontalAlignment="Left" RenderOptions.BitmapScalingMode="HighQuality" Margin="14,7,0,0"/>
-                <Label Grid.Row="0" x:Name="LabelVoltar" Content="Voltar"   VerticalContentAlignment="Center" FontSize="12" Margin="25,7,0,0"/>
-                <TextBlock Grid.Row="1" Text="Crie uma nova comunidade!" FontSize="16" FontWeight="Bold"  TextAlignment="Center" Margin="0,6,0,20"/>
+                <Label Grid.Row="0" x:Name="LabelVoltar" Content="Voltar"   VerticalContentAlignment="Center" FontSize="13" Margin="25,7,0,0"/>
+                <TextBlock Grid.Row="1" Text="Crie uma nova comunidade!" FontSize="18" FontWeight="Bold"  TextAlignment="Center" Margin="0,6,0,20"/>
 
                 <Rectangle Grid.Row="2" x:Name="imgComunidade" Height="120" Width="120"  Fill="Black" RadiusX="5" RadiusY="5" RenderOptions.BitmapScalingMode="HighQuality" Margin="0,13,0,11"/>
                 <Button Grid.Row="3" Content="Adicionar Imagem" Click="AdicionarImagem_Click" Width="165" Height="30" Margin="0,11,0,10" Style="{StaticResource EstiloBotaoCinza}"/>
 
-                <TextBox Grid.Row="4" x:Name="txtNomeComunidade" Text="Nome da Comunidade" Margin="60,0,60,11" Height="35" Style="{StaticResource textBoxRedondo}"  VerticalContentAlignment="Center" />
-                <TextBox Grid.Row="5" x:Name="txtDescricao" Text="Descrição" Margin="60,11,60,42" Height="35" Style="{StaticResource textBoxRedondo}" VerticalContentAlignment="Center" TextWrapping="Wrap" />
+                <TextBlock Grid.Row="4" Panel.ZIndex="1" Text="Nome da Comunidade" Style="{StaticResource TextBlockLogin}"  VerticalAlignment="Top" HorizontalAlignment="Left"  Visibility="{Binding ElementName=txtNomeComunidade, Path=Text.IsEmpty, Converter={StaticResource BoolToVis} }" Margin="77,8,0,0" Height="17"/>
+                <TextBox Grid.Row="4" x:Name="txtNomeComunidade"  Margin="60,0,60,11" Height="35" Style="{StaticResource textBoxRedondo}"  VerticalContentAlignment="Center" />
+
+                <TextBlock Grid.Row="5" Panel.ZIndex="1" Text="Descrição da Comunidade" Style="{StaticResource TextBlockLogin}"  VerticalAlignment="Top" HorizontalAlignment="Left"  Visibility="{Binding ElementName=txtDescricao, Path=Text.IsEmpty, Converter={StaticResource BoolToVis} }" Margin="77,20,0,0" Height="17"/>
+                <TextBox Grid.Row="5" x:Name="txtDescricao"  Margin="60,11,60,42" Height="35" Style="{StaticResource textBoxRedondo}" VerticalContentAlignment="Center" TextWrapping="Wrap" />
 
                 <Button Grid.Row="6" Content="Criar Comunidade" Margin="170,0,170,24" Height="35" Style="{StaticResource EstiloBotaoAzul}" Click="CriarComunidade_Click"/>
 

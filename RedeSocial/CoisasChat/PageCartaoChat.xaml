@@ -18,7 +18,7 @@
                 <ColumnDefinition Width = "*"/>
             </Grid.ColumnDefinitions>
             <Ellipse x:Name="foto" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="50" Stretch="Fill" Margin="10, 5, 5, 5" Stroke="#37376E"/>
-            <TextBlock x:Name="textNome" Grid.Column="1" VerticalAlignment="Center" Margin="5" Text="Nome do amigo" FontSize="16" FontWeight="Bold" TextWrapping="Wrap"/>
+            <TextBlock x:Name="textNome" Grid.Column="1" VerticalAlignment="Center" Margin="5" Text="Nome do amigo" FontSize="18" FontWeight="Bold" TextWrapping="Wrap"/>
         </Grid>
     </Border>
 </Page>

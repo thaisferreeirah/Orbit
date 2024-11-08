@@ -31,7 +31,7 @@
         </Style>
 
         <Style x:Key="EstiloComboBox" TargetType="ComboBox">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -58,6 +58,8 @@
 
         <Style TargetType="{x:Type ComboBoxItem}">
             <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+           <!--Talvez colocar arimo aqui-->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ComboBoxItem">
@@ -78,7 +80,7 @@
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#333333"/>
             <Setter Property="AcceptsReturn" Value="True"/>
             <Setter Property="Template">
@@ -93,7 +95,7 @@
         </Style>
 
         <Style x:Key="EstiloBotaoSelecionado" TargetType="Button">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Background" Value="White"/>
