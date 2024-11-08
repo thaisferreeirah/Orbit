@@ -35,6 +35,9 @@ namespace RedeSocial
             this.comunidadeManager = comunidadeManager;
             this.codUsuario = codUsuario;
             this.MainFrame = MainFrame;
+
+            MessageBox.Show($"{codUsuario}");
+
         }
 
         private void AbrirCriarComunidade()

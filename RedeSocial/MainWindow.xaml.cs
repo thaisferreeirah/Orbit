@@ -22,6 +22,7 @@ namespace RedeSocial
     {
         private UserManager userManager = new UserManager();
         private NarizManager narizManager = new NarizManager();
+        private ComunidadeManager comunidadeManager = new();
         private Teste teste = new Teste();
         private ChatList chatList;
        
@@ -46,9 +47,13 @@ namespace RedeSocial
 
             if (resultado == "Logado com sucesso!")
             {
-                Home homeWindow = new Home(userManager.BuscarCodigoUsuario(email), chatList);
+
+                Home homeWindow = new Home(userManager.BuscarCodigoUsuario(email), chatList, comunidadeManager, userManager);
                 homeWindow.Show();
-                this.Close();
+                this.Hide();
+
+                CampoUsuario.Clear();
+                CampoSenha.Clear();
             }
         }
 

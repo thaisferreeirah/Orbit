@@ -74,6 +74,7 @@ namespace RedeSocial
             VerificarParticipacao();
             atualizarPaginaPost(); //Carrega as postagens na tela
             exibirFotoPerfil(); //Carrega foto no usuário no formulário do post
+
         }
 
         private void CarregarInformacoesDaComunidade()
@@ -141,11 +142,13 @@ namespace RedeSocial
                 if (comunidade.Membros.Contains(codUsuario))
                 {
                     ParticiparHabilitado = false;
+                    btnParticipar.Visibility = Visibility.Hidden;
                     btnParticipar.Content = "Participando da Comunidade";
                 }
                 else
                 {
                     ParticiparHabilitado = true;
+
                 }
                 btnParticipar.IsEnabled = ParticiparHabilitado;
             }
@@ -155,6 +158,13 @@ namespace RedeSocial
             }
         }
 
+        private void btnParticipar_Click(object sender, RoutedEventArgs e)
+        {
+            comunidadeManager.AssociarUsuarioAComunidade(codUsuario, codComunidade);
+            CarregarInformacoesDaComunidade();
+            ParticiparHabilitado = false;
+            btnParticipar.Visibility = Visibility.Hidden;
+        }
         #region Post
         public void atualizarPaginaPost()
         {
@@ -876,6 +886,7 @@ namespace RedeSocial
         //Exibir a foto de perfil no formulário de post
         private void exibirFotoPerfil()
         {
+            //MessageBox.Show(userManager.BuscarFoto(codUsuario));
             postFormFoto.Fill = new ImageBrush(new BitmapImage(new Uri(userManager.BuscarFoto(codUsuario))));
         }
 
@@ -931,6 +942,8 @@ namespace RedeSocial
             campoTexto.Focus();
         }
         #endregion
+
+
     }
 
 

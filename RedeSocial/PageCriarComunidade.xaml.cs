@@ -30,6 +30,8 @@ namespace RedeSocial
             this.frameComunidade = frameComunidade;
             this.MainFrame = MainFrame;
             this.novoCodigo = novoCodigo;
+
+            MessageBox.Show($"{codUsuario}");
         }
 
         private void AdicionarImagem_Click(object sender, RoutedEventArgs e)

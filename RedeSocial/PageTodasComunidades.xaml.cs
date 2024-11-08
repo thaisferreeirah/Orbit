@@ -31,7 +31,7 @@ namespace RedeSocial
         private int codComunidade;
 
 
-        public PageTodasComunidades(ComunidadeManager comunidadeManager, UserManager userManager, int codUser, int codComunidade, Frame frameComunidade, Frame MainFrame)
+        public PageTodasComunidades(ComunidadeManager comunidadeManager, UserManager userManager, int codComunidade, int codUser, Frame frameComunidade, Frame MainFrame)
         {
             InitializeComponent();
             this.comunidadeManager = comunidadeManager ?? throw new ArgumentNullException(nameof(comunidadeManager));
@@ -41,11 +41,11 @@ namespace RedeSocial
             this.frameComunidade = frameComunidade;
             this.codUsuario = codUser;
 
-
+            MessageBox.Show($"{codUsuario}");
+            MessageBox.Show($"{codUser}");
 
             DataContext = this;
             CarregarTodasAsComunidades();
-            MessageBox.Show($"Comunidade: {comunidadeManager.ObterComunidadePorCodigo(codComunidade)}");
         }
 
         private void CarregarTodasAsComunidades()
@@ -71,10 +71,10 @@ namespace RedeSocial
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("Nenhuma comunidade encontrada.");
-            }
+            //else
+            //{
+                //MessageBox.Show("Nenhuma comunidade encontrada.");
+            //}
 
         }
 

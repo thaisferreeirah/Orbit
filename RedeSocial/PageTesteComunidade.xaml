@@ -57,7 +57,7 @@
                         <TextBox x:Name="caixaPesquisa" Grid.Row="0" VerticalContentAlignment="Center" Padding="14,0,14,0" Height="35" Style="{StaticResource SearchBox}" Margin="10,37,10,15"/>
                         <TextBlock Grid.Row="0" Text="Pesquisar comunidades" FontSize="14" FontFamily="{StaticResource ArimoFont}"  Foreground="#9094B6" IsHitTestVisible="False" Visibility="{Binding ElementName=caixaPesquisa, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" Margin="26,55,20,34"/>
                         <Label Grid.Row="1" x:Name="AbrirTodasAsComunidades" Content="Todas as Comunidades" Style="{StaticResource estiloLabelLogin}" Margin="85,10,85,15" HorizontalContentAlignment="Center" MouseLeftButtonDown="AbrirTodasAsComunidades_Click"/>
-                        <Button Grid.Row="2" Content="+ Criar uma nova comunidade" Height="35" Style="{StaticResource EstiloBotaoCinza}" Margin="50,10,50,36" Click="AbrirCriarComunidade_Click"/>
+                        <Button Grid.Row="2" Content="Criar uma nova comunidade" Height="35" Style="{StaticResource EstiloBotaoCinza}" Margin="50,10,50,36" Click="AbrirCriarComunidade_Click"/>
                         
                     </Grid>
                 </Border>

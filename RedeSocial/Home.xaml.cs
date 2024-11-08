@@ -23,8 +23,8 @@ namespace RedeSocial
     /// </summary>
     public partial class Home : Window
     {
-        private UserManager usuarioManager = new UserManager();
-        private ComunidadeManager comunidadeManager = new();
+        private UserManager usuarioManager;
+        private ComunidadeManager comunidadeManager;
         ChatList chatList;
 
         PagePost pagePost;
@@ -33,17 +33,23 @@ namespace RedeSocial
         int codUsuario;
         string pesquisa;
         bool novaNotificacao;
-        public Home(int _codUsuario, ChatList _chatList)
+
+        public Home(int _codUsuario, ChatList _chatList, ComunidadeManager comunidadeManager, UserManager userManager)
         {
             InitializeComponent();
 
             codUsuario = _codUsuario;
             novaNotificacao = false;
             chatList = _chatList;
+            this.comunidadeManager = comunidadeManager;
+            this.usuarioManager = userManager;
             pagePost = new PagePost(codUsuario, this, MainFrame);
 
             AtualizarFotoPerfil();
             ChecarNotificacao();
+
+            MessageBox.Show($"{codUsuario}");
+            MessageBox.Show($"{_codUsuario}");
 
             MainFrame.Navigate(pagePost);
         }
@@ -91,14 +97,16 @@ namespace RedeSocial
 
         private void BotaoSair_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mainWindow1 = new MainWindow(chatList);
+            MainWindow mainWindow1 = Application.Current.MainWindow as MainWindow;
+            //MainWindow mainWindow1 = new MainWindow(chatList);
             mainWindow1.Show();
             this.Close();
         }
 
         private void BotaoSair_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MainWindow mainWindow = new(chatList);
+            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
+            //MainWindow mainWindow = new(chatList);
             mainWindow.Show();
             this.Close();
         }
