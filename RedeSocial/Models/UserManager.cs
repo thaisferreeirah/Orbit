@@ -227,6 +227,13 @@ namespace RedeSocial
         {
             return usersByEmail.ElementAt(codUsuario).Value.FullName;
         }
+
+        //Busca o email de um usuário pelo código
+        public string BuscarEmail(int codUsuario)
+        {
+            return usersByEmail.ElementAt(codUsuario).Value.Email;
+        }
+
         //busca a quantidade de usuarios
         public int BuscarQuantidade()
         {
@@ -359,5 +366,64 @@ namespace RedeSocial
             return usersByEmail.ElementAt(codUsuario).Value.Notificacoes.IndexOf(new Notificacao(remetente, "amizade", BuscarCodSolicitacao(remetente, codUsuario)));
         }
         #endregion
+
+        public string AtualizarDados(int codUsuario, string nome, string email)
+        {
+            // Valida o Email
+            if (!IsValidEmail(email))
+            {
+                return "O email não é válido.";
+            }
+
+            if (usersByEmail.ContainsKey(email) && BuscarEmail(codUsuario) != email)
+            {
+                return "Email já cadastrado. Tente novamente.";
+            }
+
+            usersByEmail.ElementAt(codUsuario).Value.FullName = nome;
+            usersByEmail.ElementAt(codUsuario).Value.Email = email;
+
+            return "Dados alterados com sucesso!";
+        }
+
+        public string AtualizarSenha(int codUsuario, string password, string newPassword, string confirmPassword)
+        {
+            // Valida a Senha
+            if (string.IsNullOrWhiteSpace(newPassword) || string.IsNullOrWhiteSpace(confirmPassword) || string.IsNullOrWhiteSpace(password))
+            {
+                return "Não é permitido espaço em branco na senha.";
+            }
+
+            if (!IsValidPassword(newPassword))
+            {
+                return "A senha deve ter pelo menos 6 caracteres.";
+            }
+
+            if (newPassword != confirmPassword)
+            {
+                return "As senhas não coincidem. Tente novamente.";
+            }
+
+            if (VerificarSenha(codUsuario, password))
+            {
+                return "A senha atual está incorreta.";
+            }
+
+            // Cria o hash da senha
+            string passwordHash = HashPassword(newPassword);
+
+            usersByEmail.ElementAt(codUsuario).Value.PasswordHash = passwordHash;
+
+            return "Senha alterada com sucesso!";
+        }
+
+        public bool VerificarSenha(int codUsuario, string password) {
+            string passwordHash = HashPassword(password);
+            if (passwordHash != usersByEmail.ElementAt(codUsuario).Value.PasswordHash)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

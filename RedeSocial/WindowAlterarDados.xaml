@@ -1,0 +1,57 @@
+﻿<Window x:Class="RedeSocial.WindowAlterarDados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RedeSocial"
+        mc:Ignorable="d"
+        Title="WindowAlterarDados" Height="595" Width="500"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Icon="\Icones\OrbitIcone.ico">
+    <Border x:Name="BorderAlterarDados" Background="#FFFFFF" VerticalAlignment="Stretch" CornerRadius="5" BorderBrush="Gray" BorderThickness="2">
+        <Grid x:Name="GridAlterarDados">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="\Icones\Fechar.png" Height="35" Width="35" HorizontalAlignment="Right" Margin="0 5 10 0" RenderOptions.BitmapScalingMode="HighQuality" MouseLeftButtonUp="Image_MouseLeftButtonUp"/>
+            <Border Grid.Row="1" Margin="10 5 10 10" CornerRadius="5" BorderBrush="Gray" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Alterar dados" Margin="10" FontFamily="{StaticResource ArimoFont}" FontSize="22" FontWeight="Bold"/>
+                    <TextBox Grid.Row="1" x:Name="CampoNome" Style="{StaticResource CaixaRedondoEmCima}"/>
+                    <TextBlock Grid.Row="1" Style="{StaticResource TextBlockLogin}" Text="Nome" Visibility="{Binding ElementName=CampoNome, Path=Text.IsEmpty, Converter={StaticResource BoolToVis} }"/>
+                    <TextBox Grid.Row="2" x:Name="CampoEmail" Style="{StaticResource CaixaRedondoEmBaixo}"/>
+                    <TextBlock Grid.Row="2" Style="{StaticResource TextBlockLogin}" Text="Email" Visibility="{Binding ElementName=CampoEmail, Path=Text.IsEmpty, Converter={StaticResource BoolToVis} }"/>
+                    <Button Grid.Row="3" x:Name="BotaoAlterarDados" Content="Alterar dados" Width="320" Height="40" Margin="10" Style="{StaticResource EstiloBotaoRedondo}" Click="BotaoAlterarDados_Click"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="2" Margin="10" CornerRadius="5" BorderBrush="Gray" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Alterar senha" Margin="10" FontFamily="{StaticResource ArimoFont}" FontSize="22" FontWeight="Bold"/>
+                    <TextBlock Grid.Row="1" x:Name="LabelSenhaAtual" Margin="0 0 0 15" Style="{StaticResource TextBlockLogin}" Text="Senha atual" Visibility="{Binding ElementName=CampoSenhaCadastro, Path=Password.IsEmpty, Converter={StaticResource BoolToVis} }"/>
+                    <PasswordBox Grid.Row="1" x:Name="CampoSenhaAtual" Margin="0 0 0 15" Style="{StaticResource PasswordSemDestaque}" PasswordChanged="CampoSenhaAtual_PasswordChanged"/>
+                    <TextBlock Grid.Row="2" x:Name="LabelSenhaNova" Style="{StaticResource TextBlockLogin}" Text="Senha nova" Visibility="{Binding ElementName=CampoSenhaCadastro, Path=Password.IsEmpty, Converter={StaticResource BoolToVis} }"/>
+                    <PasswordBox Grid.Row="2" x:Name="CampoSenhaNova" Style="{StaticResource PasswordSemDestaque}" PasswordChanged="CampoSenhaNova_PasswordChanged"/>
+                    <TextBlock Grid.Row="3" x:Name="LabelRepetirSenhaNova" Style="{StaticResource TextBlockLogin}" Text="Repetir senha nova" Visibility="{Binding ElementName=CampoSenhaCadastro, Path=Password.IsEmpty, Converter={StaticResource BoolToVis} }"/>
+                    <PasswordBox Grid.Row="3" x:Name="CampoRepetirSenhaNova" Style="{StaticResource PasswordSemDestaque}" PasswordChanged="CampoRepetirSenhaNova_PasswordChanged"/>
+                    <Button Grid.Row="4" x:Name="BotaoAlterarSenha" Content="Alterar senha" Width="320" Height="40" Margin="10" Style="{StaticResource EstiloBotaoRedondo}" Click="BotaoAlterarSenha_Click" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

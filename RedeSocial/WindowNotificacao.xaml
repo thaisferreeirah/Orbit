@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:RedeSocial"
         mc:Ignorable="d"
         Title="WindowNotificacao" Height="450" Width="300"
-        WindowStyle="None" AllowsTransparency="True" Background="Transparent">
-    <Border x:Name="BorderNotificacao" Background="#FFFFFF" VerticalAlignment="Stretch" CornerRadius="5" BorderBrush="Black" BorderThickness="3">
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Icon="\Icones\OrbitIcone.ico">
+    <Border x:Name="BorderNotificacao" Background="#FFFFFF" VerticalAlignment="Stretch" CornerRadius="5" BorderBrush="Gray" BorderThickness="3">
         <StackPanel x:Name="StackPanelNotificacoes">
             <Label Content="Notificações" Margin="10" FontFamily="{StaticResource ArimoFont}" FontSize="18" FontWeight="Bold"/>
         </StackPanel>

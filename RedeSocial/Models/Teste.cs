@@ -19,9 +19,10 @@ namespace RedeSocial.Models
         NarizManager narizManager = new NarizManager();
         RichTextBox richTextBox;
 
+        string projectPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
+
         public void AdicionarUsuario()
         {
-            string projectPath = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
             usuarioManager.AdicionarUsuario("jojo@email.com", "jojo", "123123", "Johnny Bravo", new DateOnly(2000, 12, 13), projectPath + "\\Fotos\\Pukki.jpg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
             narizManager.AdicionarUsuario();
             usuarioManager.AdicionarUsuario("gojojo@email.com", "gojojo", "123123", "Satoru Gojo", new DateOnly(1996, 12, 07), projectPath + "\\Fotos\\Gojo.jpg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
@@ -78,6 +79,7 @@ namespace RedeSocial.Models
             postManager.ArmazenarPost(1, "", FormatarTextoPost("Deixa o Like!"), "", "23/09/2024 15:33");
             postManager.ArmazenarPost(3, "", FormatarTextoPost("Que Mario?"), "", "23/09/2024 19:27");
             postManager.ArmazenarPost(2, "", FormatarTextoPost("Estou com fome"), "", "24/09/2024 01:11");
+            postManager.ArmazenarPost(5, "", FormatarTextoPost("Falem bem ou falem mal, mas falem de mim"), projectPath + "\\Fotos\\Jimin.jpeg", "25/09/2024 11:11");
         }
 
         public void AdicionarLike()
@@ -132,7 +134,15 @@ namespace RedeSocial.Models
             chatList.AdicionarMensagem(0, 1, "Marmota", "04/10/2024", "10:45");
         }
 
-        public void AdicionarTeste(ChatList chatList)
+        public void AdicionarComunidade(ComunidadeManager comunidadeManager)
+        {
+            comunidadeManager.AdicionarComunidade(0, "Amo K-pop", projectPath + "\\Fotos\\Jimin.jpeg", "Aserehe ra de re, aqui tem do bom e do melhor dos Australianos. Bonapetí");
+            comunidadeManager.AdicionarComunidade(1, "É bolacha!", projectPath + "\\Imagens\\Bolacha.jpeg", "É BOLACHA E NÃO BISCOITO!!!!!!!!!!!!!!!!");
+            comunidadeManager.AdicionarComunidade(2, "Como ficar rico com 100 reais", projectPath + "\\Imagens\\Dinheiro.jpeg", "Quer saber como ganhar dinheiro fácil e rápido? Assine esse curso >>> AQUI!!!");
+            comunidadeManager.AdicionarComunidade(3, "Desenhos Atuais", projectPath + "\\Imagens\\JohnnyBravo.jpeg", "Vamos falar apenas sobre os desenhos mais recentes, nada de coisa antiga, plz.");
+        }
+
+        public void AdicionarTeste(ChatList chatList, ComunidadeManager comunidadeManager)
         {
             AdicionarUsuario();
             AdicionarAmigo();
@@ -142,6 +152,7 @@ namespace RedeSocial.Models
             AdicionarComentario();
             AdicionarRecomendar();
             AdicionarMensagem(chatList);
+            AdicionarComunidade(comunidadeManager);
         }
     }
 }

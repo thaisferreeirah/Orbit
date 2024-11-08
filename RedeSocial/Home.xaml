@@ -13,13 +13,14 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
+        <Rectangle Name="Overlay" Panel.ZIndex="2" Grid.Row="0" Grid.RowSpan="2" Fill="Black" Opacity="0.2" Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <!-- Barra superior -->
         <Grid x:Name="GridBarraSuperior" Grid.Row="0" Background="#37376E ">
             <TextBlock Canvas.Top="57" Canvas.Left="57" FontSize="16" Foreground="#9094B6" FontFamily="{StaticResource ArimoFont}"
        Panel.ZIndex="1" IsHitTestVisible="False" Text="Pesquise na Orbit" Visibility="{Binding ElementName=CaixaPesquisa, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="14 0 0 0" Width="520"/>
             <TextBox x:Name="CaixaPesquisa" Style="{StaticResource SearchBox}" KeyDown="CaixaPesquisa_KeyDown"/>
             <Image x:Name="BotaoBuscar" Source="\Icones\Lupa.png" Margin="450 0 0 0" Style="{StaticResource ImageMenu}" MouseLeftButtonUp="BotaoBuscar_MouseLeftButtonUp"/>
+            <Image x:Name="BotaoConfiguracao" Source="\Icones\Config.png" HorizontalAlignment="Right" Margin="0 0 70 0" Style="{StaticResource ImageMenu}" MouseLeftButtonUp="BotaoConfiguracao_MouseLeftButtonUp"/>
             <Image x:Name="BotaoNotificacao" Source="\Icones\Notificacao.png" HorizontalAlignment="Right" Margin="0 0 20 0" Style="{StaticResource ImageMenu}" MouseLeftButtonUp="BotaoNotificacao_MouseLeftButtonUp"/>
 
             <!-- Toggle Menu -->

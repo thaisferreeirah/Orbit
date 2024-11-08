@@ -12,7 +12,7 @@
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <StackPanel>
-                <Border  x:Name="gridSolicAmizade" BorderBrush="#FFF0F0FA" BorderThickness="0 0 0 1" Width="920" Margin="0,30,0,10" Visibility="Collapsed">
+                <Border  x:Name="gridSolicAmizade" BorderBrush="Gray" BorderThickness="0 0 0 1" Width="920" Margin="0,30,0,10" Visibility="Collapsed">
                     <Grid Margin="0 0 0 15" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -22,7 +22,7 @@
                         <WrapPanel Grid.Row="1" x:Name="gridSolicitacaoRecebida" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
                     </Grid>
                 </Border>
-                <Border x:Name="gridSolicEnviada" BorderBrush="#FFF0F0FA" BorderThickness="0 0 0 1" Width="920" Margin="0,29,0,0" Visibility="Collapsed">
+                <Border x:Name="gridSolicEnviada" BorderBrush="Gray" BorderThickness="0 0 0 1" Width="920" Margin="0,29,0,0" Visibility="Collapsed">
                     <Grid Background="#FFF0F0FA" Margin="0 0 0 15">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>

@@ -82,6 +82,9 @@
     <Compile Update="PagePost.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowAlterarDados.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowRecuperarSenha.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -181,6 +184,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageTodasComunidades.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowAlterarDados.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowRecuperarSenha.xaml">

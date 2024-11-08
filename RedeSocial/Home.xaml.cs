@@ -136,26 +136,36 @@ namespace RedeSocial
             }
         }
 
+        private void BotaoConfiguracao_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+                Overlay.Visibility = Visibility.Visible;
+                
+                WindowAlterarDados windowAlterarDados = new WindowAlterarDados(codUsuario);
+                windowAlterarDados.ShowDialog();
+
+                Overlay.Visibility = Visibility.Collapsed;
+        }
+
         private void BotaoNotificacao_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-                BotaoNotificacao.Source = new BitmapImage(new Uri("pack://application:,,,/RedeSocial;component/Icones/Notificacao.png"));
+            BotaoNotificacao.Source = new BitmapImage(new Uri("pack://application:,,,/RedeSocial;component/Icones/Notificacao.png"));
 
-                Point buttonPosition = BotaoNotificacao.TransformToAncestor(this).Transform(new Point(0, 0));
+            Point buttonPosition = BotaoNotificacao.TransformToAncestor(this).Transform(new Point(0, 0));
 
-                Point mainWindowPosition = new Point(this.Left, this.Top);
+            Point mainWindowPosition = new Point(this.Left, this.Top);
 
-                Point modalPosition = new Point(mainWindowPosition.X + buttonPosition.X + BotaoNotificacao.ActualWidth,
-                                                mainWindowPosition.Y + buttonPosition.Y);
+            Point modalPosition = new Point(mainWindowPosition.X + buttonPosition.X + BotaoNotificacao.ActualWidth,
+                                            mainWindowPosition.Y + buttonPosition.Y);
 
-                windowNotificacao = new WindowNotificacao(codUsuario)
-                {
-                    Owner = this,
-                    WindowStartupLocation = WindowStartupLocation.Manual,
-                    Left = modalPosition.X - 280,
-                    Top = modalPosition.Y + 80
-                };
+            windowNotificacao = new WindowNotificacao(codUsuario)
+            {
+                Owner = this,
+                WindowStartupLocation = WindowStartupLocation.Manual,
+                Left = modalPosition.X - 280,
+                Top = modalPosition.Y + 80
+            };
 
-                windowNotificacao.Show();
+            windowNotificacao.Show();
         }
 
         private void Window_PreviewMouseDown(object sender, MouseButtonEventArgs e)

@@ -13,7 +13,7 @@
             <Label Content="Solicitação de amizade" FontSize="14" FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal">
                 <Ellipse x:Name="FotoPerfil" Height="45" Width="45" Stretch="Fill" Margin="5 0 0 0" Stroke="#37376E"/>
-                <Label x:Name="LabelNome" Content="Nome" VerticalAlignment="Center" FontSize="14"/>
+                <Label x:Name="LabelNome" Content="Nome" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="BotaoRecusar" Content="Recusar" Height="30" Width="130" FontSize="14" Margin="5" Style="{StaticResource EstiloBotaoAzul}" Click="BotaoRecusar_Click_1"/>

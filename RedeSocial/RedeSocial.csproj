@@ -12,7 +12,9 @@
     <None Remove="Fotos\Gojo.jpg" />
     <None Remove="Fotos\Pukki.jpg" />
     <None Remove="Icones\AdicionarFoto.png" />
+    <None Remove="Icones\Config.png" />
     <None Remove="Icones\Enviar.png" />
+    <None Remove="Icones\Fechar.png" />
     <None Remove="Icones\icon_amigos.png" />
     <None Remove="Icones\icon_conversas.png" />
     <None Remove="Icones\icon_depoimentos.png" />
@@ -40,7 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icones\Config.png" />
     <Resource Include="Icones\Enviar.png" />
+    <Resource Include="Icones\Fechar.png" />
     <Resource Include="Icones\Notificacao.png" />
     <Resource Include="Icones\NotificacaoNova.png" />
     <Resource Include="Icones\OrbitIcone.ico" />
