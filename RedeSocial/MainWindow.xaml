@@ -12,11 +12,10 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="157"/>
+                    <RowDefinition Height="200"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Content="Orbit" Width="300" Height="70" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" 
-               VerticalContentAlignment="Top" FontFamily="{StaticResource KulimParkBold}" FontSize="64" FontWeight="Bold" Foreground="#37376E"/>
+                <Image Source="\Imagens\OrbitLogo.png" VerticalAlignment="Stretch" Margin="10"/>
                 <TabControl x:Name="tabMenu" Grid.Row="1" SelectionChanged="TabControl_SelectionChanged" Style="{StaticResource TabControlLogin}">
                     <TabItem Header="Login" Style="{StaticResource TabItemArredondado}" >
                         <StackPanel>

@@ -115,7 +115,7 @@
                             <Grid x:Name="gridPosts" Grid.Row="2"/>
                         </Grid>
                         <!--Aqui é a borda amigos-->
-                        <Frame x:Name="frame6Amigos" Grid.Column="2" Width="450" Height="250"  VerticalAlignment="Top"/>
+                        <Frame x:Name="frame6Amigos" Grid.Column="2" Width="450" Height="260"  VerticalAlignment="Top"/>
                     </Grid>
                 </Grid>
             </StackPanel>

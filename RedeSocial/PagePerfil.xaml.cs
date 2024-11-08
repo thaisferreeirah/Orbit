@@ -232,7 +232,7 @@ namespace RedeSocial
                 Text = postManager.BuscarQuantidadeLike(i).ToString(),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center,
-                FontSize = 14,
+                FontSize = 16,
                 Margin = new Thickness(10, 5, 5, 5),
                 FontWeight = FontWeights.Bold
             };
@@ -272,7 +272,7 @@ namespace RedeSocial
                 Text = postManager.BuscarQuantidadeComentario(i).ToString(),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center,
-                FontSize = 14,
+                FontSize = 16,
                 Margin = new Thickness(10, 5, 5, 5),
                 FontWeight = FontWeights.Bold
             };
@@ -302,7 +302,7 @@ namespace RedeSocial
                 Text = "Recomendar",
                 VerticalAlignment = VerticalAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Center,
-                FontSize = 14,
+                FontSize = 16
             };
 
             borderRecomendar.MouseLeftButtonUp += (sender, e) => borderRecomendar_Click(sender, e, i, newRecomendar);
@@ -329,7 +329,7 @@ namespace RedeSocial
                 Text = userManager.BuscarNome(postManager.BuscarRemetente(i)),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Top,
-                FontSize = 14,
+                FontSize = 16,
                 FontFamily = (FontFamily)Application.Current.Resources["ArimoFont"],
                 FontWeight = FontWeights.Bold,
                 Margin = new Thickness(5, 13, 0, 0)
@@ -363,7 +363,7 @@ namespace RedeSocial
             {
                 Text = postManager.BuscarTitulo(i),
                 TextWrapping = TextWrapping.Wrap,
-                FontSize = 16,
+                FontSize = 18,
                 FontFamily = (FontFamily)Application.Current.Resources["ArimoFont"],
                 Foreground = corPrincipal,
                 FontWeight = FontWeights.Bold,
@@ -581,7 +581,7 @@ namespace RedeSocial
                     Content = "Comentário . . .",
                     HorizontalAlignment = HorizontalAlignment.Stretch,
                     VerticalAlignment = VerticalAlignment.Center,
-                    FontSize = 14,
+                    FontSize = 16,
                     Opacity = 0.4,
                     Margin = new Thickness(20, 0, 0, 0),
                     IsHitTestVisible = false
@@ -682,7 +682,7 @@ namespace RedeSocial
                 Text = userManager.BuscarNome(postManager.BuscarUsuarioComentario(i, j)),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Center,
-                FontSize = 12,
+                FontSize = 14,
                 FontWeight = FontWeights.Bold,
                 Margin = new Thickness(15, 10, 15, 0)
             };
@@ -692,7 +692,7 @@ namespace RedeSocial
                 Text = postManager.BuscarComentario(i, j),
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Center,
-                FontSize = 14,
+                FontSize = 16,
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(15, 5, 15, 10)
             };

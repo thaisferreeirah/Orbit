@@ -1,7 +1,8 @@
 ﻿<Window x:Class="RedeSocial.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterScreen"  
-        Title="Recuperação de Senha" Height="180" Width="400"> 
+        Title="Recuperação de Senha" Height="180" Width="400"
+        Icon="\Icones\OrbitIcone.ico"> 
 
 
     <Grid>

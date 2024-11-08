@@ -12,6 +12,7 @@
     <None Remove="Fotos\Gojo.jpg" />
     <None Remove="Fotos\Pukki.jpg" />
     <None Remove="Icones\AdicionarFoto.png" />
+    <None Remove="Icones\Enviar.png" />
     <None Remove="Icones\icon_amigos.png" />
     <None Remove="Icones\icon_conversas.png" />
     <None Remove="Icones\icon_depoimentos.png" />
@@ -34,10 +35,12 @@
     <None Remove="Imagens\NaoAbreJogo.png" />
     <None Remove="Imagens\Nariz.png" />
     <None Remove="Imagens\NarizJogo.png" />
+    <None Remove="Imagens\OrbitLogo.png" />
     <None Remove="Imagens\TigrinhoJogo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icones\Enviar.png" />
     <Resource Include="Icones\Notificacao.png" />
     <Resource Include="Icones\NotificacaoNova.png" />
     <Resource Include="Icones\OrbitIcone.ico" />
@@ -95,6 +98,7 @@
     <Resource Include="Imagens\NaoAbreJogo.png" />
     <Resource Include="Imagens\Nariz.png" />
     <Resource Include="Imagens\NarizJogo.png" />
+    <Resource Include="Imagens\OrbitLogo.png" />
     <Resource Include="Imagens\TigrinhoJogo.png" />
   </ItemGroup>
 

@@ -105,7 +105,7 @@ namespace RedeSocial.Models
         {
             richTextBox = new RichTextBox()
             {
-                FontSize = 14
+                FontSize = 16
             };
 
             richTextBox.AppendText(texto);

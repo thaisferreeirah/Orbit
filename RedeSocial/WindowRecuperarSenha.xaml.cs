@@ -41,15 +41,13 @@ namespace RedeSocial
             try
             {
                 EnviarEmailRecuperacao(emailUsuario, novaSenha);
-                //AtualizarSenhaEmArquivo(emailUsuario, novaSenha);
-                MessageBox.Show($"E-mail de recuperação enviado para {emailUsuario}");
                 userManager.AlterarSenha(userManager.BuscarCodigoUsuarioPorEmail(emailUsuario), novaSenha);
                 
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao enviar o e-mail: {ex.Message}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show($"Erro ao enviar o e-mail: {ex.Message}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -96,68 +94,13 @@ namespace RedeSocial
 
                 mailMessage.To.Add(emailUsuario);
                 smtpClient.Send(mailMessage);
+                MessageBox.Show($"E-mail de recuperação enviado para {emailUsuario}");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao enviar o e-mail: " + ex.Message);
+                MessageBox.Show("Erro ao enviar o e-mail.");
             }
         }
-
-        private void AtualizarSenhaEmArquivo(string emailUsuario, string novaSenha)
-        {
-            string filePath = "senhas.txt";
-
-            // Lê todas as linhas do arquivo e as armazena em uma lista
-            List<string> linhas = File.Exists(filePath) ? File.ReadAllLines(filePath).ToList() : new List<string>();
-
-            // Atualiza ou adiciona a senha do usuário na lista
-            bool usuarioExistente = false;
-            for (int i = 0; i < linhas.Count; i++)
-            {
-                if (linhas[i].StartsWith(emailUsuario + ":"))
-                {
-                    linhas[i] = $"{emailUsuario}:{novaSenha}"; // Atualiza a senha
-                    usuarioExistente = true;
-                    break;
-                }
-            }
-
-            if (!usuarioExistente)
-            {
-                linhas.Add($"{emailUsuario}:{novaSenha}"); // Adiciona um novo usuário
-            }
-
-            // Escreve a lista de volta no arquivo
-            File.WriteAllLines(filePath, linhas);
-        }
-        private bool ValidarCredenciais(string emailUsuario, string senha)
-        {
-            string filePath = "senhas.txt";
-
-            // Verifica se o arquivo existe
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show("Arquivo de senhas não encontrado.");
-                return false;
-            }
-
-            // Lê todas as linhas e verifica se alguma delas corresponde ao email e senha
-            var linhas = File.ReadAllLines(filePath);
-            foreach (var linha in linhas)
-            {
-                var partes = linha.Split(':');
-                if (partes.Length == 2 && partes[0] == emailUsuario && partes[1] == senha)
-                {
-                    return true; // Credenciais corretas
-                }
-            }
-
-            return false; // Credenciais incorretas
-        }
-       
-
-
-
     }
 }
 

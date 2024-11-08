@@ -58,7 +58,7 @@
                                 </Grid.ColumnDefinitions>
                                 <TextBox x:Name="campoMensagem" Grid.Column="0" VerticalAlignment="Stretch" VerticalContentAlignment="Center" MinHeight="35" Margin="10,5,0,5" Padding="5" FontSize="16" TextWrapping="Wrap" BorderThickness="0" KeyDown="campoMensagem_KeyDown" TextChanged="campoMensagem_TextChanged"/>
                                 <Label x:Name="labelMensagem" Content="Mensagem" Grid.Column="0" VerticalAlignment="Center" Margin="12,0,0,0" Foreground="#66000000" FontSize="16" IsHitTestVisible="False"/>
-                                <Image x:Name="botaoEnviar" Source="C:\Users\ZettZ\OneDrive\Documentos\Fatec\Projeto ED\Johnny\CoisasDoProjetoOrbit\Chat\Chat\Imagens\Enviar.png" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,0" Height="25" Width="25" MouseLeftButtonUp="botaoEnviar_MouseLeftButtonUp" />
+                                <Image x:Name="botaoEnviar" Source="\Icones\Enviar.png" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,0" Height="25" Width="25" MouseLeftButtonUp="botaoEnviar_MouseLeftButtonUp" />
                             </Grid>
                         </Border>
                     </Grid>
