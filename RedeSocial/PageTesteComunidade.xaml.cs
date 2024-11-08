@@ -37,7 +37,8 @@ namespace RedeSocial
             this.codUsuario = codUsuario;
             this.MainFrame = MainFrame;
 
-            //ExibirMinhasComunidades(codUsuario);
+            ExibirMinhasComunidades(codUsuario);
+            TodasComunidades();
         }
 
         private void AbrirCriarComunidade()
@@ -54,7 +55,7 @@ namespace RedeSocial
         private void ExibirMinhasComunidades(int codUsuario)
         {
             gridMinhasComunidades.Children.Clear();
-            gridMinhasComunidades.RowDefinitions.Clear(); // Limpar definições de linha
+            gridMinhasComunidades.RowDefinitions.Clear();
 
             // Iterar por todas as comunidades
             foreach (var comunidade in comunidadeManager.ObterTodasAsComunidades())
@@ -63,22 +64,22 @@ namespace RedeSocial
                 if (comunidade.VerificarMembro(codUsuario))
                 {
                     int codComunidade = comunidade.Codigo;
+
                     Frame frame = new Frame
                     {
                         Height = 60,
                         Width = 330
                     };
-                    PageMinhaComunidade cartaoComunidade = new PageMinhaComunidade(codComunidade);
-                    frame.Navigate(cartaoComunidade);
+                    //PageMinhaComunidade cartaoComunidade = new PageMinhaComunidade(codComunidade);
+                    //frame.Navigate(cartaoComunidade);
+
+                    frame.Navigate(new PageMinhaComunidade(comunidadeManager, codComunidade));
                     gridMinhasComunidades.RowDefinitions.Add(new RowDefinition());
                     Grid.SetRow(frame, gridMinhasComunidades.RowDefinitions.Count - 1);
                     gridMinhasComunidades.Children.Add(frame);
                 }
             }
         }
-
-
-
 
         private void AbrirCriarComunidade_Click(object sender, RoutedEventArgs e)
         {
@@ -92,6 +93,9 @@ namespace RedeSocial
 
         private void AbrirTodasAsComunidades_Click(object sender, RoutedEventArgs e)
         {
+            frameComunidade.Navigate(new PageTodasComunidades(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
+        }
+        private void TodasComunidades() {
             frameComunidade.Navigate(new PageTodasComunidades(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
         }
     }

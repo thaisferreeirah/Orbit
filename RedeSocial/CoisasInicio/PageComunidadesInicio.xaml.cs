@@ -24,14 +24,15 @@ namespace RedeSocial.CoisasInicio
         Frame mainFrame;
         Home home;
         UserManager userManager = new UserManager();
-        ComunidadeManager comunidadeManager = new ComunidadeManager();
+        private ComunidadeManager comunidadeManager;
         int codUsuario;
-        public PageComunidadesInicio(int _codUsuario, Frame _mainFrame, Home _home)
+        public PageComunidadesInicio(int _codUsuario, Frame _mainFrame, Home _home, ComunidadeManager comunidadeManager)
         {
             InitializeComponent();
             codUsuario = _codUsuario;
             mainFrame = _mainFrame;
             home = _home;
+            this.comunidadeManager = comunidadeManager;
             buscarComunidadesDoUsuario(_codUsuario);
         }
         //var amigosFotos = new[] { fotoComunidade1, fotoComunidade2, fotoComunidade3, fotoComunidade4, fotoComunidade5 };
@@ -39,6 +40,7 @@ namespace RedeSocial.CoisasInicio
 
         public void buscarComunidadesDoUsuario(int codUsuario)
         {
+
             var comunidades = comunidadeManager.BuscarComunidadesDoUsuario(codUsuario);
 
             var comunidadeFotos = new[] { fotoComunidade1, fotoComunidade2, fotoComunidade3, fotoComunidade4, fotoComunidade5 };

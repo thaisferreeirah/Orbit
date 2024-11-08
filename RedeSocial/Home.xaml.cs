@@ -43,13 +43,10 @@ namespace RedeSocial
             chatList = _chatList;
             this.comunidadeManager = comunidadeManager;
             this.usuarioManager = userManager;
-            pagePost = new PagePost(codUsuario, this, MainFrame);
+            pagePost = new PagePost(codUsuario, this, MainFrame, comunidadeManager);
 
             AtualizarFotoPerfil();
             ChecarNotificacao();
-
-            //MessageBox.Show($"{codUsuario}");
-            //MessageBox.Show($"{_codUsuario}");
 
             MainFrame.Navigate(pagePost);
         }
@@ -67,7 +64,7 @@ namespace RedeSocial
 
         private void BotaoInicio_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PagePost(codUsuario, this, MainFrame));
+            MainFrame.Navigate(new PagePost(codUsuario, this, MainFrame, comunidadeManager));
         }
 
         private void BotaoAmigos_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

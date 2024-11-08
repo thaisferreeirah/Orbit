@@ -77,14 +77,14 @@ namespace RedeSocial
             }
         }
 
-        private void Fechar_Click(object sender, RoutedEventArgs e)
-        {
-            frameComunidade.Content = null;
-        }
-
         private void txtNomeComunidade_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void LabelVoltar_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            frameComunidade.Navigate(new PageTodasComunidades(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
         }
     }
 }

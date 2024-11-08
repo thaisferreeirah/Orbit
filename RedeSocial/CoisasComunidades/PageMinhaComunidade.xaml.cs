@@ -21,10 +21,13 @@ namespace RedeSocial.CoisasComunidades
     /// </summary>
     public partial class PageMinhaComunidade : Page
     {
-        ComunidadeManager comunidadeManager = new ComunidadeManager();
-        public PageMinhaComunidade(int _codComunidade)
+        private ComunidadeManager comunidadeManager;
+
+        public PageMinhaComunidade(ComunidadeManager comunidadeManager, int _codComunidade)
         {
             InitializeComponent();
+            this.comunidadeManager = comunidadeManager;
+
             ExibirMembro(_codComunidade);
         }
         private void ExibirMembro(int codComunidade)
