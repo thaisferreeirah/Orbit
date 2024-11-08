@@ -37,8 +37,6 @@ namespace RedeSocial
             this.codUsuario = codUsuario;
             this.MainFrame = MainFrame;
 
-            MessageBox.Show($"{codUsuario}");
-
             //ExibirMinhasComunidades(codUsuario);
         }
 

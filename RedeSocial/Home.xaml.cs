@@ -48,8 +48,8 @@ namespace RedeSocial
             AtualizarFotoPerfil();
             ChecarNotificacao();
 
-            MessageBox.Show($"{codUsuario}");
-            MessageBox.Show($"{_codUsuario}");
+            //MessageBox.Show($"{codUsuario}");
+            //MessageBox.Show($"{_codUsuario}");
 
             MainFrame.Navigate(pagePost);
         }

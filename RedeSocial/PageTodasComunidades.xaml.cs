@@ -42,9 +42,6 @@ namespace RedeSocial
             this.frameComunidade = frameComunidade;
             this.codUsuario = codUser;
 
-            MessageBox.Show($"{codUsuario}");
-            MessageBox.Show($"{codUser}");
-
             DataContext = this;
             CarregarTodasAsComunidades();
         }
