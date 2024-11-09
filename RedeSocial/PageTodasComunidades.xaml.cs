@@ -53,7 +53,7 @@ namespace RedeSocial
 
             if (todasAsComunidades != null && todasAsComunidades.Count > 0)
             {
-                //Cria um cartão de comunidade para cada copmunidade existente
+                //Cria um cartão de comunidade para cada comunidade existente
                 foreach (var comunidade in todasAsComunidades)
                 {
                     int codigo = comunidade.Codigo;

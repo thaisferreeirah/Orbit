@@ -21,26 +21,28 @@ namespace RedeSocial.CoisasInicio
     /// </summary>
     public partial class PageComunidadesInicio : Page
     {
-        Frame mainFrame;
-        Home home;
-        UserManager userManager = new UserManager();
+        private Frame mainFrame;
+        private Home home;
+        private UserManager userManager = new UserManager();
         private ComunidadeManager comunidadeManager;
-        int codUsuario;
+        private int codUsuario;
         private Frame frameComunidade;
+
         public PageComunidadesInicio(int _codUsuario, Frame _mainFrame, Home _home, ComunidadeManager comunidadeManager)
         {
             InitializeComponent();
-            codUsuario = _codUsuario;
+            this.codUsuario = _codUsuario;
             mainFrame = _mainFrame;
             home = _home;
             this.comunidadeManager = comunidadeManager;
             buscarComunidadesDoUsuario(_codUsuario);
+            
         }
 
 
         public void buscarComunidadesDoUsuario(int codUsuario)
         {
-            
+
             var comunidades = comunidadeManager.BuscarComunidadesDoUsuario(codUsuario);
             // Cria arrays para armazenar os nomes e as fotos da comunidade do usuário, para cada comunidade que o usuário está exibe a foto e o nome da comunidade até 5.
             var comunidadeFotos = new[] { fotoComunidade1, fotoComunidade2, fotoComunidade3, fotoComunidade4, fotoComunidade5 };

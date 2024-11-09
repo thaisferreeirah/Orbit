@@ -58,7 +58,7 @@
                         <TextBlock Grid.Row="0" Text="Pesquisar comunidades" FontSize="16" FontFamily="{StaticResource ArimoFont}"  Foreground="#9094B6" IsHitTestVisible="False" Visibility="{Binding ElementName=caixaPesquisa, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" Margin="26,54,20,35"/>
                         <Image x:Name="BotaoBuscar" Grid.Row="0" Source="\Icones\Lupa.png"  Style="{StaticResource ImageMenu}" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="25" Width="25" Margin="0,51,18,0" MouseLeftButtonUp="BotaoBuscar_MouseLeftButtonUp"/>
                         <TextBlock Grid.Row="1" x:Name="AbrirTodasAsComunidades" Text="Todas as Comunidades" Style="{StaticResource EstiloTextBlockComunidades}" Margin="85,0,85,15" TextAlignment="Center" MouseLeftButtonDown="AbrirTodasAsComunidades_Click"/>
-                        <Button Grid.Row="2" Content="+ Criar uma nova comunidade" Height="40" Style="{StaticResource EstiloBotaoCinza}" Margin="50,10,50,36" Click="AbrirCriarComunidade_Click"/>
+                        <Button Grid.Row="2" Content="Criar uma nova comunidade" Height="40" Style="{StaticResource EstiloBotaoCinza}" Margin="50,10,50,36" Click="AbrirCriarComunidade_Click"/>
                     </Grid>
                 </Border>
                 <Rectangle Grid.Row="1" Stroke="#DADCDF" Margin="20,15,20,15"/>

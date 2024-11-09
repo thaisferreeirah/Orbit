@@ -76,7 +76,27 @@ namespace RedeSocial
             atualizarPaginaPost(); //Carrega as postagens na tela
             exibirFotoPerfil(); //Carrega foto no usuário no formulário do post
 
+            ConfigurarInterfaceDePostagem();
             MostrarMembros();
+        }
+
+        private void ConfigurarInterfaceDePostagem()
+        {
+            var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
+            if (comunidade != null && comunidade.VerificarMembro(codUsuario))
+            {
+                botaoPostar.IsEnabled = true;
+                botaoPostar.Visibility = Visibility.Visible;
+                campoTexto.IsEnabled = true;
+                campoTitulo.IsEnabled = true;
+            }
+            else
+            {
+                botaoPostar.IsEnabled = false;
+                botaoPostar.Visibility = Visibility.Hidden;
+                campoTexto.IsEnabled = false;
+                campoTitulo.IsEnabled = false;
+            }
         }
 
         private void CarregarInformacoesDaComunidade()
@@ -192,6 +212,7 @@ namespace RedeSocial
         {
             comunidadeManager.AssociarUsuarioAComunidade(codUsuario, codComunidade);
             CarregarInformacoesDaComunidade();
+            ConfigurarInterfaceDePostagem();
             ParticiparHabilitado = false;
             btnParticipar.Visibility = Visibility.Hidden;
             MostrarMembros();
