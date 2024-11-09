@@ -161,7 +161,7 @@ namespace RedeSocial
             {
                 Owner = this,
                 WindowStartupLocation = WindowStartupLocation.Manual,
-                Left = modalPosition.X - 280,
+                Left = modalPosition.X - 300,
                 Top = modalPosition.Y + 80
             };
 
