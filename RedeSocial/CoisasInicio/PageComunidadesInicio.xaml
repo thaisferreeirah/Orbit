@@ -31,17 +31,17 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Rectangle x:Name="fotoComunidade1" Grid.Column="0" Grid.Row="0" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="nomeComunidade1" Grid.Column="0" Grid.Row="0" Height="15" Style="{StaticResource TextBlockInicio}"/>
-                    <Rectangle x:Name="fotoComunidade2" Grid.Column="1" Grid.Row="0" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="nomeComunidade2" Grid.Column="1" Grid.Row="0" Height="15" Style="{StaticResource TextBlockInicio}"/>
-                    <Rectangle x:Name="fotoComunidade3" Grid.Column="2" Grid.Row="0" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="nomeComunidade3" Grid.Column="2" Grid.Row="0" Height="15" Style="{StaticResource TextBlockInicio}"/>
+                    <Rectangle x:Name="fotoComunidade1" Grid.Column="0" Grid.Row="0" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
+                    <TextBlock x:Name="nomeComunidade1" Grid.Column="0" Grid.Row="0"  Style="{StaticResource TextBlockInicio}" Margin="0,74,0,0"/>
+                    <Rectangle x:Name="fotoComunidade2" Grid.Column="1" Grid.Row="0" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
+                    <TextBlock x:Name="nomeComunidade2" Grid.Column="1" Grid.Row="0"  Style="{StaticResource TextBlockInicio}" Margin="0,74,0,0"/>
+                    <Rectangle x:Name="fotoComunidade3" Grid.Column="2" Grid.Row="0" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
+                    <TextBlock x:Name="nomeComunidade3" Grid.Column="2" Grid.Row="0"  Style="{StaticResource TextBlockInicio}" Margin="0,74,0,0"/>
 
-                    <Rectangle x:Name="fotoComunidade4" Grid.Column="0" Grid.Row="1" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"  RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="nomeComunidade4" Grid.Column="0" Grid.Row="1" Height="15" Style="{StaticResource TextBlockInicio}"/>
-                    <Rectangle x:Name="fotoComunidade5" Grid.Column="1" Grid.Row="1" Height="70" Width="70" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
-                    <TextBlock x:Name="nomeComunidade5" Grid.Column="1" Grid.Row="1" Height="15" Style="{StaticResource TextBlockInicio}"/>
+                    <Rectangle x:Name="fotoComunidade4" Grid.Column="0" Grid.Row="1" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"  RadiusX="5" RadiusY="5"/>
+                    <TextBlock x:Name="nomeComunidade4" Grid.Column="0" Grid.Row="1"  Style="{StaticResource TextBlockInicio}" Margin="0,74,0,0"/>
+                    <Rectangle x:Name="fotoComunidade5" Grid.Column="1" Grid.Row="1" Height="60" Width="60" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" RadiusX="5" RadiusY="5"/>
+                    <TextBlock x:Name="nomeComunidade5" Grid.Column="1" Grid.Row="1"  Style="{StaticResource TextBlockInicio}" Margin="0,74,0,0"/>
 
                     <Label x:Name="labelVerTodas" Grid.Column="2" Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontWeight="Bold" Foreground="#37376E" />
                 </Grid>

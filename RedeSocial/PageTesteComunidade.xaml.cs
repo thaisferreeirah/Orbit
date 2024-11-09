@@ -68,10 +68,9 @@ namespace RedeSocial
                     Frame frame = new Frame
                     {
                         Height = 60,
-                        Width = 330
+                        Width = 330,
+                        VerticalAlignment = VerticalAlignment.Top
                     };
-                    //PageMinhaComunidade cartaoComunidade = new PageMinhaComunidade(codComunidade);
-                    //frame.Navigate(cartaoComunidade);
 
                     frame.Navigate(new PageMinhaComunidade(comunidadeManager, codComunidade));
                     gridMinhasComunidades.RowDefinitions.Add(new RowDefinition());
