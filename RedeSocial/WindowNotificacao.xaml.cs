@@ -42,7 +42,7 @@ namespace RedeSocial
             };
             frame.Navigate(pageCartaoNotificacaoAmizade);
 
-            StackPanelNotificacoes.Children.Add(frame);
+            StackPanelNotificacoes.Children.Insert(1, frame);
 
             usuarioManager.AlterarNotificacaoVerificado(codUsuario, i);
         }
