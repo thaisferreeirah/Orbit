@@ -34,6 +34,9 @@
     <Compile Update="CoisasNotificacao\PageCartaoNotificacaoAmizade.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PageBuscarComunidades.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="PageComunidades.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -121,6 +124,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CoisasNotificacao\PageCartaoNotificacaoAmizade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageBuscarComunidades.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PageComunidades.xaml">

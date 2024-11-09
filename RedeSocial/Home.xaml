@@ -48,7 +48,7 @@
         </Grid>
 
         <!-- Menu Lateral -->
-        <Grid x:Name="MenuLateral" Grid.Row="1" HorizontalAlignment="Left" Width="200" Background="#F2F4F7" Panel.ZIndex="1">
+        <Grid x:Name="MenuLateral" Grid.Row="1" HorizontalAlignment="Left" Width="200" Background="#FFF0F0FA" Panel.ZIndex="1">
             <StackPanel x:Name="NomePlaceholder">
                 <!-- Listview pro menu -->
                 <ListView x:Name="ItensMenu" Background="Transparent" BorderBrush="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">

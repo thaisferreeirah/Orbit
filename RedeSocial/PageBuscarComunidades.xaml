@@ -1,0 +1,15 @@
+﻿<Page x:Class="RedeSocial.PageBuscarComunidades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RedeSocial"
+      mc:Ignorable="d" 
+      Title="PageBuscarComunidades">
+
+    <Grid Height="600" Width="820" Margin="10,0,10,0">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,10,0,10">
+            <WrapPanel x:Name="gridComunidades"/>
+        </ScrollViewer>
+    </Grid>
+</Page>

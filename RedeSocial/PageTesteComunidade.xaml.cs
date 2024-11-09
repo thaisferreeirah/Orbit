@@ -95,5 +95,23 @@ namespace RedeSocial
         private void TodasComunidades() {
             frameComunidade.Navigate(new PageTodasComunidades(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
         }
+
+        private void caixaPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                string pesquisa = caixaPesquisa.Text.ToString();
+                //MessageBox.Show("Pesquisa: "+pesquisa);
+                PageBuscarComunidades pageBuscarComunidades = new PageBuscarComunidades(pesquisa, comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame);
+                frameComunidade.Navigate(pageBuscarComunidades);
+            }
+        }
+
+        private void BotaoBuscar_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            string pesquisa = caixaPesquisa.Text.ToString();
+            PageBuscarComunidades pageBuscarComunidades = new PageBuscarComunidades(pesquisa, comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame);
+            frameComunidade.Navigate(pageBuscarComunidades);
+        }
     }
 }

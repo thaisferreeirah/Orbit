@@ -50,15 +50,15 @@
                     </Border.Effect>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="105"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <TextBox x:Name="caixaPesquisa" Grid.Row="0" VerticalContentAlignment="Center" Padding="14,0,14,0" Height="35" Style="{StaticResource SearchBox}" Margin="10,37,10,15"/>
-                        <TextBlock Grid.Row="0" Text="Pesquisar comunidades" FontSize="16" FontFamily="{StaticResource ArimoFont}"  Foreground="#9094B6" IsHitTestVisible="False" Visibility="{Binding ElementName=caixaPesquisa, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" Margin="26,55,20,34"/>
+                        <TextBox x:Name="caixaPesquisa" Grid.Row="0" VerticalContentAlignment="Center" Padding="14,0,14,0" Height="35" Style="{StaticResource SearchBox}" Margin="10,37,10,15" KeyDown="caixaPesquisa_KeyDown"/>
+                        <TextBlock Grid.Row="0" Text="Pesquisar comunidades" FontSize="16" FontFamily="{StaticResource ArimoFont}"  Foreground="#9094B6" IsHitTestVisible="False" Visibility="{Binding ElementName=caixaPesquisa, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}" Margin="26,54,20,35"/>
+                        <Image x:Name="BotaoBuscar" Grid.Row="0" Source="\Icones\Lupa.png"  Style="{StaticResource ImageMenu}" VerticalAlignment="Top" HorizontalAlignment="Right"  Height="25" Width="25" Margin="0,51,18,0" MouseLeftButtonUp="BotaoBuscar_MouseLeftButtonUp"/>
                         <TextBlock Grid.Row="1" x:Name="AbrirTodasAsComunidades" Text="Todas as Comunidades" Style="{StaticResource EstiloTextBlockComunidades}" Margin="85,0,85,15" TextAlignment="Center" MouseLeftButtonDown="AbrirTodasAsComunidades_Click"/>
                         <Button Grid.Row="2" Content="+ Criar uma nova comunidade" Height="40" Style="{StaticResource EstiloBotaoCinza}" Margin="50,10,50,36" Click="AbrirCriarComunidade_Click"/>
-
                     </Grid>
                 </Border>
                 <Rectangle Grid.Row="1" Stroke="#DADCDF" Margin="20,15,20,15"/>

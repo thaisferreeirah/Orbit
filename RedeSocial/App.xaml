@@ -50,7 +50,7 @@
         <Style x:Key="TabItemArredondado" TargetType="TabItem">
             <Setter Property="Height" Value="73"/>
             <Setter Property="Width" Value="230"/>
-            <Setter Property="FontFamily" Value="Arimo"/>
+            <Setter Property="FontFamily" Value="{StaticResource ArimoFont}"/>
             <Setter Property="FontSize" Value="24"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -574,7 +574,7 @@
         </Style>
 
         <Style x:Key="EstiloTextBlockComunidades" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#4B4B82"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
@@ -582,6 +582,33 @@
                     <Setter Property="TextDecorations" Value="Underline"/>
                 </Trigger>
             </Style.Triggers>
+        </Style>
+
+        <Style x:Key="EstiloInvisível" TargetType="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="borda" CornerRadius="4"  Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="Texto" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding ContentStringFormat}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="FontSize" Value="13"/>
+                                <Setter TargetName="Texto" Property="TextDecorations" Value="Underline"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="borda" Property="Background" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Application.Resources>
 </Application>

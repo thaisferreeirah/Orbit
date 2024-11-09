@@ -86,5 +86,10 @@ namespace RedeSocial
         {
             frameComunidade.Navigate(new PageTodasComunidades(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
         }
+
+        private void botaoVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            frameComunidade.Navigate(new PageTodasComunidades(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
+        }
     }
 }
