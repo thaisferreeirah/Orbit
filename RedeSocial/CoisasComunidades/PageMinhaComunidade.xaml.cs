@@ -28,7 +28,7 @@ namespace RedeSocial.CoisasComunidades
         private Frame frameComunidade;
         private Frame MainFrame;
 
-        public PageMinhaComunidade(ComunidadeManager comunidadeManager, int _codComunidade, UserManager _userManager, int _codUsuario, Frame frameComunidade, Frame _mainFrame)
+        public PageMinhaComunidade(ComunidadeManager comunidadeManager, int codComunidade, UserManager _userManager, int _codUsuario, Frame frameComunidade, Frame _mainFrame)
         {
             InitializeComponent();
             this.comunidadeManager = comunidadeManager;
@@ -38,7 +38,6 @@ namespace RedeSocial.CoisasComunidades
             this.codUsuario = _codUsuario;
             this.codComunidade = codComunidade;
 
-            MessageBox.Show($"`{codComunidade}");
             ExibirMembro(codComunidade);
         }
         private void ExibirMembro(int codComunidade)
