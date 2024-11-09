@@ -68,8 +68,10 @@ namespace RedeSocial
                     Frame frame = new Frame
                     {
                         Height = 60,
-                        Width = 330
+                        Width = 330,
+                        VerticalAlignment = VerticalAlignment.Top
                     };
+
                     frame.Navigate(new PageMinhaComunidade(comunidadeManager, codComunidade));
                     gridMinhasComunidades.RowDefinitions.Add(new RowDefinition());
                     Grid.SetRow(frame, gridMinhasComunidades.RowDefinitions.Count - 1);

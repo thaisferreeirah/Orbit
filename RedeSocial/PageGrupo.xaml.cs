@@ -199,6 +199,7 @@ namespace RedeSocial
             CarregarInformacoesDaComunidade();
             ParticiparHabilitado = false;
             btnParticipar.Visibility = Visibility.Hidden;
+            MostrarMembros();
         }
         #region Post
         public void atualizarPaginaPost()
