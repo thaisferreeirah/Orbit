@@ -9,7 +9,7 @@
       Title="PageMinhaComunidade">
 
     <Grid>
-        <Border Margin="0,5,0,5" CornerRadius="5" Background="White">
+        <Border Margin="0,5,0,5" CornerRadius="5" Background="White" MouseDown="AbrirComunidade">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>

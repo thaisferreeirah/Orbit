@@ -71,7 +71,7 @@ namespace RedeSocial
                         Width = 330,
                     };
 
-                    frame.Navigate(new PageMinhaComunidade(comunidadeManager, codComunidade));
+                    frame.Navigate(new PageMinhaComunidade(comunidadeManager, codComunidade, userManager, codUsuario, frameComunidade, MainFrame));
                     gridMinhasComunidades.Children.Add(frame);
                 }
             }
