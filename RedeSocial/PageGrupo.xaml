@@ -46,7 +46,6 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Button x:Name="VoltarPag" Content="X" Margin="577,10,10,48"/>
                                 <Label Grid.Row="0" Content="Descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" FontWeight="Bold" Padding="0" Margin=" 12,37,0,0"/>
                                 <TextBlock x:Name="labelDescricaoComunidade" Grid.Row="1" Text="Texto da descrição" VerticalAlignment="Top" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" Padding="0" Margin="15,15,35,0" Height="65" TextWrapping="Wrap" TextAlignment="Justify"/>
                                 <Button Grid.Row="2" x:Name="btnParticipar" Content="Participar da Comunidade" Style="{StaticResource EstiloBotaoAzul}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="240" Margin="0,0,35,18" IsEnabled="{Binding ParticiparHabilitado}" Click="btnParticipar_Click"/>

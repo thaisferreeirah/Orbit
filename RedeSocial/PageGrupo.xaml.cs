@@ -162,11 +162,6 @@ namespace RedeSocial
             }
         }
 
-        private void VoltarPag_Click(object sender, RoutedEventArgs e)
-        {
-            //MainFrame.Navigate(new PageTesteComunidade(comunidadeManager, userManager, codComunidade, Frame frameComunidade, Frame MainFrame));
-        }
-
         private void VerificarParticipacao()
         {
             var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
@@ -201,6 +196,7 @@ namespace RedeSocial
             btnParticipar.Visibility = Visibility.Hidden;
             MostrarMembros();
         }
+
         #region Post
         public void atualizarPaginaPost()
         {
@@ -978,12 +974,7 @@ namespace RedeSocial
             campoTexto.Focus();
         }
         #endregion
-
-
     }
-
-
-
     public class MembroViewModel
         {
             public string Nome { get; set; }

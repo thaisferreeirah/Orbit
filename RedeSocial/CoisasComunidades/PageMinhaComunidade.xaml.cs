@@ -38,7 +38,7 @@ namespace RedeSocial.CoisasComunidades
             this.frameComunidade = _frameComunidade;
             this.MainFrame = _mainFrame;
 
-            ExibirMembro(_codComunidade);
+            ExibirMembro(codComunidade);
         }
         private void ExibirMembro(int codComunidade)
         {
