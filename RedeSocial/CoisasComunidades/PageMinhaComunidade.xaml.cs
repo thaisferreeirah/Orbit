@@ -22,13 +22,24 @@ namespace RedeSocial.CoisasComunidades
     public partial class PageMinhaComunidade : Page
     {
         private ComunidadeManager comunidadeManager;
+        private UserManager userManager;
+        private int codUsuario;
+        private Frame frameComunidade;
+        private Frame MainFrame;
+        private int codComunidade;
 
-        public PageMinhaComunidade(ComunidadeManager comunidadeManager, int _codComunidade)
+        public PageMinhaComunidade(ComunidadeManager comunidadeManager, UserManager userManager, int codComunidade, int codUser, Frame frameComunidade, Frame MainFrame)
         {
             InitializeComponent();
             this.comunidadeManager = comunidadeManager;
+            this.userManager = userManager;
+            this.MainFrame = MainFrame;
+            this.frameComunidade = frameComunidade;
+            this.codUsuario = codUser;
+            this.codComunidade = codComunidade;
 
-            ExibirMembro(_codComunidade);
+            MessageBox.Show($"`{codComunidade}");
+            ExibirMembro(codComunidade);
         }
         private void ExibirMembro(int codComunidade)
         {
@@ -40,5 +51,7 @@ namespace RedeSocial.CoisasComunidades
             };
             labelNomeComunidade.Content = nomeComunidade;
         }
+
+
     }
 }

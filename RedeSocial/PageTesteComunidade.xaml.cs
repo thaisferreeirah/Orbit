@@ -72,7 +72,7 @@ namespace RedeSocial
                         VerticalAlignment = VerticalAlignment.Top
                     };
 
-                    frame.Navigate(new PageMinhaComunidade(comunidadeManager, codComunidade));
+                    frame.Navigate(new PageMinhaComunidade(comunidadeManager, userManager, codComunidade, codUsuario, frameComunidade, MainFrame));
                     gridMinhasComunidades.RowDefinitions.Add(new RowDefinition());
                     Grid.SetRow(frame, gridMinhasComunidades.RowDefinitions.Count - 1);
                     gridMinhasComunidades.Children.Add(frame);

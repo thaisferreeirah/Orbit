@@ -96,6 +96,8 @@ namespace RedeSocial
         private void BotaoTeste_Click(object sender, RoutedEventArgs e)
         {
             teste.AdicionarTeste(chatList, comunidadeManager);
+            BotaoTeste.IsEnabled = false;
+            BotaoTeste.Visibility = Visibility.Hidden;
         }
 
         private void InstanciarChatList()
