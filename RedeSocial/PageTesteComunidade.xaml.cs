@@ -27,15 +27,17 @@ namespace RedeSocial
         private int codUsuario;
         private Frame MainFrame;
         private int novoCodigo;
+        private Home Home;
 
 
-        public PageTesteComunidade(ComunidadeManager comunidadeManager, UserManager userManager, int codUsuario, Frame MainFrame)
+        public PageTesteComunidade(ComunidadeManager comunidadeManager, UserManager userManager, int codUsuario, Frame MainFrame, Home home)
         {
             InitializeComponent();
             this.userManager = userManager;
             this.comunidadeManager = comunidadeManager;
             this.codUsuario = codUsuario;
             this.MainFrame = MainFrame;
+            this.Home = home;
 
             ExibirMinhasComunidades(codUsuario);
             TodasComunidades();
@@ -54,13 +56,11 @@ namespace RedeSocial
 
         private void ExibirMinhasComunidades(int codUsuario)
         {
-            gridMinhasComunidades.Children.Clear();
-            gridMinhasComunidades.RowDefinitions.Clear();
+            gridMinhasComunidades.Children.Clear(); // Limpa o Stackpanel
 
-            // Iterar por todas as comunidades
-            foreach (var comunidade in comunidadeManager.ObterTodasAsComunidades())
+            //Loop cria um frame com a página "MinhaComunidade" para cada comunidade do usuário logado
+            foreach (var comunidade in comunidadeManager.ObterTodasAsComunidades()) //Está ordenando pelo código da comunidade
             {
-                // Verifica se o usuário está na comunidade
                 if (comunidade.VerificarMembro(codUsuario))
                 {
                     int codComunidade = comunidade.Codigo;
@@ -69,16 +69,14 @@ namespace RedeSocial
                     {
                         Height = 60,
                         Width = 330,
-                        VerticalAlignment = VerticalAlignment.Top
                     };
 
                     frame.Navigate(new PageMinhaComunidade(comunidadeManager, codComunidade));
-                    gridMinhasComunidades.RowDefinitions.Add(new RowDefinition());
-                    Grid.SetRow(frame, gridMinhasComunidades.RowDefinitions.Count - 1);
                     gridMinhasComunidades.Children.Add(frame);
                 }
             }
         }
+
 
         private void AbrirCriarComunidade_Click(object sender, RoutedEventArgs e)
         {

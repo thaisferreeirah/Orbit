@@ -28,6 +28,7 @@ namespace RedeSocial
         private int codUsuario;
         private Frame frameComunidade;
         private Frame MainFrame;
+
         public ObservableCollection<ComunidadeViewModel> Comunidades { get; set; } = [];
         private int codComunidade;
 
