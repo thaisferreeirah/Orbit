@@ -142,7 +142,7 @@ namespace RedeSocial
             var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
             gridMembros.Children.Clear();
             gridMembros.RowDefinitions.Clear(); // Limpar definições de linh
-            foreach (int codUsuario in comunidade.Membros)
+            foreach (int codMembro in comunidade.Membros)
             {
 
                 string nome = userManager.BuscarNome(codUsuario);
@@ -153,7 +153,7 @@ namespace RedeSocial
                    Width = 240,
                    VerticalAlignment = VerticalAlignment.Top
                 };
-                PageMembroComunidade membroComunidade = new PageMembroComunidade(codUsuario);
+                PageMembroComunidade membroComunidade = new PageMembroComunidade(codMembro);
                 frame.Navigate(membroComunidade);
                 gridMembros.RowDefinitions.Add(new RowDefinition());
                 Grid.SetRow(frame, gridMembros.RowDefinitions.Count - 1);

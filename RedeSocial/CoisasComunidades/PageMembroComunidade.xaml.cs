@@ -20,21 +20,21 @@ namespace RedeSocial.CoisasComunidades
     /// </summary>
     public partial class PageMembroComunidade : Page
     {
-        int codUsuario;
+        int codMembro;
         UserManager userManager = new UserManager();
-        public PageMembroComunidade(int _codUsuario)
+        public PageMembroComunidade(int _codMembro)
         {
             InitializeComponent();
-            codUsuario = _codUsuario;
-            ExibirMembro(_codUsuario);
+            codMembro = _codMembro;
+            ExibirMembro(_codMembro);
         }
 
-        private void ExibirMembro(int codUsuario)
+        private void ExibirMembro(int codMembro)
         {
-            string nomeMembro = userManager.BuscarNome(codUsuario);
+            string nomeMembro = userManager.BuscarNome(codMembro);
             fotoMembro.Fill = new ImageBrush
             {
-                ImageSource = new BitmapImage(new Uri(userManager.BuscarFoto(codUsuario))),
+                ImageSource = new BitmapImage(new Uri(userManager.BuscarFoto(codMembro))),
                 Stretch = Stretch.UniformToFill,
             };
             labelNomeMembro.Content = nomeMembro;
@@ -42,7 +42,7 @@ namespace RedeSocial.CoisasComunidades
 
         private void fotoMembro_MouseDown(object sender, MouseButtonEventArgs e)
         {
-                //if (codUsuario == amigo)
+                //if (codMembro == amigo)
                 //{
                 //    mainFrame.Navigate(new PagePerfil(codUsuario, mainWindow, mainFrame));
                 //}

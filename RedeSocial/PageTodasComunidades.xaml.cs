@@ -28,6 +28,7 @@ namespace RedeSocial
         private int codUsuario;
         private Frame frameComunidade;
         private Frame MainFrame;
+
         public ObservableCollection<ComunidadeViewModel> Comunidades { get; set; } = [];
         private int codComunidade;
 
@@ -58,15 +59,15 @@ namespace RedeSocial
                     string nome = comunidade.Nome;
                     string foto = comunidade.Foto;
 
-                    //PageCartaoComunidade pageCartaoComunidade = new PageCartaoComunidade(codigo);
+                    PageCartaoComunidade pageCartaoComunidade = new PageCartaoComunidade(codigo, comunidadeManager);
 
-                    //Frame frame = new Frame()
-                    //{
-                    //    Height = 300,
-                    //    Width = 230
-                    //};
-                    //frame.Navigate(pageCartaoComunidade);
-                    //gridComunidades.Children.Add(frame);
+                    Frame frame = new Frame()
+                    {
+                        Height = 230,
+                        Width = 200
+                    };
+                    frame.Navigate(pageCartaoComunidade);
+                    gridComunidades.Children.Add(frame);
 
 
                     if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(foto))

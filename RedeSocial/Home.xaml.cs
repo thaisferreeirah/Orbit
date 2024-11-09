@@ -84,7 +84,7 @@ namespace RedeSocial
 
         private void BotaoComunidades_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PageTesteComunidade(comunidadeManager, usuarioManager, codUsuario, MainFrame));
+            MainFrame.Navigate(new PageTesteComunidade(comunidadeManager, usuarioManager, codUsuario, MainFrame, this));
         }
 
         private void BotaoJogos_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
