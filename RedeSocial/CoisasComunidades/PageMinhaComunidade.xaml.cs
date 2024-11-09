@@ -35,7 +35,7 @@ namespace RedeSocial.CoisasComunidades
             this.userManager = userManager;
             this.MainFrame = MainFrame;
             this.frameComunidade = frameComunidade;
-            this.codUsuario = codUser;
+            this.codUsuario = _codUsuario;
             this.codComunidade = codComunidade;
 
             MessageBox.Show($"`{codComunidade}");
