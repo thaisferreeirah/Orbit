@@ -4,31 +4,14 @@
       xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="RedeSocial.PageTodasComunidades"
       Title="Todas as Comunidades">
 
-    <Grid x:Name="gridComunidades" Background="White" Height="600" Width="700">
-        <TextBlock Text="Todas as Comunidades" FontSize="24" FontWeight="Bold" Margin="0,0,0,562" TextAlignment="Center"/>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <ItemsControl ItemsSource="{Binding Comunidades}" Height="514">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal" Width="600" />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border MouseLeftButtonUp="AbrirPaginaComunidade" Tag="{Binding Codigo}" Cursor="Hand" Margin="10">
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="180">
-                                <Ellipse Width="100" Height="100">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="{Binding Foto}" />
-                                    </Ellipse.Fill>
-                                </Ellipse>
-                                <TextBlock Text="{Binding Nome}" VerticalAlignment="Center" FontSize="16" TextAlignment="Center" Margin="0,5,0,0"/>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+    <Grid  Height="600" Width="820" Margin="10,0,10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Todas as Comunidades" FontSize="24" FontWeight="Bold" Margin="0,10,0,10" TextAlignment="Center"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <WrapPanel x:Name="gridComunidades"/>
         </ScrollViewer>
     </Grid>
 </Page>

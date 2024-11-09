@@ -53,37 +53,24 @@ namespace RedeSocial
 
             if (todasAsComunidades != null && todasAsComunidades.Count > 0)
             {
+                //Cria um cartão de comunidade para cada copmunidade existente
                 foreach (var comunidade in todasAsComunidades)
                 {
                     int codigo = comunidade.Codigo;
-                    string nome = comunidade.Nome;
-                    string foto = comunidade.Foto;
 
-                    //PageCartaoComunidade pageCartaoComunidade = new PageCartaoComunidade(codigo, comunidadeManager);
+                    PageCartaoComunidade pageCartaoComunidade = new PageCartaoComunidade(codigo, comunidadeManager, userManager, codUsuario, MainFrame);
 
-                    //Frame frame = new Frame()
-                    //{
-                    //Height = 230,
-                    //Width = 200
-                    //};
-                    //frame.Navigate(pageCartaoComunidade);
-                    //gridComunidades.Children.Add(frame);
-
-
-                    if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(foto))
+                    Frame frame = new Frame()
                     {
-                        Comunidades.Add(new ComunidadeViewModel { Nome = nome, Foto = foto, Codigo = codigo });
-                    }
-                    else
-                    {
-                        MessageBox.Show("Comunidade com informações inválidas.");
-                    }
+                        Height = 230,
+                        Width = 200
+                    };
+                    frame.Navigate(pageCartaoComunidade);
+                    gridComunidades.Children.Add(frame);
+
+
                 }
             }
-            //else
-            //{
-                //MessageBox.Show("Nenhuma comunidade encontrada.");
-            //}
 
         }
 

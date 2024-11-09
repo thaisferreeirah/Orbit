@@ -22,12 +22,19 @@ namespace RedeSocial.CoisasComunidades
     public partial class PageCartaoComunidade : Page
     {
         private ComunidadeManager comunidadeManager;
-
-        public PageCartaoComunidade(int codComunidade, ComunidadeManager comunidadeManager)
+        private int codComunidade;
+        private UserManager userManager;
+        int codUsuario;
+        Frame mainFrame;
+        public PageCartaoComunidade(int _codComunidade, ComunidadeManager _comunidadeManager, UserManager _userManager, int _codUsuario, Frame _MainFrame)
         {
             InitializeComponent();
-            this.comunidadeManager = comunidadeManager;
-            ExibirComunidade(codComunidade);
+            this.comunidadeManager = _comunidadeManager;
+            codComunidade = _codComunidade;
+            userManager = _userManager;
+            codUsuario = _codUsuario;
+            mainFrame = _MainFrame;
+            ExibirComunidade(_codComunidade);
         }
 
         private void ExibirComunidade(int codComunidade)
@@ -38,6 +45,11 @@ namespace RedeSocial.CoisasComunidades
                 Stretch = Stretch.UniformToFill,
             };
             nomeDaComunidade.Text = comunidadeManager.BuscarNomeComunidade(codComunidade);
+        }
+
+        private void fotoDaComunidade_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            mainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, codComunidade, codUsuario, mainFrame));
         }
     }
 }
