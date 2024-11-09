@@ -27,7 +27,7 @@ namespace RedeSocial.CoisasInicio
         private ComunidadeManager comunidadeManager;
         private int codUsuario;
         private Frame frameComunidade;
-
+        private int[] comunidadesArray;
         public PageComunidadesInicio(int _codUsuario, Frame _mainFrame, Home _home, ComunidadeManager comunidadeManager)
         {
             InitializeComponent();
@@ -44,6 +44,7 @@ namespace RedeSocial.CoisasInicio
         {
 
             var comunidades = comunidadeManager.BuscarComunidadesDoUsuario(codUsuario);
+            comunidadesArray = new int[comunidades.Count];
             // Cria arrays para armazenar os nomes e as fotos da comunidade do usuário, para cada comunidade que o usuário está exibe a foto e o nome da comunidade até 5.
             var comunidadeFotos = new[] { fotoComunidade1, fotoComunidade2, fotoComunidade3, fotoComunidade4, fotoComunidade5 };
             var comunidadeNomes = new[] { nomeComunidade1, nomeComunidade2, nomeComunidade3, nomeComunidade4, nomeComunidade5 };
@@ -51,6 +52,7 @@ namespace RedeSocial.CoisasInicio
             for (int i = 0; i < comunidades.Count && i < comunidadeFotos.Length; i++)
             {
                 int codComunidade = comunidades[i];
+                comunidadesArray[i] = codComunidade;
                 comunidadeFotos[i].Fill = new ImageBrush
                 {
                     ImageSource = new BitmapImage(new Uri(comunidadeManager.BuscarFotoComunidade(codComunidade))),
@@ -72,27 +74,27 @@ namespace RedeSocial.CoisasInicio
         }
         private void fotoComunidade1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            fotoComunidade_MouseLeftButtonDown(sender, e, 0);
+            fotoComunidade_MouseLeftButtonDown(sender, e, comunidadesArray[0]);
         }
 
         private void fotoComunidade2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            fotoComunidade_MouseLeftButtonDown(sender, e, 1);
+            fotoComunidade_MouseLeftButtonDown(sender, e, comunidadesArray[1]);
         }
 
         private void fotoComunidade3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            fotoComunidade_MouseLeftButtonDown(sender, e, 2);
+            fotoComunidade_MouseLeftButtonDown(sender, e, comunidadesArray[2]);
         }
 
         private void fotoComunidade4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            fotoComunidade_MouseLeftButtonDown(sender, e, 3);
+            fotoComunidade_MouseLeftButtonDown(sender, e, comunidadesArray[3]);
         }
 
         private void fotoComunidade5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            fotoComunidade_MouseLeftButtonDown(sender, e, 4);
+            fotoComunidade_MouseLeftButtonDown(sender, e, comunidadesArray[4]);
         }
 
         private void labelVerTodas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

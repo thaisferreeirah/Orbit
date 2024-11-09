@@ -100,7 +100,7 @@
                             </Border>
                             <Grid x:Name="gridPosts" Grid.Row="2"/>
                         </Grid>
-                        <Border Grid.Column="1" Background="#ffffff" Width="240" CornerRadius="10" Margin="10,0,10,0" Height="356" VerticalAlignment="Center">
+                        <Border Grid.Column="1" Background="#ffffff" Width="240" CornerRadius="10" Margin="10,8,10,0" Height="392" VerticalAlignment="Top">
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="3" ShadowDepth="0"/>
                             </Border.Effect>
