@@ -27,7 +27,7 @@
                         </Border.Effect>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="240"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
@@ -37,8 +37,8 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                                 <Rectangle x:Name="FotoComuni" Grid.Row="0" Fill="Black" Width="150" Height="150" RadiusX="2" RadiusY="2" Margin="45,21,45,11"/>
-                                <Label x:Name="labelNomeComunidade" Grid.Row="1" Content="Nome da Comunidade" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" FontWeight="Bold" Margin="0,0,0,0"/>
-                                <Label x:Name="QTD_Membros" Grid.Row="2" Content="VAR membros" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" Margin="0,0,0,10"/>
+                                <TextBlock x:Name="labelNomeComunidade" Grid.Row="1" Text="Nome da Comunidade" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" FontWeight="Bold" Margin="5,0,5,0" TextAlignment="Center" TextWrapping="Wrap"/>
+                                <!--Label x:Name="QTD_Membros" Grid.Row="2" Content="VAR membros" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="{StaticResource ArimoFont}" FontSize="18" Foreground="#333333" Margin="0,0,0,10"/-->
                             </Grid>
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
@@ -111,7 +111,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Row="0" Content="Membros" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Height="33" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <Label x:Name="labelMembros" Grid.Row="0" Content="Membros" FontFamily="{StaticResource ArimoFont}" FontSize="16" Foreground="#333333" FontWeight="Bold" Height="33"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 <Rectangle Grid.Row="1" Height="1" Fill="#DADCDF" Margin="10,0,10,0"/>
                                 <Grid x:Name="gridMembros" Grid.Row="2" Margin="0,10,0,0" />
                             </Grid>

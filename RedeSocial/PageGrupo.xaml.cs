@@ -51,7 +51,7 @@ namespace RedeSocial
         public bool ParticiparHabilitado { get; set; }
 
 
-        public PageGrupo(ComunidadeManager comunidadeManager, UserManager userManager, int codComunidade, int codUsuario, Frame frameComunidade, Frame MainFrame)
+        public PageGrupo(ComunidadeManager comunidadeManager, UserManager userManager, int codComunidade, int codUsuario, Frame MainFrame)
         {
             InitializeComponent();
             this.userManager = userManager;
@@ -91,7 +91,7 @@ namespace RedeSocial
                 {
                     // Carregar informações na interface
                     string NomeComunidade =  comunidadeManager.BuscarNomeComunidade(codComunidade);
-                    labelNomeComunidade.Content = NomeComunidade;
+                    labelNomeComunidade.Text = NomeComunidade;
 
                     string DescricaoComunidade = comunidadeManager.BuscarDescricaoComunidade(codComunidade);
                     labelDescricaoComunidade.Text = DescricaoComunidade;
@@ -99,11 +99,11 @@ namespace RedeSocial
                     int QuantidadeMembros = comunidade.Membros.Count();
                     if(QuantidadeMembros == 1)
                     {
-                        QTD_Membros.Content = (QuantidadeMembros + " Membro");
+                        labelMembros.Content = ($"Membro ({QuantidadeMembros})");
                     }
                     else
                     {
-                        QTD_Membros.Content = (QuantidadeMembros + " Membros");
+                        labelMembros.Content = ($"Membro ({QuantidadeMembros})");
                     }
 
                     FotoComuni.Fill = new ImageBrush

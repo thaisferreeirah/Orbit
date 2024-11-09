@@ -26,6 +26,7 @@ namespace RedeSocial.CoisasInicio
         UserManager userManager = new UserManager();
         private ComunidadeManager comunidadeManager;
         int codUsuario;
+        private Frame frameComunidade;
         public PageComunidadesInicio(int _codUsuario, Frame _mainFrame, Home _home, ComunidadeManager comunidadeManager)
         {
             InitializeComponent();
@@ -35,14 +36,13 @@ namespace RedeSocial.CoisasInicio
             this.comunidadeManager = comunidadeManager;
             buscarComunidadesDoUsuario(_codUsuario);
         }
-        //var amigosFotos = new[] { fotoComunidade1, fotoComunidade2, fotoComunidade3, fotoComunidade4, fotoComunidade5 };
-        //var amigosNomes = new[] { nomeComunidade1, nomeComunidade2, nomeComunidade3, nomeComunidade4, nomeComunidade5 };
+
 
         public void buscarComunidadesDoUsuario(int codUsuario)
         {
-
+            
             var comunidades = comunidadeManager.BuscarComunidadesDoUsuario(codUsuario);
-
+            // Cria arrays para armazenar os nomes e as fotos da comunidade do usuário, para cada comunidade que o usuário está exibe a foto e o nome da comunidade até 5.
             var comunidadeFotos = new[] { fotoComunidade1, fotoComunidade2, fotoComunidade3, fotoComunidade4, fotoComunidade5 };
             var comunidadeNomes = new[] { nomeComunidade1, nomeComunidade2, nomeComunidade3, nomeComunidade4, nomeComunidade5 };
 
@@ -64,5 +64,38 @@ namespace RedeSocial.CoisasInicio
             }
         }
 
+        private void fotoComunidade_MouseLeftButtonDown(object sender, MouseButtonEventArgs e, int comunidade)
+        {
+            mainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, comunidade, codUsuario, mainFrame));
+        }
+        private void fotoComunidade1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            fotoComunidade_MouseLeftButtonDown(sender, e, 0);
+        }
+
+        private void fotoComunidade2_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            fotoComunidade_MouseLeftButtonDown(sender, e, 1);
+        }
+
+        private void fotoComunidade3_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            fotoComunidade_MouseLeftButtonDown(sender, e, 2);
+        }
+
+        private void fotoComunidade4_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            fotoComunidade_MouseLeftButtonDown(sender, e, 3);
+        }
+
+        private void fotoComunidade5_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            fotoComunidade_MouseLeftButtonDown(sender, e, 4);
+        }
+
+        private void labelVerTodas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            mainFrame.Navigate(new PageTesteComunidade(comunidadeManager, userManager, codUsuario, mainFrame, home));
+        }
     }
 }

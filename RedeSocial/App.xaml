@@ -572,5 +572,16 @@
             <Setter Property="Margin" Value="0,90,0,0"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
+
+        <Style x:Key="EstiloTextBlockComunidades" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#4B4B82"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#2D2D5A"/>
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

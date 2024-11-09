@@ -65,7 +65,7 @@ namespace RedeSocial
 
                 comunidadeManager.AssociarUsuarioAComunidade(codUsuario, novoCodigo);
 
-                MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, novoCodigo, codUsuario, frameComunidade, MainFrame));
+                MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, novoCodigo, codUsuario, MainFrame));
 
                 txtNomeComunidade.Clear();
                 txtDescricao.Clear();
