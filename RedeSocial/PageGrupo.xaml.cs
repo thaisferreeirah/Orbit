@@ -38,6 +38,7 @@ namespace RedeSocial
         private int codUsuario;
         private Frame frameComunidade;
         private Frame MainFrame;
+        private Home Home;
 
         //Coisas do post
         ComunidadePostManager comunidadePostManager = new ComunidadePostManager();
@@ -51,7 +52,7 @@ namespace RedeSocial
         public bool ParticiparHabilitado { get; set; }
 
 
-        public PageGrupo(ComunidadeManager comunidadeManager, UserManager userManager, int codComunidade, int codUsuario, Frame MainFrame)
+        public PageGrupo(ComunidadeManager comunidadeManager, UserManager userManager, int codComunidade, int codUsuario, Frame MainFrame, Frame frameComunidade, Home home)
         {
             InitializeComponent();
             this.userManager = userManager;
@@ -60,6 +61,8 @@ namespace RedeSocial
             this.frameComunidade = frameComunidade;
             this.MainFrame = MainFrame;
             this.codUsuario = codUsuario;
+            this.Home = home;
+
             DataContext = this;
 
             //Coisas do Post
@@ -78,6 +81,50 @@ namespace RedeSocial
 
             ConfigurarInterfaceDePostagem();
             MostrarMembros();
+            VerificarAcessoAAdministracao();
+
+            this.Loaded += PageGrupo_Loaded;
+        }
+
+        private void VerificarAcessoAAdministracao()
+        {
+            var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
+
+            if (comunidade != null)
+            {
+                if (comunidade.CodUsuarioCriador == codUsuario)
+                {
+                    HabilitarGerenciamento();
+                }
+                else
+                {
+                    DesabilitarGerenciamento();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Comunidade não encontrada.");
+            }
+        }
+
+        private void HabilitarGerenciamento()
+        {
+            BtnGerenciar.IsEnabled = true;
+            BtnGerenciar.Visibility = Visibility.Visible;
+        }
+
+        private void DesabilitarGerenciamento()
+        {
+            BtnGerenciar.IsEnabled = false;
+            BtnGerenciar.Visibility = Visibility.Hidden;
+
+        }
+
+    private void PageGrupo_Loaded(object sender, RoutedEventArgs e)
+        {
+            CarregarInformacoesDaComunidade();
+            MostrarMembros();
+            ConfigurarInterfaceDePostagem();
         }
 
         private void ConfigurarInterfaceDePostagem()
@@ -182,23 +229,61 @@ namespace RedeSocial
             }
         }
 
+        /*  
+         *  private void VerificarParticipacao()
+          {
+              var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
+
+              if (comunidade != null)
+              {
+                  // Verifica diretamente se o usuário está na lista de membros da comunidade
+                  if (comunidade.Membros.Contains(codUsuario))
+                  {
+                      ParticiparHabilitado = false;
+                      btnParticipar.Visibility = Visibility.Hidden;
+                      btnParticipar.Content = "Participando da Comunidade";
+                  }
+                  else
+                  {
+                      ParticiparHabilitado = true;
+
+                  }
+                  btnParticipar.IsEnabled = ParticiparHabilitado;
+              }
+              else
+              {
+                  MessageBox.Show("Comunidade não encontrada.");
+              }
+          }
+
+          private void btnParticipar_Click(object sender, RoutedEventArgs e)
+          {
+              comunidadeManager.AssociarUsuarioAComunidade(codUsuario, codComunidade);
+              CarregarInformacoesDaComunidade();
+              ConfigurarInterfaceDePostagem();
+              ParticiparHabilitado = false;
+              btnParticipar.Visibility = Visibility.Hidden;
+              MostrarMembros();
+          }
+        */
         private void VerificarParticipacao()
         {
             var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
 
             if (comunidade != null)
             {
-                // Verifica diretamente se o usuário está na lista de membros da comunidade
+                // Verifica se o usuário já é membro da comunidade
                 if (comunidade.Membros.Contains(codUsuario))
                 {
-                    ParticiparHabilitado = false;
-                    btnParticipar.Visibility = Visibility.Hidden;
-                    btnParticipar.Content = "Participando da Comunidade";
+                    ParticiparHabilitado = true;
+                    btnParticipar.Visibility = Visibility.Visible;
+                    btnParticipar.Content = "Sair da Comunidade"; // Mostra opção para sair
                 }
                 else
                 {
                     ParticiparHabilitado = true;
-
+                    btnParticipar.Visibility = Visibility.Visible;
+                    btnParticipar.Content = "Participar da Comunidade"; // Mostra opção para participar
                 }
                 btnParticipar.IsEnabled = ParticiparHabilitado;
             }
@@ -210,12 +295,32 @@ namespace RedeSocial
 
         private void btnParticipar_Click(object sender, RoutedEventArgs e)
         {
-            comunidadeManager.AssociarUsuarioAComunidade(codUsuario, codComunidade);
-            CarregarInformacoesDaComunidade();
-            ConfigurarInterfaceDePostagem();
-            ParticiparHabilitado = false;
-            btnParticipar.Visibility = Visibility.Hidden;
-            MostrarMembros();
+            var comunidade = comunidadeManager.ObterComunidadePorCodigo(codComunidade);
+
+            if (comunidade != null)
+            {
+                if (comunidade.Membros.Contains(codUsuario))
+                {
+                    // Se o usuário já é membro, remove da comunidade
+                    comunidadeManager.RemoverUsuarioDaComunidade(codUsuario, codComunidade);
+                    btnParticipar.Content = "Participar da Comunidade";
+                }
+                else
+                {
+                    // Se o usuário não é membro, associa à comunidade
+                    comunidadeManager.AssociarUsuarioAComunidade(codUsuario, codComunidade);
+                    btnParticipar.Content = "Sair da Comunidade";
+                }
+
+                // Atualiza as informações da interface
+                CarregarInformacoesDaComunidade();
+                ConfigurarInterfaceDePostagem();
+                MostrarMembros();
+            }
+            else
+            {
+                MessageBox.Show("Comunidade não encontrada.");
+            }
         }
 
         #region Post
@@ -995,6 +1100,12 @@ namespace RedeSocial
             campoTexto.Focus();
         }
         #endregion
+
+        private void BtnGerenciar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var pageGerenciarComunidade = new PageGerenciarComunidade(codComunidade, comunidadeManager, userManager, codUsuario, MainFrame, Home);
+            NavigationService.Navigate(pageGerenciarComunidade);
+        }
     }
     public class MembroViewModel
         {

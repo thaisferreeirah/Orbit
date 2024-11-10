@@ -20,8 +20,9 @@ namespace RedeSocial
         private Frame frameComunidade;
         private Frame MainFrame;
         private int novoCodigo;
+        private Home Home;
 
-        public PageCriarComunidade(ComunidadeManager comunidadeManager ,UserManager userManager, int codUsuario, Frame frameComunidade, Frame MainFrame, int novoCodigo)
+        public PageCriarComunidade(ComunidadeManager comunidadeManager ,UserManager userManager, int codUsuario, Frame frameComunidade, Frame MainFrame, int novoCodigo, Home home)
         {
             InitializeComponent();
             this.userManager = userManager;
@@ -30,6 +31,7 @@ namespace RedeSocial
             this.frameComunidade = frameComunidade;
             this.MainFrame = MainFrame;
             this.novoCodigo = novoCodigo;
+            this.Home = home;
 
         }
 
@@ -60,12 +62,11 @@ namespace RedeSocial
 
             if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(descricao) && !string.IsNullOrEmpty(caminhoFoto))
             {
-                //int novoCodigo = comunidadeManager.CodigoUnico();
-                comunidadeManager.AdicionarComunidade(novoCodigo, nome, caminhoFoto, descricao);
+                comunidadeManager.AdicionarComunidade(novoCodigo, nome, caminhoFoto, descricao, codUsuario);
 
                 comunidadeManager.AssociarUsuarioAComunidade(codUsuario, novoCodigo);
 
-                MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, novoCodigo, codUsuario, MainFrame));
+                MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, novoCodigo, codUsuario, MainFrame, frameComunidade, Home));
 
                 txtNomeComunidade.Clear();
                 txtDescricao.Clear();

@@ -28,8 +28,8 @@ namespace RedeSocial
     public partial class PagePost : Page
     {
         private PostManager postManager = new PostManager();
-        private UserManager usuarioManager = new UserManager();
-
+        private UserManager usuarioManager;
+        private ComunidadeManager comunidadeManager;
         private Home mainWindow;
         Frame mainFrame;
 
@@ -44,13 +44,14 @@ namespace RedeSocial
         SolidColorBrush corSecundaria;
         SolidColorBrush corPlano;
         SolidColorBrush corLinha;
-        private ComunidadeManager comunidadeManager;
 
-        public PagePost(int codUser, Home _mainWin, Frame _mainFrame, ComunidadeManager comunidadeManager)
+
+        public PagePost(UserManager userManager, int codUser, Home _mainWin, Frame _mainFrame, ComunidadeManager comunidadeManager)
         {
             InitializeComponent();
 
             this.comunidadeManager = comunidadeManager;
+            this.usuarioManager = userManager;
 
             codUsuario = codUser;
             exibicaoPost = "proprio";
@@ -68,7 +69,7 @@ namespace RedeSocial
             corLinha = new SolidColorBrush(Color.FromRgb(200, 200, 200));
 
             frameAmigos.Navigate(new PageAmizadesInicio(codUsuario, mainFrame, mainWindow));
-            frameComunidades.Navigate(new PageComunidadesInicio(codUsuario, mainFrame, mainWindow, comunidadeManager));
+            frameComunidades.Navigate(new PageComunidadesInicio(usuarioManager, codUsuario, mainFrame, mainWindow, comunidadeManager));
 
             atualizarPagina(exibicaoPost);
             exibirFotoPerfil();

@@ -16,6 +16,9 @@
     <Compile Update="CoisasComunidades\PageCartaoComunidade.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CoisasComunidades\PageGerenciarComunidade.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="CoisasComunidades\PageMinhaComunidade.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +106,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CoisasComunidades\PageCartaoComunidade.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CoisasComunidades\PageGerenciarComunidade.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="CoisasComunidades\PageMinhaComunidade.xaml">

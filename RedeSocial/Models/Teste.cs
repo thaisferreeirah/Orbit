@@ -136,10 +136,10 @@ namespace RedeSocial.Models
 
         public void AdicionarComunidade(ComunidadeManager comunidadeManager)
         {
-            comunidadeManager.AdicionarComunidade(0, "Amo K-pop", projectPath + "\\Fotos\\Jimin.jpeg", "Aserehe ra de re, aqui tem do bom e do melhor dos Australianos. Bonapetí");
-            comunidadeManager.AdicionarComunidade(1, "É bolacha!", projectPath + "\\Imagens\\Bolacha.jpeg", "É BOLACHA E NÃO BISCOITO!!!!!!!!!!!!!!!!");
-            comunidadeManager.AdicionarComunidade(2, "Como ficar rico com 100 reais", projectPath + "\\Imagens\\Dinheiro.jpeg", "Quer saber como ganhar dinheiro fácil e rápido? Assine esse curso >>> AQUI!!!");
-            comunidadeManager.AdicionarComunidade(3, "Desenhos Atuais", projectPath + "\\Imagens\\JohnnyBravo.jpeg", "Vamos falar apenas sobre os desenhos mais recentes, nada de coisa antiga, plz.");
+            comunidadeManager.AdicionarComunidade(0, "Amo K-pop", projectPath + "\\Fotos\\Jimin.jpeg", "Aserehe ra de re, aqui tem do bom e do melhor dos Australianos. Bonapetí", 0);
+            comunidadeManager.AdicionarComunidade(1, "É bolacha!", projectPath + "\\Imagens\\Bolacha.jpeg", "É BOLACHA E NÃO BISCOITO!!!!!!!!!!!!!!!!", 0);
+            comunidadeManager.AdicionarComunidade(2, "Como ficar rico com 100 reais", projectPath + "\\Imagens\\Dinheiro.jpeg", "Quer saber como ganhar dinheiro fácil e rápido? Assine esse curso >>> AQUI!!!", 0);
+            comunidadeManager.AdicionarComunidade(3, "Desenhos Atuais", projectPath + "\\Imagens\\JohnnyBravo.jpeg", "Vamos falar apenas sobre os desenhos mais recentes, nada de coisa antiga, plz.", 0);
         }
 
         public void AdicionarTeste(ChatList chatList, ComunidadeManager comunidadeManager)

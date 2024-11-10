@@ -53,7 +53,7 @@ namespace RedeSocial.CoisasComunidades
 
         private void AbrirComunidade(object sender, MouseButtonEventArgs e)
         {
-            MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, codComunidade, codUsuario, MainFrame));
+            MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, codComunidade, codUsuario, MainFrame, MainFrame, null));
         }
     }
 }

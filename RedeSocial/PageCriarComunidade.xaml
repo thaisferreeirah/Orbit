@@ -27,8 +27,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
     </Page.Resources>
+    
     <Grid>
         <Border Grid.Row="0" Background="#FFFFFFFF" CornerRadius="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="480" Width="540" >
             <Border.Effect>
@@ -64,10 +64,6 @@
                 <TextBox Grid.Row="5" x:Name="txtDescricao"  Margin="60,11,60,42" Height="35" Style="{StaticResource textBoxRedondo}" VerticalContentAlignment="Center" TextWrapping="Wrap" />
 
                 <Button Grid.Row="6" Content="Criar Comunidade" Margin="170,0,170,24" Height="35" Style="{StaticResource EstiloBotaoAzul}" Click="CriarComunidade_Click"/>
-
-
-
-
             </Grid>
         </Border>
     </Grid>

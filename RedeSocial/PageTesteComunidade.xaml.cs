@@ -46,7 +46,7 @@ namespace RedeSocial
         private void AbrirCriarComunidade()
         {
             novoCodigo = comunidadeManager.CodigoUnico();
-            frameComunidade.Navigate(new PageCriarComunidade(comunidadeManager, userManager, codUsuario, frameComunidade, MainFrame, novoCodigo));
+            frameComunidade.Navigate(new PageCriarComunidade(comunidadeManager, userManager, codUsuario, frameComunidade, MainFrame, novoCodigo, Home));
         }
 
         public void AbrirPageGrupo()

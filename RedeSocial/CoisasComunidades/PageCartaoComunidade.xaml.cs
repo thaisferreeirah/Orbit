@@ -49,7 +49,8 @@ namespace RedeSocial.CoisasComunidades
 
         private void fotoDaComunidade_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            mainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, codComunidade, codUsuario, mainFrame));
+            Home homeInstance = new Home(codUsuario, new ChatList(), comunidadeManager, userManager);
+            mainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, codComunidade, codUsuario, mainFrame, mainFrame, homeInstance));
         }
     }
 }

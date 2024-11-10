@@ -78,7 +78,7 @@ namespace RedeSocial
         {
             if (sender is Border border && border.Tag is int codComunidade)
             {
-                MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, codComunidade, codUsuario, MainFrame));
+                MainFrame.Navigate(new PageGrupo(comunidadeManager, userManager, codComunidade, codUsuario, frameComunidade, MainFrame, null));
             }
         }
 
