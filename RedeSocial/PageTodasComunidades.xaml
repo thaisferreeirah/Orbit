@@ -3,15 +3,16 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="RedeSocial.PageTodasComunidades"
       Title="Todas as Comunidades">
-
-    <Grid  Height="600" Width="820" Margin="10,0,10,0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Todas as Comunidades" FontSize="24" FontWeight="Bold" Margin="0,10,0,10" TextAlignment="Center"/>
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <WrapPanel x:Name="gridComunidades"/>
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
+            <Grid Margin="10,0,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Todas as Comunidades" FontSize="24" FontWeight="Bold" Margin="0,10,0,10" TextAlignment="Center"/>
+                <WrapPanel Grid.Row="1" x:Name="gridComunidades"/>
+            </Grid>
         </ScrollViewer>
     </Grid>
 </Page>

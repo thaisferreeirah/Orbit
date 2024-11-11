@@ -169,6 +169,7 @@ namespace RedeSocial.Models
             comunidadeManager.AdicionarComunidade(1, "É bolacha!", projectPath + "\\Imagens\\Bolacha.jpeg", "É BOLACHA E NÃO BISCOITO!!!!!!!!!!!!!!!!", 0);
             comunidadeManager.AdicionarComunidade(2, "Como ficar rico com 100 reais", projectPath + "\\Imagens\\Dinheiro.jpeg", "Quer saber como ganhar dinheiro fácil e rápido? Assine esse curso >>> AQUI!!!", 0);
             comunidadeManager.AdicionarComunidade(3, "Desenhos Atuais", projectPath + "\\Imagens\\JohnnyBravo.jpeg", "Vamos falar apenas sobre os desenhos mais recentes, nada de coisa antiga, plz.", 0);
+            comunidadeManager.AdicionarComunidade(4, "Você já viu essa mulher?", projectPath + "\\Imagens\\Chuuringa.jpg", "Já sonhou com esta mulher? TODAS AS NOITES EM TODO O MUNDO CENTENAS DE PESSOAS SONHAM COM ESSA CARA.", 12);
         }
 
         public void AdicionarTeste(ChatList chatList, ComunidadeManager comunidadeManager)

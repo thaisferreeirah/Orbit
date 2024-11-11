@@ -9,7 +9,7 @@ d:DesignHeight="230" d:DesignWidth="200" Background="Transparent"
       Title="PageCartaoComunidade">
 
 
-    <Grid Margin="10,10,10,0">
+    <Grid Margin="10,5,10,5">
         <Border Background="#FFFFFFFF" CornerRadius="6" MouseLeftButtonDown="fotoDaComunidade_MouseLeftButtonDown">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="3" ShadowDepth="0"/>
