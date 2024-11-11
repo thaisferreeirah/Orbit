@@ -31,7 +31,7 @@ namespace RedeSocial.Models
             narizManager.AdicionarUsuario();
             usuarioManager.AdicionarUsuario("gigi@email.com", "gigi", "123123", "Luigi", new DateOnly(1981, 10, 11), projectPath + "\\Fotos\\Luigi.png", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
             narizManager.AdicionarUsuario();
-            usuarioManager.AdicionarUsuario("jaja@email.com", "jaja", "123123", "Janete Jaeger", new DateOnly(2001, 02, 13), projectPath + "\\Fotos\\Janete.jpeg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
+            usuarioManager.AdicionarUsuario("ddddohn@gmail.com", "jaja", "123123", "Janete Jaeger", new DateOnly(2001, 02, 13), projectPath + "\\Fotos\\Janete.jpeg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
             narizManager.AdicionarUsuario();
             usuarioManager.AdicionarUsuario("jiji@email.com", "jiji", "123123", "Jimin Jinovo", new DateOnly(2001, 02, 13), projectPath + "\\Fotos\\Jimin.jpeg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
             narizManager.AdicionarUsuario();
@@ -53,6 +53,7 @@ namespace RedeSocial.Models
             narizManager.AdicionarUsuario();
 
             narizManager.SetNariz(0, 5000);
+            narizManager.SetNariz(4, 2000);
         }
 
         public void AdicionarAmigo()
@@ -75,11 +76,11 @@ namespace RedeSocial.Models
         {
             postManager.ArmazenarPost(0, "El Pudinho", FormatarTextoPost("Fiz um pudim muito bom!"), "", "22/09/2024 10:10");
             postManager.ArmazenarPost(1, "", FormatarTextoPost("Alguém sabe onde eu coloquei minha carteira?"), "", "22/09/2024 10:54");
-            postManager.ArmazenarPost(0, "", FormatarTextoPost("Olha esse elefante gigante"), "", "22/09/2024 11:13");
+            postManager.ArmazenarPost(0, "", FormatarTextoPost("Qual é mais pesado, 1kg de algodão ou 1kg de chumbo?"), "", "22/09/2024 11:13");
             postManager.ArmazenarPost(1, "", FormatarTextoPost("Deixa o Like!"), "", "23/09/2024 15:33");
             postManager.ArmazenarPost(3, "", FormatarTextoPost("Que Mario?"), "", "23/09/2024 19:27");
             postManager.ArmazenarPost(2, "", FormatarTextoPost("Estou com fome"), "", "24/09/2024 01:11");
-            postManager.ArmazenarPost(5, "", FormatarTextoPost("Falem bem ou falem mal, mas falem de mim"), projectPath + "\\Fotos\\Jimin.jpeg", "25/09/2024 11:11");
+            postManager.ArmazenarPost(5, "", FormatarTextoPost("Falem bem ou falem mal, falem Jimin"), projectPath + "\\Fotos\\Jimin.jpeg", "25/09/2024 11:11");
         }
 
         public void AdicionarLike()
@@ -89,6 +90,14 @@ namespace RedeSocial.Models
             postManager.AdicionarLike(0, 4);
             postManager.AdicionarLike(1, 4);
             postManager.AdicionarLike(4, 2);
+            postManager.AdicionarLike(6, 1);
+            postManager.AdicionarLike(6, 2);
+            postManager.AdicionarLike(6, 3);
+            postManager.AdicionarLike(6, 5);
+            postManager.AdicionarLike(6, 6);
+            postManager.AdicionarLike(6, 7);
+            postManager.AdicionarLike(6, 8);
+            postManager.AdicionarLike(6, 9);
         }
 
         public void AdicionarComentario()
@@ -132,6 +141,26 @@ namespace RedeSocial.Models
             chatList.AdicionarMensagem(0, 1, "Vamos", "02/10/2024", "20:30");
             chatList.AdicionarMensagem(2, 0, "Elefante", "03/10/2024", "06:45");
             chatList.AdicionarMensagem(0, 1, "Marmota", "04/10/2024", "10:45");
+
+            //Pizza order
+            chatList.AdicionarMensagem(4, 0, "olá, boa noite", "02/11/2024", "19:42");
+            chatList.AdicionarMensagem(4, 0, "gostaria de pedir uma pizza meia calabresa e meia quatro queijo", "02/11/2024", "19:42");
+            chatList.AdicionarMensagem(0, 4, "boa noite", "02/11/2024", "19:43");
+            chatList.AdicionarMensagem(0, 4, "fica 65 reais", "02/11/2024", "19:43");
+            chatList.AdicionarMensagem(0, 4, "qual o endereço?", "02/11/2024", "19:43");
+            chatList.AdicionarMensagem(0, 4, "e qual a forma de pagamento? Aceitamos em dinheiro vivo, morto, crédito, débito e pix", "02/11/2024", "19:44");
+            chatList.AdicionarMensagem(4, 0, "rua dos vida loka, 7210", "02/11/2024", "19:45");
+            chatList.AdicionarMensagem(4, 0, "vou pagar no pixel", "02/11/2024", "19:45");
+            chatList.AdicionarMensagem(4, 0, "quanto tempo demora?", "02/11/2024", "19:45");
+            chatList.AdicionarMensagem(0, 4, "leva cerca de 30 min", "02/11/2024", "19:46");
+            chatList.AdicionarMensagem(0, 4, "a chave pix é essa: 89fu32t0nu908e8e23uwu98f", "02/11/2024", "19:46");
+            chatList.AdicionarMensagem(0, 4, "vou precisar do comprovante do pagamento, por favor", "02/11/2024", "19:46");
+            chatList.AdicionarMensagem(4, 0, "não tem como enviar foto nesse chat", "02/11/2024", "19:49");
+            chatList.AdicionarMensagem(0, 4, "q coisa, vou contatar os desenvolvedores para que melhorarem isso", "02/11/2024", "19:50");
+            chatList.AdicionarMensagem(0, 4, "então poderia me informar o nome de pixelador?", "02/11/2024", "19:50");
+            chatList.AdicionarMensagem(4, 0, "Godofredo Cintilante", "02/11/2024", "19:51");
+            chatList.AdicionarMensagem(0, 4, "pagamento confirmado. A pizza chega em até 30 min", "02/11/2024", "19:51");
+            chatList.AdicionarMensagem(0, 4, "obrigado pela preferência", "02/11/2024", "19:52");
         }
 
         public void AdicionarComunidade(ComunidadeManager comunidadeManager)
@@ -144,15 +173,15 @@ namespace RedeSocial.Models
 
         public void AdicionarTeste(ChatList chatList, ComunidadeManager comunidadeManager)
         {
-            AdicionarUsuario();
-            AdicionarAmigo();
-            AdicionarSolicitacaoAmizade();
-            AdicionarPost();
-            AdicionarLike();
-            AdicionarComentario();
-            AdicionarRecomendar();
-            AdicionarMensagem(chatList);
-            AdicionarComunidade(comunidadeManager);
+                AdicionarUsuario();
+                AdicionarAmigo();
+                AdicionarSolicitacaoAmizade();
+                AdicionarPost();
+                AdicionarLike();
+                AdicionarComentario();
+                AdicionarRecomendar();
+                AdicionarMensagem(chatList);
+                AdicionarComunidade(comunidadeManager);
         }
     }
 }

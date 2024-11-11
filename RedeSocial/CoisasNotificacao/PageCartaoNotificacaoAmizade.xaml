@@ -12,7 +12,7 @@
         <StackPanel>
             <Label Content="Solicitação de amizade" FontSize="14" FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal">
-                <Ellipse x:Name="FotoPerfil" Height="45" Width="45" Stretch="Fill" Margin="5 0 0 0" Stroke="#37376E"/>
+                <Ellipse x:Name="FotoPerfil" Height="45" Width="45" Stretch="Fill" Margin="5 0 0 0" Stroke="#37376E" RenderOptions.BitmapScalingMode="HighQuality"/>
                 <Label x:Name="LabelNome" Content="Nome" VerticalAlignment="Center" FontSize="16"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
