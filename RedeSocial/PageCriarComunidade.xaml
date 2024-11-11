@@ -52,7 +52,7 @@
                     </StackPanel>
                 </Button>
 
-                <TextBlock Grid.Row="1" Text="Crie uma nova comunidade!" FontSize="20" FontWeight="Bold"  TextAlignment="Center" FontFamily="{StaticResource ArimoFont}" Margin="0,6,0,20"/>
+                <TextBlock Grid.Row="1" Text="Crie uma nova comunidade!" FontSize="20" FontWeight="Bold" TextAlignment="Center" FontFamily="{StaticResource ArimoFont}" Foreground="#333333" Margin="0,6,0,20"/>
 
                 <Rectangle Grid.Row="2" x:Name="imgComunidade" Height="120" Width="120"  Fill="Black" RadiusX="5" RadiusY="5" RenderOptions.BitmapScalingMode="HighQuality" Margin="0,13,0,11"/>
                 <Button Grid.Row="3" Content="Adicionar Imagem" Click="AdicionarImagem_Click" Width="165" Height="30" Margin="0,11,0,10" Style="{StaticResource EstiloBotaoCinza}"/>
