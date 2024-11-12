@@ -16,6 +16,7 @@ namespace RedeSocial.Models
     {
         UserManager usuarioManager = new UserManager();
         PostManager postManager = new PostManager();
+        ComunidadePostManager comunidadePostManager = new ComunidadePostManager();
         NarizManager narizManager = new NarizManager();
         RichTextBox richTextBox;
 
@@ -47,8 +48,6 @@ namespace RedeSocial.Models
             narizManager.AdicionarUsuario();
             usuarioManager.AdicionarUsuario("dudu@email.com", "dudu", "123123", "Durval Dumau", new DateOnly(2001, 02, 13), projectPath + "\\Fotos\\Durval.jpeg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
             narizManager.AdicionarUsuario();
-            //usuarioManager.AdicionarUsuario("lucileny6@gmail.com", "lulu", "123456", "Lucileny Xavier", new DateOnly(2001, 02, 13), projectPath + "\\Fotos\\Janete.jpeg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
-            //narizManager.AdicionarUsuario();
             usuarioManager.AdicionarUsuario("seeun@gmail.com", "sese", "123123", "Yoon Se Eun", new DateOnly(2003, 06, 14), projectPath + "\\Fotos\\Seboke.jpg", projectPath + "\\Fundo\\fundoPadraoPreto.jpg");
             narizManager.AdicionarUsuario();
 
@@ -165,11 +164,31 @@ namespace RedeSocial.Models
 
         public void AdicionarComunidade(ComunidadeManager comunidadeManager)
         {
-            comunidadeManager.AdicionarComunidade(0, "Amo K-pop", projectPath + "\\Fotos\\Jimin.jpeg", "Aserehe ra de re, aqui tem do bom e do melhor dos Australianos. Bonapetí", 0);
+            comunidadeManager.AdicionarComunidade(0, "Amo K-pop", projectPath + "\\Fotos\\Jimin.jpeg", "Aserehe ra de re, aqui tem do bom e do melhor dos Australianos. Bonapetí", 5);
+            comunidadeManager.AssociarUsuarioAComunidade(5, 0);
+            comunidadeManager.AssociarUsuarioAComunidade(6, 0);
+            comunidadeManager.AssociarUsuarioAComunidade(7, 0);
             comunidadeManager.AdicionarComunidade(1, "É bolacha!", projectPath + "\\Imagens\\Bolacha.jpeg", "É BOLACHA E NÃO BISCOITO!!!!!!!!!!!!!!!!", 0);
-            comunidadeManager.AdicionarComunidade(2, "Como ficar rico com 100 reais", projectPath + "\\Imagens\\Dinheiro.jpeg", "Quer saber como ganhar dinheiro fácil e rápido? Assine esse curso >>> AQUI!!!", 0);
+            comunidadeManager.AssociarUsuarioAComunidade(0, 1);
+            comunidadeManager.AssociarUsuarioAComunidade(1, 1);
+            comunidadeManager.AssociarUsuarioAComunidade(2, 1);
+            comunidadeManager.AdicionarComunidade(2, "Como ficar rico com 100 reais", projectPath + "\\Imagens\\Dinheiro.jpeg", "Quer saber como ganhar dinheiro fácil e rápido? Assine esse curso >>> AQUI!!!", 4);
+            comunidadeManager.AssociarUsuarioAComunidade(4, 2);
+            comunidadeManager.AssociarUsuarioAComunidade(3, 2);
+            comunidadeManager.AssociarUsuarioAComunidade(5, 2);
             comunidadeManager.AdicionarComunidade(3, "Desenhos Atuais", projectPath + "\\Imagens\\JohnnyBravo.jpeg", "Vamos falar apenas sobre os desenhos mais recentes, nada de coisa antiga, plz.", 0);
+            comunidadeManager.AssociarUsuarioAComunidade(0, 3);
+            comunidadeManager.AssociarUsuarioAComunidade(6, 3);
+            comunidadeManager.AssociarUsuarioAComunidade(7, 3);
             comunidadeManager.AdicionarComunidade(4, "Você já viu essa mulher?", projectPath + "\\Imagens\\Chuuringa.jpg", "Já sonhou com esta mulher? TODAS AS NOITES EM TODO O MUNDO CENTENAS DE PESSOAS SONHAM COM ESSA CARA.", 12);
+            comunidadeManager.AssociarUsuarioAComunidade(8, 4);
+            comunidadeManager.AssociarUsuarioAComunidade(9, 4);
+            comunidadeManager.AssociarUsuarioAComunidade(12, 4);
+        }
+
+        public void AdicionarPostComunidade()
+        {
+            comunidadePostManager.ArmazenarPost(0, 5, "", FormatarTextoPost("FALEM DE MIM, MDS!!! ALGUÉM FALE JIMIN!!!!"), "", DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
         }
 
         public void AdicionarTeste(ChatList chatList, ComunidadeManager comunidadeManager)
@@ -183,6 +202,7 @@ namespace RedeSocial.Models
                 AdicionarRecomendar();
                 AdicionarMensagem(chatList);
                 AdicionarComunidade(comunidadeManager);
+                AdicionarPostComunidade();
         }
     }
 }

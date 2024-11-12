@@ -879,8 +879,8 @@ namespace RedeSocial
             Image newMidia = new Image()
             {
                 Source = new BitmapImage(new Uri(enderecoMidia, UriKind.RelativeOrAbsolute)),
-                MaxHeight = 150,
-                MaxWidth = 150,
+                MaxHeight = 200,
+                MaxWidth = 350,
                 Margin = new Thickness(0, 10, 0, 10)
             };
 
