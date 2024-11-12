@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>OrbitIcone.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,6 +40,11 @@
     <None Remove="Imagens\NarizJogo.png" />
     <None Remove="Imagens\OrbitLogo.png" />
     <None Remove="Imagens\TigrinhoJogo.png" />
+    <None Remove="OrbitIcone.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="OrbitIcone.ico" />
   </ItemGroup>
 
   <ItemGroup>
